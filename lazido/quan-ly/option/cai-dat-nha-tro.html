@@ -1,0 +1,2666 @@
+<!DOCTYPE html>
+<html lang="vi" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="geo.region" content="vi">
+    <meta name="language" content="vi">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>LOZIDO - Cài đặt nhà trọ</title>
+    <meta name="keywords" content="Phần mềm nhà trọ, phần mềm phòng trọ, phần mềm quản lý nhà trọ, phần mềm quản lý nhà trọ, quản lý nhà trọ, quản lý trọ, quản lý phòng trọ">
+    <meta name="description" content="Phần mềm quản lý nhà  trọ trên điện thoại, máy tính, máy tính bảng, iPad hỗ trợ chủ nhà quản lý nhà trọ, phòng trọ  dễ dàng và tiện lợi mọi lúc mọi nơi, tiết kiệm thời gian và công sức">
+
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="csrf-token" content="CZqXP04OzKEuLEt01gkxMY2DrN3sCqnCK8eSZ2o4">
+
+    <meta name="author" content="LOZIDO - Quản lý nhà cho thuê">
+    <meta name="copyright" content="LOZIDO - Quản lý nhà cho thuê - Platform Quan ly nha tro, phong tro">
+    <meta name="abstract" content="Phần mềm quản lý nhà trọ, phòng trọ, ký túc xá, chung cư tốt nhất hiện nay">
+
+    <meta property="og:image" content="https://quanlytro.me/householder-admin/images/lozido_facebook-recovered.jpg">
+    <meta property="og:image:secure_url" content="https://quanlytro.me/householder-admin/images/lozido_facebook-recovered.jpg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="370">
+    <meta property="og:image:type" content="image/webp">
+
+    <link rel="shortcut icon" href="https://quanlytro.me/images/favicon.ico" type="image/x-icon">
+    <link rel="alternate" href="https://quanlytro.me/quan-ly/7081/cai-dat-nha-tro" hreflang="vi-vn" />
+
+    <script type="text/javascript">
+        var recaptcha_site_key = '6Ld0LAYeAAAAABA67PAls5DpnkfNJ-rkgHbsSilR';
+        var __environment = 'production';
+    </script>
+
+    <script src="https://quanlytro.me/plugins/jquery-3.6.0/jquery.min.js"></script>
+    <script src="https://quanlytro.me/plugins/jquery-3.6.0/jquery-ui-1.8.13.min.js"></script>
+    <script src="https://quanlytro.me/plugins/feather.min.js"></script>
+    <!-- <script src="https://quanlytro.me/plugins/sweetalert2@11"></script>
+    <script src="https://quanlytro.me/bootstrap-5.0/js/popper.min.js"></script> -->
+    <script src="https://quanlytro.me/bootstrap-5.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="https://quanlytro.me/householder-admin/js/helper.js?version=1.3.8"></script>
+    <script type="text/javascript" src="https://quanlytro.me/householder-admin/js/format.js?version=1.3.8"></script>
+    <script type="text/javascript" src="https://quanlytro.me/householder-admin/js/route-api.js?version=1.3.8"></script>
+    <script type="text/javascript" src="https://quanlytro.me/householder-admin/js/index.js?version=1.3.8"></script>
+    <script type="text/javascript" src="https://quanlytro.me/householder-admin/js/transporter.js?version=1.3.8"></script>
+    <script type="text/javascript" src="https://quanlytro.me/householder-admin/js/upload-image.js?version=1.3.8"></script>
+    <style>
+        .modal.show .btn-close {
+            outline: 0;
+            box-shadow: 0 0 0 .25rem rgb(255 87 34 / 9%);
+            opacity: 1;
+            border-radius: 100%;
+            padding: 10px;
+        }
+        .btn{
+            font-size: 14px!important;
+            font-weight: 600!important;
+        }
+    </style>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        var __current_block = JSON.parse(JSON.stringify({"id":7081,"name":"ASUS","name_full":"Nh\u00e0 tr\u1ecd ASUS","user_id":8151,"category":0,"category_name":"Nh\u00e0 tr\u1ecd","category_name_short":"Nh\u00e0 tr\u1ecd","room_type":"room","room_type_name":"ph\u00f2ng","type":"floors","room_total":6,"count_floor":2,"area":15,"room_amount":36,"ele_amount":0,"water_amount":0,"price_items_cache":[{"id":23351,"name":"Ti\u1ec1n \u0111i\u1ec7n","type":"constant","unit":"kwh","price":1700,"rooms":[{"id":102158,"name":"Ph\u00f2ng 1","sort":null,"value":102158,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102159,"name":"Ph\u00f2ng 2","sort":null,"value":102159,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102160,"name":"Ph\u00f2ng 3","sort":null,"value":102160,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102161,"name":"Ph\u00f2ng 4","sort":null,"value":102161,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102162,"name":"Ph\u00f2ng 5","sort":null,"value":102162,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102163,"name":"Ph\u00f2ng 6","sort":null,"value":102163,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"}],"value":null,"frames":[],"status":"is_active","history":null,"user_id":8151,"block_id":7081,"category":"ele","type_text":"Theo gi\u00e1 tr\u1ecb c\u1ed1 \u0111\u1ecbnh","unit_text":"KWh","is_default":1,"status_text":"\u0110ang s\u1eed d\u1ee5ng","subtraction":1},{"id":23352,"name":"Ti\u1ec1n n\u01b0\u1edbc","type":"constant","unit":"khoi","price":18000,"rooms":[{"id":102158,"name":"Ph\u00f2ng 1","sort":null,"value":102158,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102159,"name":"Ph\u00f2ng 2","sort":null,"value":102159,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102160,"name":"Ph\u00f2ng 3","sort":null,"value":102160,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102161,"name":"Ph\u00f2ng 4","sort":null,"value":102161,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102162,"name":"Ph\u00f2ng 5","sort":null,"value":102162,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102163,"name":"Ph\u00f2ng 6","sort":null,"value":102163,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"}],"value":null,"frames":[],"status":"is_active","history":null,"user_id":8151,"block_id":7081,"category":"water","type_text":"Theo gi\u00e1 tr\u1ecb c\u1ed1 \u0111\u1ecbnh","unit_text":"Kh\u1ed1i","is_default":1,"status_text":"\u0110ang s\u1eed d\u1ee5ng","subtraction":1}],"circle_order":6,"deadline_bill":10,"bill_setting":{"note":{"content":null},"enable_qr":1,"payment_default":"cash","show_circle_day":0,"single_send_zalo":0,"template_bill_zalo":1,"enable_rounding_money":1,"extract_receipt_expense":0},"app_renter_setting":{"allow_update_car":1,"default_password":123456789,"allow_close_clock":0,"auto_create_account":0,"allow_ticket_contract":1,"allow_update_customer":1},"room_group":[{"id":1,"name":"T\u1ea7ng tr\u1ec7t","index":0,"label":"T\u1ea7ng tr\u1ec7t","value":1},{"id":2,"name":"T\u1ea7ng 1","index":1,"label":"T\u1ea7ng 1","value":2}],"max_member":1,"open_door":null,"close_door":null,"rule":null,"extension":null,"data_log":{"menu_label":{"pay_bill":0,"room_list":"0\/6","new_session":6,"deposit_request":6,"terminate_contract":0}},"setting":{"car_function":1,"post_function":1,"agent_function":1,"asset_function":1,"price_item_ele":3,"price_item_wifi":0,"price_item_trash":0,"price_item_water":3,"task_job_function":1,"send_sms_when_create_bill":1,"contract_document_function":0},"province_id":72,"district_id":712,"ward_id":25732,"address_component":{"address":"63, An T\u1ecbnh, Tr\u1ea3ng B\u00e0ng, T\u00e2y Ninh","ward_id":"25732","position":{"latitude":"10.7829132","longitude":"106.6961898"},"district_id":"712","province_id":"72","address_detail":"63"},"address":"63, An T\u1ecbnh, Tr\u1ea3ng B\u00e0ng, T\u00e2y Ninh","latitude":10.7829132,"longitude":106.6961898,"auto_create_room":1,"post_ids":[]}));
+
+        var __permission_block = JSON.parse(JSON.stringify(null));
+
+        let user = JSON.parse(JSON.stringify({"staff":false,"free":false,"trial":true,"fee":false}));
+       
+    </script>
+    <link href="/bootstrap-5.0/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+                        <link href="/householder-admin/css/common.cssversion=1.3.8.css"
+                rel="stylesheet">
+                    <link href="/householder-admin/css/block.cssversion=1.3.8.css"
+                rel="stylesheet">
+            </head>
+
+<body>
+    <div id="app_loading" class="text-center" style="padding:40vh 10px">
+        <div class="inner-loading">
+            <img style="margin: auto" src="/images/icons/loading.gif" alt="Đang tải..." width="50px"/>
+            <i class="loading_text" style="font-size: 13px; margin-top: -10px;">Đang tải dữ liệu...</i>
+        </div>
+    </div>
+    <header>
+    <div class="header-inner">
+                <div class="header-sticky">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#lozido-main-menu" aria-controls="lozido-main-menu" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"> </span>
+                    </button>
+                    <nav class="collapse navbar-collapse lozido-main-menu">
+                        <ul class="navbar-nav main-menu-left  me-auto mb-2 mb-lg-0">
+                            <li class="nav-item menu-item active">
+                                <a href="/" class="nav-link ">
+                                    <i data-feather="arrow-left"></i>
+                                                                            <img width="180px" src="/images/logo-lozido-quan-ly-tro-white.png"/>
+                                                                    </a>
+                            </li>
+                        </ul>
+
+                        <ul class="topbar-items main-menu-right navbar-nav">
+                                                                                                <li class="nav-item menu-item active">
+                                        <a href="/quan-ly.html" class="nav-link ">
+                                            <i data-feather="home"></i>
+                                            <span style="margin-top: 5px" class="text">Quản lý nhà</span>
+                                        </a>
+                                    </li>
+                                                                                                                                                                <li class="nav-item menu-item ">
+                                        <a href="/bao-cao.html" class="nav-link ">
+                                            <i data-feather="pie-chart"></i>
+                                            <span style="margin-top: 5px" class="text">Tổng báo cáo</span>
+                                        </a>
+                                    </li>
+                                                                                                                                                                <li class="nav-item menu-item ">
+                                        <a href="/dang-tin.html" class="nav-link ">
+                                            <i data-feather="plus"></i>
+                                            <span style="margin-top: 5px" class="text">Đăng tin</span>
+                                        </a>
+                                    </li>
+                                                                                                                                                                <li class="nav-item menu-item ">
+                                        <a href="/moi-gioi.html" class="nav-link ">
+                                            <i data-feather="users"></i>
+                                            <span style="margin-top: 5px" class="text">Môi giới</span>
+                                        </a>
+                                    </li>
+                                                                                                                                                                <li class="nav-item menu-item ">
+                                        <a href="/phan-quyen.html" class="nav-link ">
+                                            <i data-feather="box"></i>
+                                            <span style="margin-top: 5px" class="text">Công ty/nhóm</span>
+                                        </a>
+                                    </li>
+                                                                                                                                                                <li class="nav-item menu-item ">
+                                        <a href="/cai-dat.html" class="nav-link ">
+                                            <i data-feather="settings"></i>
+                                            <span style="margin-top: 5px" class="text">Cài đặt chung</span>
+                                        </a>
+                                    </li>
+                                                                                                                                                                                                                                                                                            <li class="nav-item btn-group menu-item ">
+                                        <a href="javascript:;" class="nav-link" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="count-notification badge">0</span>
+                                            <i data-feather="bell"></i>
+                                            <span style="margin-top: 5px" class="text">Thông báo</span>
+                                        </a>
+                                        <ul class="dropdown-menu notication-dropdown dropdown-menu-lg-end">
+                                            <div class="text-center" style="padding: 20px">
+                                                <img style="margin: auto" src="/images/icons/loading.gif" alt="Đang tải..." width="50px"/>
+                                                <div>
+                                                    <i class="loading_text" style="font-size: 13px; margin-top: -10px;">Đang tải thông báo...</i>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </li>
+
+                                                                                                                                <li class="nav-item menu-item ">
+                                        <a href="/tai-khoan.html" class="nav-link ">
+                                            <i data-feather="user"></i>
+                                            <span style="margin-top: 5px" class="text">Tài khoản</span>
+                                        </a>
+                                    </li>
+                                                                                                                                                                <li class="nav-item menu-item ">
+                                        <a href="/dang-xuat" class="nav-link ">
+                                            <i data-feather="log-out"></i>
+                                            <span style="margin-top: 5px" class="text">Đăng xuất</span>
+                                        </a>
+                                    </li>
+                                                                                                                    </ul>
+                    </nav>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <div>
+                    <div>
+                <style type="text/css">
+    .scrollable-content {
+        overflow-x: auto;
+        white-space: nowrap;
+        flex: 1;
+        position: relative;
+        scroll-behavior: smooth; /* Thêm hiệu ứng cuộn mượt */
+    }
+    .scrollable-content-container button {
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+        position: absolute;
+        top: 50%;
+        height: 96%;
+        width: 50px;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+    .scrollable-content-container button::before{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        background: #000;
+        z-index: -1;
+    }
+    .scrollable-content-container button:hover::before {
+        background-color: #2f8932;
+    }
+
+    .scrollable-content-container button.hidden {
+        opacity: 0;
+        pointer-events: none; /* Ngăn chặn sự kiện chuột khi ẩn */
+    }
+
+    .scrollable-content-container .scroll-left{
+        left: 0px;
+        flex: 0 0 auto;
+        background: linear-gradient(to right, rgb(255 255 255), rgb(255 255 255 / 0%));
+    }
+    .scrollable-content-container .scroll-right {
+        right: 0px;
+        flex: 0 0 auto;
+        background: linear-gradient(to left, rgb(255 255 255), rgb(255 255 255 / 0%));
+    }
+</style>
+
+<div style="min-height: 125px;display: flex;padding: 0px 10px 0px 0px;">
+    <div class="col-md-2 d-flex align-items-center justify-content-center" style="margin-right: 10px;">
+        <div class="current-block d-flex align-items-center" style="position: relative" data-bs-toggle="modal" data-bs-target="#manageBlock">
+            <div class="d-flex align-items-center" style="flex-direction: row; flex:1">
+                <div class="icon-blocks">
+                    <span class="count-block">1</span>
+                    <i data-feather="home" class="feather-size-18"> </i>
+                </div>
+
+                <div style="padding: 20px 0px 20px 5px; flex:1">
+                    <span style="font-size: 12px;">Đang quản lý</span>
+                    <h4 style="font-size: 14px; color: #15a05c; padding:0px; margin:0px; white-space: nowrap;max-width: 150px; overflow: hidden; text-overflow: ellipsis; ">
+                        <span>Nhà trọ ASUS</span>
+                    </h4>
+                </div>
+            </div>
+                            <button class="shadow" id="add-block"
+                        style="position: absolute;
+                        right: -14px;
+                        top: 29px;
+                        border-radius: 100%;
+                        height: 35px;
+                        width: 35px;
+                        text-align: center;
+                        padding: 0px;
+                        background-color: #7dc343;
+                        color: #fff;
+                        border: 1px solid #7dc443;
+                        z-index: 10;"
+                        data-bs-toggle="modal" data-bs-target="#addBlock">
+                    <span data-bs-toggle="tooltip" data-bs-placement="top" title="Thêm mới nhà cho thuê">
+                        <i data-feather="plus"> </i>
+                    </span>
+                </button>
+                    </div>
+    </div>
+    <div class="col-md-10" style="align-items: center; justify-content: space-between; display: flex;">
+        <div class=" scrollable-content-container" style="position: relative; align-items: center; justify-content: space-between; display: flex;overflow: hidden;">
+            <button class="scroll-left">←</button>
+            <div style="display: flex; flex-wrap: nowrap; overflow-x: auto; position: relative;" class="scrollable-content">    
+                                                                                        <a href="/quan-ly.html" class="item-menu">
+                                                        <div class="icon text-center">
+                                    <img width=55px src="/images/icons/menus/thu_tien.png"/>
+                                </div>
+                                <div class="key">
+                                    <span class="title"><b>Quản lý phòng</b></span>
+                                </div>
+                            </a>
+                                                                        <a href="/quan-ly/option/lap-phieu-thu.html" class="item-menu">
+                                                        <div class="icon text-center">
+                                    <img width=55px src="/images/icons/menus/thu_tien.png"/>
+                                </div>
+                                <div class="key">
+                                    <span class="title"><b>Quản lý hóa đơn</b></span>
+                                </div>
+                            </a>
+                                                                        <a href="/quan-ly/option/quan-ly-dich-vu.html" class="item-menu">
+                                                        <div class="icon text-center">
+                                    <img width=55px src="/images/icons/menus/ghi_chu.png"/>
+                                </div>
+                                <div class="key">
+                                    <span class="title"><b>Quản lý dịch vụ</b></span>
+                                </div>
+                            </a>
+                                                                        <a href="/quan-ly/option/quan-ly-tai-san.html" class="item-menu">
+                                                        <div class="icon text-center">
+                                    <img width=55px src="/images/icons/menus/ghi_chu.png"/>
+                                </div>
+                                <div class="key">
+                                    <span class="title"><b>Quản lý tài sản</b></span>
+                                </div>
+                            </a>
+                                                                        <a href="/quan-ly/option/tat-ca-hop-dong.html" class="item-menu">
+                                                        <div class="icon text-center">
+                                    <img width=55px src="/images/icons/menus/report_customer_use.png"/>
+                                </div>
+                                <div class="key">
+                                    <span class="title"><b>Quản lý hợp đồng</b></span>
+                                </div>
+                            </a>
+                                                                        <a href="/quan-ly/option/tat-ca-khach-thue.html" class="item-menu">
+                                                        <div class="icon text-center">
+                                    <img width=55px src="/images/icons/menus/danh_sach_lien_he.png"/>
+                                </div>
+                                <div class="key">
+                                    <span class="title"><b>Quản lý khách thuê</b></span>
+                                </div>
+                            </a>
+                                                                        <a href="/quan-ly/option/thu-chi-tong-ket.html" class="item-menu">
+                                                        <div class="icon text-center">
+                                    <img width=55px src="/images/icons/menus/thu_tien.png"/>
+                                </div>
+                                <div class="key">
+                                    <span class="title"><b>Thu/Chi - Tổng kết</b></span>
+                                </div>
+                            </a>
+                                                                        <a href="/quan-ly/option/cai-dat-nha-tro.html" class="item-menu active">
+                                                        <div class="icon text-center">
+                                    <img width=55px src="/images/icons/menus/setting.png"/>
+                                </div>
+                                <div class="key">
+                                    <span class="title"><b>Cài đặt</b></span>
+                                </div>
+                            </a>
+                                                                        <a href="/quan-ly/option/lich-su-gui-zalo.html" class="item-menu">
+                                                        <div class="icon text-center">
+                                    <img width=45px src="/images/icons/icon-zalo.png"/>
+                                </div>
+                                <div class="key">
+                                    <span class="title"><b>Lịch sử gửi zalo</b></span>
+                                </div>
+                            </a>
+                                                </div>
+            <button class="scroll-right">→</button> 
+        </div>       
+    </div>
+</div>
+
+<script type="text/javascript">
+    const $scrollableContent = $('.scrollable-content');
+    const $scrollLeft = $('.scroll-left');
+    const $scrollRight = $('.scroll-right');
+
+    function updateButtonVisibility() {
+        const scrollLeft = $scrollableContent.scrollLeft();
+        const scrollWidth = $scrollableContent[0].scrollWidth-10;
+        const clientWidth = $scrollableContent[0].clientWidth;
+
+        $scrollLeft.toggleClass('hidden', scrollLeft === 0);
+        $scrollRight.toggleClass('hidden', scrollLeft + clientWidth >= scrollWidth);
+    }
+
+    $scrollLeft.click(function() {
+        $scrollableContent.animate({ scrollLeft: 0 }, 100); // Hiệu ứng cuộn mượt
+    });
+
+    $scrollRight.click(function() {
+        const scrollWidth = $scrollableContent[0].scrollWidth-10;
+        $scrollableContent.animate({ scrollLeft: scrollWidth }, 100); // Hiệu ứng cuộn mượt
+    });
+
+    $scrollableContent.on('scroll', updateButtonVisibility);
+
+    updateButtonVisibility(); // Cập nhật trạng thái nút khi trang được tải
+</script>
+                <div style="padding:15px 15px 15px 15px; background-color: #fff; border-radius: 10px; margin: 0 10px 10px 10px">
+                    <script type="text/javascript">
+    var current_block = JSON.parse(JSON.stringify({"id":7081,"name":"ASUS","name_full":"Nh\u00e0 tr\u1ecd ASUS","user_id":8151,"category":0,"category_name":"Nh\u00e0 tr\u1ecd","category_name_short":"Nh\u00e0 tr\u1ecd","room_type":"room","room_type_name":"ph\u00f2ng","type":"floors","room_total":6,"count_floor":2,"area":15,"room_amount":36,"ele_amount":0,"water_amount":0,"price_items_cache":[{"id":23351,"name":"Ti\u1ec1n \u0111i\u1ec7n","type":"constant","unit":"kwh","price":1700,"rooms":[{"id":102158,"name":"Ph\u00f2ng 1","sort":null,"value":102158,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102159,"name":"Ph\u00f2ng 2","sort":null,"value":102159,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102160,"name":"Ph\u00f2ng 3","sort":null,"value":102160,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102161,"name":"Ph\u00f2ng 4","sort":null,"value":102161,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102162,"name":"Ph\u00f2ng 5","sort":null,"value":102162,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102163,"name":"Ph\u00f2ng 6","sort":null,"value":102163,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"}],"value":null,"frames":[],"status":"is_active","history":null,"user_id":8151,"block_id":7081,"category":"ele","type_text":"Theo gi\u00e1 tr\u1ecb c\u1ed1 \u0111\u1ecbnh","unit_text":"KWh","is_default":1,"status_text":"\u0110ang s\u1eed d\u1ee5ng","subtraction":1},{"id":23352,"name":"Ti\u1ec1n n\u01b0\u1edbc","type":"constant","unit":"khoi","price":18000,"rooms":[{"id":102158,"name":"Ph\u00f2ng 1","sort":null,"value":102158,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102159,"name":"Ph\u00f2ng 2","sort":null,"value":102159,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102160,"name":"Ph\u00f2ng 3","sort":null,"value":102160,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102161,"name":"Ph\u00f2ng 4","sort":null,"value":102161,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102162,"name":"Ph\u00f2ng 5","sort":null,"value":102162,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102163,"name":"Ph\u00f2ng 6","sort":null,"value":102163,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"}],"value":null,"frames":[],"status":"is_active","history":null,"user_id":8151,"block_id":7081,"category":"water","type_text":"Theo gi\u00e1 tr\u1ecb c\u1ed1 \u0111\u1ecbnh","unit_text":"Kh\u1ed1i","is_default":1,"status_text":"\u0110ang s\u1eed d\u1ee5ng","subtraction":1}],"circle_order":6,"deadline_bill":10,"bill_setting":{"note":{"content":null},"enable_qr":1,"payment_default":"cash","show_circle_day":0,"single_send_zalo":0,"template_bill_zalo":1,"enable_rounding_money":1,"extract_receipt_expense":0},"app_renter_setting":{"allow_update_car":1,"default_password":123456789,"allow_close_clock":0,"auto_create_account":0,"allow_ticket_contract":1,"allow_update_customer":1},"room_group":[{"id":1,"name":"T\u1ea7ng tr\u1ec7t","index":0,"label":"T\u1ea7ng tr\u1ec7t","value":1},{"id":2,"name":"T\u1ea7ng 1","index":1,"label":"T\u1ea7ng 1","value":2}],"max_member":1,"open_door":null,"close_door":null,"rule":null,"extension":null,"data_log":{"menu_label":{"pay_bill":0,"room_list":"0\/6","new_session":6,"deposit_request":6,"terminate_contract":0}},"setting":{"car_function":1,"post_function":1,"agent_function":1,"asset_function":1,"price_item_ele":3,"price_item_wifi":0,"price_item_trash":0,"price_item_water":3,"task_job_function":1,"send_sms_when_create_bill":1,"contract_document_function":0},"province_id":72,"district_id":712,"ward_id":25732,"address_component":{"address":"63, An T\u1ecbnh, Tr\u1ea3ng B\u00e0ng, T\u00e2y Ninh","ward_id":"25732","position":{"latitude":"10.7829132","longitude":"106.6961898"},"district_id":"712","province_id":"72","address_detail":"63"},"address":"63, An T\u1ecbnh, Tr\u1ea3ng B\u00e0ng, T\u00e2y Ninh","latitude":10.7829132,"longitude":106.6961898,"auto_create_room":1,"post_ids":[]}));
+
+    var dataSendSetting = {
+        room_group: __current_block?.room_group ?? null,
+        bill_setting: null,
+        bank_setting: null,
+        circle_order: 0,
+        deadline_bill: 0,
+        setting: null,
+    };
+</script>
+
+<div class="page-setting">
+    <div class="container-fluid">
+        <div class="header-item" style="    position: sticky;
+        top: 0px;
+        background-color: #fff;
+        z-index: 1;
+        padding: 10px;
+        border-bottom: 0.5px solid #ccc;">
+            <h4 class="title-item">
+                Cài đặt nhà trọ
+                <i style="font-size: 14px;
+            font-weight: normal;">Các thiết lập cho nhà trọ</i>
+            </h4>
+            <div>
+                <a href="/quan-ly" class="btn btn-white">
+                    <i data-feather="arrow-left"></i>
+                    Về trang quản lý
+                </a>
+                                <button style="margin-left: 10px" class="btn btn-primary" id="save-setting">
+                    <i data-feather="save"></i>
+                    Lưu cài đặt
+                </button>
+                            </div>
+        </div>
+        <div class="overflow-hidden card-feature mt-4 mb-4">
+            <div class="d-flex">
+                <div class="col-md-3 content-left" style="border-right: 1px solid #eee; padding:0">
+                    <!-- Nav tabs -->
+                    <ul class="nav setting-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#home">
+                                <i data-feather="box"></i>
+                                Nhóm phòng
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#increase_price">
+                                <i data-feather="trending-up"></i>
+                                Tăng giá thuê 
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#function_setting">
+                                <i data-feather="settings"></i>
+                                Bật tắt tính năng
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#bill_setting">
+                                <i data-feather="bookmark"></i>
+                                Cài đặt hóa đơn
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#bank_setting">
+                                <i data-feather="dollar-sign"></i>
+                                Cài đặt tài khoản ngân hàng
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#app_renter_setting">
+                                <i data-feather="smartphone"></i>
+                               Thiết lập cho app khách thuê
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#other">
+                                <i data-feather="file"></i>
+                                Nội quy, giờ giấc, tiện ích cho thuê
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-9 content-left">
+                    <div style="padding: 15px">
+                        <!-- Tab panes -->
+                        <form id="block-setting-form">
+                            <div class="tab-content">
+                                <script type="text/javascript" src="https://quanlytro.me/tabulator-5.5/dist/js/tabulator.js"></script>
+<script type="text/javascript" src="https://quanlytro.me/tabulator-5.5/dist/js/jquery_wrapper.js"></script>
+<script type="text/javascript" src="https://quanlytro.me/householder-admin/js/tabulator-setting.js?version=1.3.8"></script>
+
+<link href="https://quanlytro.me/tabulator-5.5/dist/css/tabulator_semanticui.min.css" rel="stylesheet">
+
+<div id="home" class="container tab-pane active">
+    <div class="header-item">
+        <div class="title-item">
+            <h4 class="mb-0">Gom nhóm phòng để dễ quản lý</h4>
+            Bạn có thể nhóm danh sách phòng theo nhóm để phân biệt Khu/Tầng/Dãy
+        </div>
+                <button type="button" id="add-row" class="add-round" data-bs-toggle="tooltip"
+                data-bs-placement="left" title="Thêm nhóm">
+            <i data-feather="plus"></i>
+        </button>
+            </div>
+    <div>
+        <i class="text-danger">* Nhấp và kéo để xếp vị trí của nhóm</i>
+        <div id="group_room" class="celled"></div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    Tabulator.extendModule("edit", "editors", common_editors);
+    Tabulator.extendModule("format", "formatters", Object.assign(common_formatters));
+    Tabulator.extendModule("validate", "validators", common_validators);
+</script>
+<script>
+    $(document).ready(function () {
+        let __el ={
+            groupRoomTable: $("#group_room"),
+            addRow: $("#add-row")
+        };
+
+        let dataGroup = __current_block?.room_group ?? null;
+
+        var table = new Tabulator(__el.groupRoomTable.get(0), {
+            index: 'id',
+            data: dataGroup ? Object.keys(dataGroup).map((item, index) => {
+                dataGroup[item].index = index + 1;
+                return dataGroup[item];
+            }):null,
+            height: "100%",
+            layout: "fitColumns",
+            selectable: false,
+            movableRows: true,
+            columns: [{
+                rowHandle: true,
+                field: "id",
+                formatter: "handle",
+                headerSort: false,
+                frozen: false,
+                width: 40,
+                maxWidth: 40,
+                cssClass:'move'
+            },
+            {
+                title: "Tên nhóm",
+                field: "name",
+                headerSort: false,
+                editor:  __permission_block === null || __permission_block.block.update ? true : false,
+                validator: 'required',
+                cssClass: __permission_block === null || __permission_block.block.update ? 'edit_enable' : 'edit_disable', 
+            }, {
+                title: "",
+                field: "delete",
+                width: 60,
+                hozAlign: "center",
+                vertAlign: "middle",
+                headerSort: false,
+                frozen: true,
+                formatter:"delete",
+                cellClick:function(e, cell){
+                    Swal.fire({
+                        title: 'Cảnh báo!',
+                        text: "Bạn có chắc chắn muốn xóa?",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        cancelButtonColor: '#d33',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'Vâng! tôi muốn xóa',
+                        cancelButtonText: 'Không xóa'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            console.log(cell.getData());
+                            $.transferData({
+                                method: "POST",
+                                url: __helper.url.urlPattern(__routeApi.block.deleteGroup, {
+                                    block_id : parseInt(__current_block.id)}
+                                ),
+                                data: {
+                                    group: cell.getData()
+                                },
+                                success: (res) => {
+                                    Swal.fire({
+                                        title: 'Thông báo!',
+                                        text: res.message,
+                                        icon: 'success',
+                                        confirmButtonText: 'Đóng'
+                                    }).then(result=>{
+                                        cell.getRow().delete();
+                                    });
+                                }
+                            });
+                        }
+                    });
+                },
+            }
+            ],
+        });
+
+        //listen for row move
+        table.on("rowMoved", function (row) {
+            dataSendSetting['room_group'] = row.getTable().getData().map((item, index)=>{
+                item.index= index;
+                return item;
+            });
+        });
+
+        table.on("cellEdited", function (cell) {
+            cell.getData().label = cell.getValue();
+            cell.getRow().update(cell.getData());
+            dataSendSetting['room_group'] = cell.getTable().getData();
+        });
+
+        table.on("dataChanged", function (data) {
+            dataSendSetting['room_group'] = data;
+        });
+
+        __el.addRow.click(() => {
+            let maxId = __helper.array.getMaxObjectArray(dataSendSetting['room_group'], 'id') + 1;
+            table.addRow({
+                id: maxId,
+                value: maxId,
+                name: null,
+                label: null
+            }, true);
+        });
+    });
+</script>
+                                <style>
+    .show-demo {
+        position: relative;
+        transition: color .3s ease-in-out;
+        cursor: pointer;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            height: 3px;
+            background-color: #4caf50;
+            transform: scaleX(0);
+            transition: transform .3s ease-in-out;
+        }
+        
+        &:hover {
+            color: #4caf50;
+        }
+        
+        &:hover::before {
+            transform: scaleX(1);
+        }	
+    }
+</style>
+<div id="increase_price" class="container tab-pane fade">
+    <div class="title-item mb-3">
+        <h4 class="mb-0">Tăng giá thuê</h4>
+        Tăng giá thuê cho tất cả các phòng hoặc chỉ 1 số phòng
+    </div>
+    <div>
+        <div class="row g-3">
+            <div class="col-12">
+                <div class="form-floating">
+                    <input data-format="numeric" type="text" class="form-control" id="room_amount" name="room_amount" placeholder="Giá thuê mới"  required>
+                    <label for="circle_order">Giá thuê mới</label>
+                    <div class="invalid-feedback">
+                        Vui lòng nhập giá thuê mới
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 mt-2 mb-2">
+                <div style="border-bottom: 1px solid #ccc;"></div>
+            </div>
+
+            <div class="col-10 mt-2">
+                <div class="title-item-small">
+                    <b>Chọn phòng muốn áp dụng</b>
+                    <i class="des">Danh sách phòng chọn áp dụng</i>
+                </div>
+            </div>
+
+            <div class="col-2 mt-4" style=" text-align: center">
+                <input style="float: right;" class="form-check-input" id="check_all" type="checkbox" value="all" name="check_all">
+
+                <label for="check_all">
+                    <b>Chọn tất cả</b>
+                </label>
+            </div>
+
+            <div class="col-12 mt-2 room-list">
+                <div class="row">
+                                                            <div class="col-3 mt-2 room" data-id="102158">
+                        <div class="item-check-name" style="padding: 15px;border: 1px solid #dbdbdb;">
+                            <input class="form-check-input check-rooms" id="room_check_102158" type="checkbox" value="102158" name="rooms[]">
+
+                            <label for="room_check_102158">
+                                <b>Phòng 1</b>
+                                <p>36đ</p>
+                            </label>
+                        </div>
+                    </div>
+                                        <div class="col-3 mt-2 room" data-id="102159">
+                        <div class="item-check-name" style="padding: 15px;border: 1px solid #dbdbdb;">
+                            <input class="form-check-input check-rooms" id="room_check_102159" type="checkbox" value="102159" name="rooms[]">
+
+                            <label for="room_check_102159">
+                                <b>Phòng 2</b>
+                                <p>36đ</p>
+                            </label>
+                        </div>
+                    </div>
+                                        <div class="col-3 mt-2 room" data-id="102160">
+                        <div class="item-check-name" style="padding: 15px;border: 1px solid #dbdbdb;">
+                            <input class="form-check-input check-rooms" id="room_check_102160" type="checkbox" value="102160" name="rooms[]">
+
+                            <label for="room_check_102160">
+                                <b>Phòng 3</b>
+                                <p>36đ</p>
+                            </label>
+                        </div>
+                    </div>
+                                        <div class="col-3 mt-2 room" data-id="102161">
+                        <div class="item-check-name" style="padding: 15px;border: 1px solid #dbdbdb;">
+                            <input class="form-check-input check-rooms" id="room_check_102161" type="checkbox" value="102161" name="rooms[]">
+
+                            <label for="room_check_102161">
+                                <b>Phòng 4</b>
+                                <p>36đ</p>
+                            </label>
+                        </div>
+                    </div>
+                                        <div class="col-3 mt-2 room" data-id="102162">
+                        <div class="item-check-name" style="padding: 15px;border: 1px solid #dbdbdb;">
+                            <input class="form-check-input check-rooms" id="room_check_102162" type="checkbox" value="102162" name="rooms[]">
+
+                            <label for="room_check_102162">
+                                <b>Phòng 5</b>
+                                <p>36đ</p>
+                            </label>
+                        </div>
+                    </div>
+                                        <div class="col-3 mt-2 room" data-id="102163">
+                        <div class="item-check-name" style="padding: 15px;border: 1px solid #dbdbdb;">
+                            <input class="form-check-input check-rooms" id="room_check_102163" type="checkbox" value="102163" name="rooms[]">
+
+                            <label for="room_check_102163">
+                                <b>Phòng 6</b>
+                                <p>36đ</p>
+                            </label>
+                        </div>
+                    </div>
+                                                        </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function () {
+    var __el = {
+        form: $('#increase_price'),
+    };
+
+    __el.form.find('#check_all').click(function(){
+        if(this.checked){
+            __el.form.find('.check-rooms').prop('checked', true);
+        }else{
+            __el.form.find('.check-rooms').prop('checked', false);
+        }
+    });
+  })
+    
+</script>
+                                <div id="function_setting" class="container tab-pane fade">
+    <div class="title-item mb-3">
+        <h4 class="mb-0">Cài đặt tính năng</h4>
+        Bật/Tắt các tính năng có thể áp dụng trong Nhà trọ của bạn
+    </div>
+
+    <div class="row">
+        <div class="col-6 mt-2">
+            <div class="form-check form-switch">
+                <input data-format="numeric" class="form-check-input" type="checkbox" value="1" id="setting[asset_function]" name="setting[asset_function]"
+                       checked>
+                <label class="form-check-label" for="setting[asset_function]">
+                    <b>Quản lý tài sản</b>
+                    <p>Quản lý tài sản khách thuê sử dụng</p>
+                </label>
+            </div>
+        </div>
+
+        <div class="col-6 mt-2">
+            <div class="form-check form-switch">
+                <input data-format="numeric" class="form-check-input" type="checkbox" value="1" id="setting[car_function]" name="setting[car_function]" checked>
+                <label class="form-check-label" for="setting[car_function]">
+                    <b>Quản lý xe</b>
+                    <p>Các thông tin xe của khách thuê</p>
+                </label>
+            </div>
+        </div>
+
+        <div class="col-6 mt-2">
+            <div class="form-check form-switch">
+                <input data-format="numeric" class="form-check-input" type="checkbox" value="1" id="setting[agent_function]" name="setting[agent_function]" checked>
+                <label class="form-check-label" for="setting[agent_function]">
+                    <b>Quản lý mô giới</b>
+                    <p>Các thông tin về mô giới</p>
+                </label>
+            </div>
+        </div>
+
+        <div class="col-6 mt-2">
+            <div class="form-check form-switch">
+                <input data-format="numeric" class="form-check-input" type="checkbox" value="1" id="setting[post_function]" name="setting[post_function]" checked>
+                <label class="form-check-label" for="setting[post_function]">
+                    <b>Quản lý tin đăng</b>
+                    <p>Các thông tin về tin đăng</p>
+                </label>
+            </div>
+        </div>
+
+        <div class="col-6 mt-2">
+            <div class="form-check form-switch">
+                <input data-format="numeric" class="form-check-input" type="checkbox" value="1" id="setting[task_job_function]" name="setting[task_job_function]" checked>
+                <label class="form-check-label" for="setting[task_job_function]">
+                    <b>Quản lý công việc cần làm</b>
+                    <p>Các thông tin về việc cần làm</p>
+                </label>
+            </div>
+        </div>
+
+        <div class="col-6 mt-2">
+            <div class="form-check form-switch">
+                <input data-format="numeric" class="form-check-input" type="checkbox" value="1" id="setting[send_sms_when_create_bill]" name="setting[send_sms_when_create_bill]"
+                       checked>
+                <label class="form-check-label" for="setting[send_sms_when_create_bill]">
+                    <b>Gửi tin nhắn tự động cho khách thuê</b>
+                    <p>Giửi tin nhắn SMS tự động cho khách thuê sau khi lập phiếu</p>
+                </label>
+            </div>
+        </div>
+
+        <div class="col-6 mt-2">
+            <div class="form-check form-switch">
+                <input data-format="numeric" class="form-check-input" type="checkbox" value="1" id="setting[contract_document_function]" name="setting[contract_document_function]" checked>
+                <label class="form-check-label" for="setting[contract_document_function]">
+                    <b>Hình ảnh, file chứng từ hợp đồng</b>
+                    <p>Bậ/Tắt thêm hình ảnh, file chứng từ cho hợp đồng</p>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+                                <style>
+    .show-demo {
+        position: relative;
+        transition: color .3s ease-in-out;
+        cursor: pointer;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            height: 3px;
+            background-color: #4caf50;
+            transform: scaleX(0);
+            transition: transform .3s ease-in-out;
+        }
+        
+        &:hover {
+            color: #4caf50;
+        }
+        
+        &:hover::before {
+            transform: scaleX(1);
+        }	
+    }
+</style>
+<div id="bill_setting" class="container tab-pane fade">
+    <div class="title-item mb-3">
+        <h4 class="mb-0">Cài đặt phiếu thu (hóa đơn)</h4>
+        Thiết lập, tùy chỉnh cho hóa đơn của bạn
+    </div>
+    <div>
+        <div class="row g-3">
+            <div class="col-6">
+                <div class="form-floating">
+                    <input data-format="numeric" type="text" class="form-control" id="circle_order" name="circle_order" placeholder="Ngày lập hóa đơn"  min="1" max="31" required>
+                    <label for="circle_order">Ngày lập hóa đơn và trong khoảng 1 đến 31</label>
+                    <div class="invalid-feedback">
+                        Vui lòng nhập ngày lập hóa đơn
+                    </div>
+                </div>
+                <div class="loz-alert info mt-2 mb-2">
+                    <div class="icon flex-0">
+                        <i data-feather="info" size="20"> </i>
+                    </div>
+                    <div class="des flex-1">
+                        <b>Thông tin:</b> Khi đến ngày lập hóa đơn hệ thống sẽ nhắc nhở qua
+                        thông báo
+                    </div>
+                </div>
+                <p>
+                    - Là ngày lập hóa đơn tiền điện, nước...<br>
+                    - Nhập một ngày trong tháng. Nếu không nhập mặc định là cuối tháng.
+                </p>
+            </div>
+            
+            <div class="col-6">
+                <div class="form-floating">
+                    <input data-format="numeric" type="text" class="form-control" id="deadline_bill" name="deadline_bill"
+                           placeholder="Ngày lập hóa đơn" min="1" max="20" required>
+                    <label for="deadline_bill">Hạn đóng tiền</label>
+                    <div class="invalid-feedback">
+                        Vui lòng nhập hạn đóng tiền và trong khoảng 1 đến 20 ngày
+                    </div>
+                </div>
+                <div class="loz-alert info mt-2 mb-2">
+                    <div class="icon flex-0">
+                        <i data-feather="info" size="20"> </i>
+                    </div>
+                    <div class="des flex-1">
+                        <b>Thông tin:</b> Khi khách đóng tiền không đúng thời hạn hệ thống sẽ nhắc nhở
+                    </div>
+                </div>
+                <p>
+                    <b>Ví dụ:</b> Bạn lập phiếu ngày 01 và hạn đóng tiền thuê trọ ở đây là 5 ngày thì ngày 05
+                    sẽ là ngày hết hạn
+                </p>
+            </div>
+
+            <div class="col-12 mt-2 mb-2">
+                <div style="border-bottom: 1px solid #ccc;"></div>
+            </div>
+
+            <div class="col-6 mt-2">
+                <div class="form-check form-switch">
+                    <input data-format="numeric" class="form-check-input" type="checkbox" value="1" id="single_send_zalo" name="bill_setting[single_send_zalo]">
+                    <label class="form-check-label" for="single_send_zalo">
+                        <b>Gửi hóa đơn tự động cho khách qua Zalo</b>
+                        <p>
+                            <div>Tự động gửi hóa đơn qua zalo cho khách ngay khi tạo hóa đơn</div>
+                            <div><strong style="color:orangered">* Tính năng chỉ hoạt động khi bạn đang sử dụng gói có phí</strong></div>
+                            <div><strong style="color:orangered">* Chỉ có thể gửi zalo cho khách thuê từ 6.00 đến 22.00 giờ </strong></div>
+                        </p>
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-6 mt-2 mb-2">
+                <div class="form-floating">
+                    <select id="template_bill_zalo" name="bill_setting[template_bill_zalo]" class="form-select form-control">
+                                                                                                                                        <option selected value="1">Mẫu dạng bảng</option>
+                                                                        </select>
+                    <label for="template_bill_zalo">Mẫu hóa đơn gửi qua zalo</label>
+                    <div style="margin-top: 5px;">
+                        <a data-bs-toggle="modal" data-bs-target="#full_size_image_dialog">
+                            <p class="type_text show-demo"> <b>* Xem hình mẫu gửi zalo</b></p>
+                        </a>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <div class="col-12 mt-2 mb-2">
+                <div style="border-bottom: 1px solid #ccc;"></div>
+            </div>
+
+            <div class="col-6 mt-2">
+                <div class="form-check form-switch">
+                    <input data-format="numeric" class="form-check-input" type="checkbox" value="1" id="bill_setting[enable_qr]" name="bill_setting[enable_qr]" checked="">
+                    <label class="form-check-label" for="bill_setting[enable_qr]">
+                        <b>Ẩn/Hiển mã QR trong hóa đơn</b>
+                        <p>Bạn muốn hiển thị thông tin tài khoản & số tiền hóa đơn bằng mã QR giúp khách hàng thanh toán chuyển khoản nhanh hơn ?</p>
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-6 mt-2">
+                <div class="form-check form-switch">
+                    <input data-format="numeric" class="form-check-input" type="checkbox" value="1" id="bill_setting[extract_receipt_expense]" name="bill_setting[extract_receipt_expense]" checked="">
+                    <label class="form-check-label" for="bill_setting[extract_receipt_expense]">
+                        <b>Phân loại thu/chi từ hóa đơn</b>
+                        <p>Khi thu tiền hóa đơn bạn muốn phân tách các phiếu thu chi rõ ràng như: Tiền phòng/giường, tiền dịch vụ, giảm trừ, cộng thêm</p>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="col-12 mt-2 mb-2">
+                <div style="border-bottom: 1px solid #ccc;"></div>
+            </div>
+
+            <div class="col-6 mt-2">
+                <div class="form-check form-switch">
+                    <input data-format="numeric" class="form-check-input" type="checkbox" value="1" id="bill_setting[enable_rounding_money]" name="bill_setting[enable_rounding_money]">
+                    <label class="form-check-label" for="bill_setting[enable_rounding_money]">
+                        <b>Làm tròn hóa đơn</b>
+                        <p>Làm tròn đơn vị 1.000 đ Ví dụ: 4.300 đ -> 4.000đ, 4.500 đ -> 4.000 đ, 4.600 đ -> 5.000đ, 4.800 đ -> 5.000đ</p>
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-6 mt-2 mb-2">
+                <div class="form-floating">
+                    <select id="bill_setting[payment_default]" name="bill_setting[payment_default]" class="form-select form-control" required="">
+                        <option value="cash">Tiền mặt</option>
+                        <option value="transfer_by_bank">Chuyển khoản</option>
+                    </select>
+                    <label for="bill_setting[payment_default]">Hình thức thanh toán mặc định</label>
+                </div>
+            </div>
+
+            <div class="col-12 mt-2 mb-2">
+                <div style="border-bottom: 1px solid #ccc;"></div>
+            </div>
+        </div>
+
+        <div class="mb-4 mt-2">
+            <label for="exampleFormControlTextarea1" class="form-label"><b>Ghi chú thêm cho hóa đơn</b></label>
+            <textarea placeholder="Ví dụ: Các vi phạm khi đóng tiền trễ hạn..." class="form-control" id="bill_setting[note][content]" name="bill_setting[note][content]" rows="7"></textarea>
+        </div>
+    </div>
+</div>
+<div id="full_size_image_dialog" class="modal">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5>
+            Mẫu Zalo dạng bảng
+          </h5>
+        </div>
+        <div class="modal-body">
+          <img src="https://quanlytro.me/images/zns/dang-bang.jpg" class="img-fluid border border-dark">
+        </div>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    $('#single_send_zalo').click(function() {
+        if ($(this).is(':checked')) {
+            Swal.fire({
+                title: 'Thông báo!',
+                text: "Mỗi tin nhắn sẽ mất 1.400đ/tin nhắn từ Zalo. Bạn cũng có thể gửi hóa đơn tự động qua App LOZIDO khách thuê không tốn phí",
+                icon: 'info',
+                showCancelButton:true,
+                cancelButtonText: 'Hủy bỏ',
+                confirmButtonText: 'Bật tính năng',
+                confirmButtonColor: '#3c9e47',
+            }).then((result)=>{
+                if(result.isConfirmed){
+                    $('#single_send_zalo').prop('checked', true);
+                }else{
+                    $('#single_send_zalo').prop('checked', false);
+                }
+            });
+        }
+    });
+
+
+    $('#template_bill_zalo').change(function() {
+        var selectedValue = $(this).val();
+
+        if(parseInt(selectedValue) === 0){
+            $('.type_text').removeClass('d-none');
+            $('.type_table').addClass('d-none');
+        }else{
+            $('.type_text').addClass('d-none');
+            $('.type_table').removeClass('d-none');
+
+        }
+    });
+  })
+    
+</script>
+                                <div id="bank_setting" class="container tab-pane fade">
+    <div class="title-item mb-3">
+        <h4 class="mb-0">Cài đặt ngân hàng</h4>
+        Dùng để hiển thị trên hóa đơn, mã xóa mã QR giúp khách thuê thanh toán chuyển khoản cho bạn dễ dàng hơn
+    </div>
+    <div>
+        <div class="row g-3">
+            <div class="col-md-12">
+                <div class="form-floating">
+                    <select id="max_member" name="bank_setting[bank_id]" id="bank_setting[bank_id]" class="form-select form-control">
+                                                                                                                    <option value="970415">Ngân hàng TMCP Công thương Việt Nam - VietinBank</option>
+                                                               
+                                                                                            <option value="970436">Ngân hàng TMCP Ngoại Thương Việt Nam - Vietcombank</option>
+                                                               
+                                                                                            <option value="970418">Ngân hàng TMCP Đầu tư và Phát triển Việt Nam - BIDV</option>
+                                                               
+                                                                                            <option value="970405">Ngân hàng Nông nghiệp và Phát triển Nông thôn Việt Nam - Agribank</option>
+                                                               
+                                                                                            <option value="970422">Ngân hàng TMCP Quân đội - MBBank</option>
+                                                               
+                                                                                            <option value="970407">Ngân hàng TMCP Kỹ thương Việt Nam - Techcombank</option>
+                                                               
+                                                                                            <option value="970448">Ngân hàng TMCP Phương Đông - OCB</option>
+                                                               
+                                                                                            <option value="970416">Ngân hàng TMCP Á Châu - ACB</option>
+                                                               
+                                                                                            <option value="970432">Ngân hàng TMCP Việt Nam Thịnh Vượng - VPBank</option>
+                                                               
+                                                                                            <option value="970423">Ngân hàng TMCP Tiên Phong - TPBank</option>
+                                                               
+                                                                                            <option value="970403">Ngân hàng TMCP Sài Gòn Thương Tín - Sacombank</option>
+                                                               
+                                                                                            <option value="970437">Ngân hàng TMCP Phát triển Thành phố Hồ Chí Minh - HDBank</option>
+                                                               
+                                                                                            <option value="970454">Ngân hàng TMCP Bản Việt - VietCapitalBank</option>
+                                                               
+                                                                                            <option value="970429">Ngân hàng TMCP Sài Gòn - SCB</option>
+                                                               
+                                                                                            <option value="970441">Ngân hàng TMCP Quốc tế Việt Nam - VIB</option>
+                                                               
+                                                                                            <option value="970443">Ngân hàng TMCP Sài Gòn - Hà Nội - SHB</option>
+                                                               
+                                                                                            <option value="970431">Ngân hàng TMCP Xuất Nhập khẩu Việt Nam - Eximbank</option>
+                                                               
+                                                                                            <option value="970426">Ngân hàng TMCP Hàng Hải - MSB</option>
+                                                               
+                                                                                            <option value="546034">TMCP Việt Nam Thịnh Vượng - Ngân hàng số CAKE by VPBank - CAKE</option>
+                                                               
+                                                                                            <option value="546035">TMCP Việt Nam Thịnh Vượng - Ngân hàng số Ubank by VPBank - Ubank</option>
+                                                               
+                                                                                            <option value="971005">Viettel Money - ViettelMoney</option>
+                                                               
+                                                                                            <option value="971011">VNPT Money - VNPTMoney</option>
+                                                               
+                                                                                            <option value="970400">Ngân hàng TMCP Sài Gòn Công Thương - SaigonBank</option>
+                                                               
+                                                                                            <option value="970409">Ngân hàng TMCP Bắc Á - BacABank</option>
+                                                               
+                                                                                            <option value="970412">Ngân hàng TMCP Đại Chúng Việt Nam - PVcomBank</option>
+                                                               
+                                                                                            <option value="970414">Ngân hàng Thương mại TNHH MTV Đại Dương - Oceanbank</option>
+                                                               
+                                                                                            <option value="970419">Ngân hàng TMCP Quốc Dân - NCB</option>
+                                                               
+                                                                                            <option value="970424">Ngân hàng TNHH MTV Shinhan Việt Nam - ShinhanBank</option>
+                                                               
+                                                                                            <option value="970425">Ngân hàng TMCP An Bình - ABBANK</option>
+                                                               
+                                                                                            <option value="970427">Ngân hàng TMCP Việt Á - VietABank</option>
+                                                               
+                                                                                            <option value="970428">Ngân hàng TMCP Nam Á - NamABank</option>
+                                                               
+                                                                                            <option value="970430">Ngân hàng TMCP Xăng dầu Petrolimex - PGBank</option>
+                                                               
+                                                                                            <option value="970433">Ngân hàng TMCP Việt Nam Thương Tín - VietBank</option>
+                                                               
+                                                                                            <option value="970438">Ngân hàng TMCP Bảo Việt - BaoVietBank</option>
+                                                               
+                                                                                            <option value="970440">Ngân hàng TMCP Đông Nam Á - SeABank</option>
+                                                               
+                                                                                            <option value="970446">Ngân hàng Hợp tác xã Việt Nam - COOPBANK</option>
+                                                               
+                                                                                            <option value="970449">Ngân hàng TMCP Bưu Điện Liên Việt - LienVietPostBank</option>
+                                                               
+                                                                                            <option value="970452">Ngân hàng TMCP Kiên Long - KienLongBank</option>
+                                                               
+                                                                                            <option value="668888">Ngân hàng Đại chúng TNHH Kasikornbank - KBank</option>
+                                                               
+                                                                                            <option value="970421">Ngân hàng Liên doanh Việt - Nga - VRB</option>
+                                                               
+                                                                                            <option value="970410">Ngân hàng TNHH MTV Standard Chartered Bank Việt Nam - StandardChartered</option>
+                                                               
+                                                                                            <option value="801011">Ngân hàng Nonghyup - Chi nhánh Hà Nội - Nonghyup</option>
+                                                               
+                                                                                            <option value="970434">Ngân hàng TNHH Indovina - IndovinaBank</option>
+                                                               
+                                                                                            <option value="970456">Ngân hàng Công nghiệp Hàn Quốc - Chi nhánh TP. Hồ Chí Minh - IBKHCM</option>
+                                                               
+                                                                                            <option value="970463">Ngân hàng Kookmin - Chi nhánh Thành phố Hồ Chí Minh - KookminHCM</option>
+                                                               
+                                                                                            <option value="970462">Ngân hàng Kookmin - Chi nhánh Hà Nội - KookminHN</option>
+                                                               
+                                                                                            <option value="970457">Ngân hàng TNHH MTV Woori Việt Nam - Woori</option>
+                                                               
+                                                                                            <option value="458761">Ngân hàng TNHH MTV HSBC (Việt Nam) - HSBC</option>
+                                                               
+                                                                                            <option value="970444">Ngân hàng Thương mại TNHH MTV Xây dựng Việt Nam - CBBank</option>
+                                                               
+                                                                                            <option value="970455">Ngân hàng Công nghiệp Hàn Quốc - Chi nhánh Hà Nội - IBKHN</option>
+                                                               
+                                                                                            <option value="422589">Ngân hàng TNHH MTV CIMB Việt Nam - CIMB</option>
+                                                               
+                                                                                            <option value="796500">DBS Bank Ltd - Chi nhánh Thành phố Hồ Chí Minh - DBSBank</option>
+                                                               
+                                                                                            <option value="970406">Ngân hàng TMCP Đông Á - DongABank</option>
+                                                               
+                                                                                            <option value="970408">Ngân hàng Thương mại TNHH MTV Dầu Khí Toàn Cầu - GPBank</option>
+                                                               
+                                                                                            <option value="970439">Ngân hàng TNHH MTV Public Việt Nam - PublicBank</option>
+                                                               
+                                                                                            <option value="970458">Ngân hàng United Overseas - Chi nhánh TP. Hồ Chí Minh - UnitedOverseas</option>
+                                                               
+                                                                                            <option value="970442">Ngân hàng TNHH MTV Hong Leong Việt Nam - HongLeong</option>
+                                                               
+                                                                    </select>
+                    <label for="bank_id">Tên ngân hàng</label>
+                </div>
+            </div>
+            
+            <div class="col-md-12">
+                <div class="form-floating">
+                    <input type="text" class="form-control" name="bank_setting[branch]" id="bank_setting[branch]"
+                        placeholder="Chi nhánh ngân hàng" value="">
+                    <label for="branch">Chi nhánh ngân hàng</label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="title-item-small">
+                    <b>Thông tin tài khoản</b>
+                </div>
+            </div>
+            <div class="col-md-6 mt-2">
+                <div class="form-floating">
+                    <input type="text" class="form-control" name="bank_setting[account_name] " id="bank_setting[account_name]" required
+                        placeholder="Tên chủ tài khoản"  oninput="this.value = __format.capitalizeFulltStr(this.value)" maxlength="50" value=""> 
+                    <label for="account_name">Tên chủ tài khoản</label>
+                    <div class="invalid-feedback">
+                        Vui lòng nhập tiêu đề
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-2">
+                <div class="form-floating">
+                    <input type="text" class="form-control" name="bank_setting[account_number]" id="bank_setting[account_number]" required
+                        placeholder="Số tài khoản" value="">
+                    <label for="account_number">Số tài khoản</label>
+                    <div class="invalid-feedback">
+                        Vui lòng nhập tiêu đề
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-4 d-none">
+            <label for="content" class="form-label"><b>Ghi chú chuyển khoản</b></label>
+            <textarea placeholder="Ví dụ: Nhập số tài khoản ngân hàng để khách thuê chuyển tiền..." class="form-control" id="bank_setting[content]" name="bank_setting[content]" rows="7" ></textarea>
+        </div>
+
+        <div class="co12-6 mt-2">
+            <div class="form-check ">
+                <input data-format="numeric" class="form-check-input" type="checkbox" value="1" id="bank_setting[syn_block]" name="bank_setting[syn_block]"
+                       checked>
+                <label class="form-check-label" for="bank_setting[syn_block]">
+                    <b>Đồng bộ cho tất cả nhà trọ</b>
+                    <p>Đồng bộ thông tin ngân hàng nay cho tất cả các nhà trọ khác trong cùng hệ thống</p>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+                                <div id="app_renter_setting" class="container tab-pane fade">
+    <div class="title-item mb-3">
+        <h4 class="mb-0">Thiết lập cho App khách thuê/dân cư</h4>
+        Những thiết lập cho khách thuê khi sử dụng App khách thuê kết nối với chủ nhà
+    </div>
+    <div>
+        <div class="row g-3">
+            <div class="col-6 mt-2">
+                <div class="form-check form-switch">
+                    <input data-format="numeric" class="form-check-input" type="checkbox" value="1" id="auto_create_account" name="app_renter_setting[auto_create_account]">
+                    <label class="form-check-label" for="auto_create_account">
+                        <b>Tự tạo tài khoản cho khách thuê</b>
+                        <p>
+                            <div>Tự tạo tài khoản đăng nhập vào App khách thuê khi lập hợp đồng</div>
+                            <div>Tài khoản là số điện thoại dùng cho lập hợp đồng</div>
+                            <div>Mật khẩu mặc định vui lòng nhập ở ô kê bên</div>
+                            <div>*Lưu ý: Yêu cầu khách thuê cập nhật lại mật khẩu mới sau khi đăng nhập vào App</div>
+                        </p>
+                    </label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-floating">
+                    <input  type="text" class="form-control" id="default_password" name="default_password" placeholder="Mật khẩu" value="123456789">
+                    <label for="circle_order">Mật khẩu cho khách thuê</label>
+                </div>
+            </div>
+
+            <div class="col-6 mt-2">
+                <div class="form-check form-switch">
+                    <input data-format="numeric" class="form-check-input" type="checkbox" value="1" id="allow_close_clock" name="app_renter_setting[allow_close_clock]">
+                    <label class="form-check-label" for="allow_close_clock">
+                        <b>Chốt đồng hồ điện nước</b>
+                        <p>
+                            Cho phép khách thuê gửi thông tin chốt điện nước để lập hóa đơn
+                        </p>
+                    </label>
+                </div>
+            </div>
+            <div class="col-6 mt-2">
+                <div class="form-check form-switch">
+                    <input data-format="numeric" class="form-check-input" type="checkbox" value="1" id="allow_update_customer" name="app_renter_setting[allow_update_customer]">
+                    <label class="form-check-label" for="allow_update_customer">
+                        <b>Nhập thông tin cá nhân</b>
+                        <p>
+                            Cho phép khách thuê cập nhật thông tin cá nhân qua App khách thuê
+                        </p>
+                    </label>
+                </div>
+            </div>
+            <div class="col-6 mt-2">
+                <div class="form-check form-switch">
+                    <input data-format="numeric" class="form-check-input" type="checkbox" value="1" id="allow_update_car" name="app_renter_setting[allow_update_car]">
+                    <label class="form-check-label" for="allow_update_car">
+                        <b>Cập nhật thông tin xe</b>
+                        <p>
+                            Cho phép khách thuê cập nhật thông tin xe trong phòng
+                        </p>
+                    </label>
+                </div>
+            </div>
+            <div class="col-6 mt-2">
+                <div class="form-check form-switch">
+                    <input data-format="numeric" class="form-check-input" type="checkbox" value="1" id="allow_ticket_contract" name="app_renter_setting[allow_ticket_contract]">
+                    <label class="form-check-label" for="allow_ticket_contract">
+                        <b>Báo kết thúc hợp đồng</b>
+                        <p>
+                            Cho phép khách thuê báo kết thúc hợp đồng
+                        </p>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                                <div id="other" class="container tab-pane fade"><br>
+    <div class="title-item mb-3">
+        <h4 class="mb-0">Nội quy, giờ giấc, tiện ích cho thuê</h4>
+        Thiết lập thời gian, nội quy và tiện ích. Các thông tin này sẽ được sẽ dụng để đăng tin trong khi tìm khách thuê.
+    </div>
+
+    <div class="row g-2">
+        <div class="col-6">
+            <h5>Tiện ích của Nhà trọ</h5>
+                                                <div class="form-check">
+                                                    <input data-format="numeric" class="form-check-input" type="checkbox" id="extesnion_1" name="extensions[]" value="1">
+                                                <label class="form-check-label" for="extesnion_1">
+                            <b>Có gác lửng</b>
+                        </label>
+                    </div>
+                                    <div class="form-check">
+                                                    <input data-format="numeric" class="form-check-input" type="checkbox" id="extesnion_2" name="extensions[]" value="2">
+                                                <label class="form-check-label" for="extesnion_2">
+                            <b>Có chỗ giữ xe</b>
+                        </label>
+                    </div>
+                                    <div class="form-check">
+                                                    <input data-format="numeric" class="form-check-input" type="checkbox" id="extesnion_3" name="extensions[]" value="3">
+                                                <label class="form-check-label" for="extesnion_3">
+                            <b>Toilet riêng</b>
+                        </label>
+                    </div>
+                                    <div class="form-check">
+                                                    <input data-format="numeric" class="form-check-input" type="checkbox" id="extesnion_4" name="extensions[]" value="4">
+                                                <label class="form-check-label" for="extesnion_4">
+                            <b>Riêng với chủ</b>
+                        </label>
+                    </div>
+                                    <div class="form-check">
+                                                    <input data-format="numeric" class="form-check-input" type="checkbox" id="extesnion_5" name="extensions[]" value="5">
+                                                <label class="form-check-label" for="extesnion_5">
+                            <b>Có wifi</b>
+                        </label>
+                    </div>
+                                    <div class="form-check">
+                                                    <input data-format="numeric" class="form-check-input" type="checkbox" id="extesnion_6" name="extensions[]" value="6">
+                                                <label class="form-check-label" for="extesnion_6">
+                            <b>Có camera an ninh</b>
+                        </label>
+                    </div>
+                                    <div class="form-check">
+                                                    <input data-format="numeric" class="form-check-input" type="checkbox" id="extesnion_7" name="extensions[]" value="7">
+                                                <label class="form-check-label" for="extesnion_7">
+                            <b>Được nuôi thú cưng</b>
+                        </label>
+                    </div>
+                                    <div class="form-check">
+                                                    <input data-format="numeric" class="form-check-input" type="checkbox" id="extesnion_8" name="extensions[]" value="8">
+                                                <label class="form-check-label" for="extesnion_8">
+                            <b>Có ban công</b>
+                        </label>
+                    </div>
+                                    <div class="form-check">
+                                                    <input data-format="numeric" class="form-check-input" type="checkbox" id="extesnion_9" name="extensions[]" value="9">
+                                                <label class="form-check-label" for="extesnion_9">
+                            <b>Có nơi sinh hoạt</b>
+                        </label>
+                    </div>
+                                        <h5 class="mt-4">Nội dung giờ giấc của Nhà trọ</h5>
+            <div class="row g-2">
+                <div class="col-6">
+                    <div class="form-floating">
+                        <select id="open_door" name="open_door" class="form-select form-control">
+                                                                                                                                    <option value="04:00:00">4 giờ sáng</option>
+                                                                        
+                                                                                                        <option value="05:00:00">5 giờ sáng</option>
+                                                                        
+                                                                                                        <option value="06:00:00">6 giờ sáng</option>
+                                                                        
+                                                                                    </select>
+                        <label for="open_door">Giờ mở cửa</label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-floating">
+                        <select id="close_door" name="close_door" class="form-select form-control">
+                                                                                                                            <option value="22:00:00">22 giờ tối</option>
+                                                                                                                                <option value="23:00:00">23 giờ tối</option>
+                                                                                                                                <option value="00:00:00">00 giờ sáng</option>
+                                                                                                                    </select>
+                        <label for="close_door">Giờ đóng cửa</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <h5>Nội quy của Nhà trọ</h5>
+                                                <div class="form-check">
+                                                    <input data-format="numeric" class="form-check-input" type="checkbox" id="extesnion_1" name="rules[]" value="1">
+                                                <label class="form-check-label" for="rule_1">
+                            <b>Nhà trọ có giờ giấc không về quá khuya</b>
+                            <p>Không về sau 12h tối</p>
+                        </label>
+                    </div>
+                                    <div class="form-check">
+                                                    <input data-format="numeric" class="form-check-input" type="checkbox" id="extesnion_2" name="rules[]" value="2">
+                                                <label class="form-check-label" for="rule_2">
+                            <b>Đóng tiền trọ đúng ngày</b>
+                            <p>Đóng tiền trọ đúng ngày, không thiếu thường xuyên...</p>
+                        </label>
+                    </div>
+                                    <div class="form-check">
+                                                    <input data-format="numeric" class="form-check-input" type="checkbox" id="extesnion_3" name="rules[]" value="3">
+                                                <label class="form-check-label" for="rule_3">
+                            <b>Không hút thuốc, say xỉn</b>
+                            <p>Không tụ tập nhậu nhẹt, hát hò làm ảnh hưởng phòng xung quanh</p>
+                        </label>
+                    </div>
+                                    <div class="form-check">
+                                                    <input data-format="numeric" class="form-check-input" type="checkbox" id="extesnion_4" name="rules[]" value="4">
+                                                <label class="form-check-label" for="rule_4">
+                            <b>Không chứa chấp tội phạm</b>
+                            <p>Không che giấu và chứa chấp tội phạm trong phòng</p>
+                        </label>
+                    </div>
+                                    <div class="form-check">
+                                                    <input data-format="numeric" class="form-check-input" type="checkbox" id="extesnion_5" name="rules[]" value="5">
+                                                <label class="form-check-label" for="rule_5">
+                            <b>Không hát karaoke, nhậu nhẹt ảnh hưởng tới phòng kế bên</b>
+                            <p>Không gây ồn ào, mất trật tự, nhậu nhẹt, say xỉn...</p>
+                        </label>
+                    </div>
+                                    <div class="form-check">
+                                                    <input data-format="numeric" class="form-check-input" type="checkbox" id="extesnion_6" name="rules[]" value="6">
+                                                <label class="form-check-label" for="rule_6">
+                            <b>Cư xử văn hóa</b>
+                            <p>Không gây gỗ chửi thề, gây hiềm khích với mọi người, tạo văn hóa phòng trọ yên bình, hòa đồng.</p>
+                        </label>
+                    </div>
+                                    </div>
+    </div>
+
+</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        let form = $("#block-setting-form");
+        form.setObjectToForm(current_block);
+
+
+        $("#save-setting").click((e)=>{
+            let dataSend = __helper.object.mergeObject(dataSendSetting, form.getObjectOfForm());
+            let room_group ={};
+
+            dataSend.room_group.map((item)=>{
+                room_group[item.value] = item;
+            });
+
+            dataSend.room_group = room_group;
+
+            $.transferData({
+                method:'POST',
+                url:__helper.url.urlPattern(__routeApi.block.updateSetting, {
+                    block_id: parseInt(7081)
+                }),
+                data:__helper.object.mergeObject(dataSendSetting, form.getObjectOfForm()),
+                textLoading:'Đang cập nhật cài đặt...',
+                success:(res)=>{
+                    window.location.reload();
+                },
+                fail:(res)=>{
+                    Swal.fire({
+                        title: 'Thông báo!',
+                        text: res.message,
+                        icon: 'error',
+                        confirmButtonText: 'Đã hiểu'
+                    });
+                }
+            })
+        });
+
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        if(window.location.hash!==''){
+            var triggerEl = document.querySelector(`.setting-tabs a[href="${window.location.hash}"]`)
+            var tab = new bootstrap.Tab(triggerEl);
+            tab.show();
+        }
+    });
+</script>
+                </div>
+            </div>
+            <!-- Modal manage block -->
+ <div class="modal fade" id="manageBlock" tabindex="-1" aria-labelledby="manageBlockLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header modal-header--sticky">
+                <i style="margin-right: 15px" data-feather="home"> </i>
+                <h5 class="modal-title" id="manageBlockLabel">
+                    Danh sách nhà trọ của bạn
+                    <p style="font-size: 14px; font-weight: normal; font-style: italic; margin: 0">Tới 1 nhà trọ và quản lý</p>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+            </div>
+            <div class="modal-body">
+                                    <div class="item-feature active d-flex align-items-center justify-content-between mb-2">
+                        <div class="info" style="flex: 1">
+                            <h6>Nhà trọ ASUS</h6>
+                            <p>63, An Tịnh, Trảng Bàng, Tây Ninh</p>
+                        </div>
+
+                                                                                    <div class="btn-round disabled btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Không thể xóa nhà trọ đang thao tác">
+                                    <i data-feather="trash-2"> </i>
+                                </div>
+                                                                            
+                                                <div class="btn-round btn-edit"
+                                data-bs-toggle="modal"
+                                data-bs-target="#addBlock"
+                                data-block='{"id":7081,"name":"ASUS","name_full":"Nh\u00e0 tr\u1ecd ASUS","user_id":8151,"category":0,"category_name":"Nh\u00e0 tr\u1ecd","category_name_short":"Nh\u00e0 tr\u1ecd","room_type":"room","room_type_name":"ph\u00f2ng","type":"floors","room_total":6,"count_floor":2,"area":15,"room_amount":36,"ele_amount":0,"water_amount":0,"price_items_cache":[{"id":23351,"name":"Ti\u1ec1n \u0111i\u1ec7n","type":"constant","unit":"kwh","price":1700,"rooms":[{"id":102158,"name":"Ph\u00f2ng 1","sort":null,"value":102158,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102159,"name":"Ph\u00f2ng 2","sort":null,"value":102159,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102160,"name":"Ph\u00f2ng 3","sort":null,"value":102160,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102161,"name":"Ph\u00f2ng 4","sort":null,"value":102161,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102162,"name":"Ph\u00f2ng 5","sort":null,"value":102162,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102163,"name":"Ph\u00f2ng 6","sort":null,"value":102163,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"}],"value":null,"frames":[],"status":"is_active","history":null,"user_id":8151,"block_id":7081,"category":"ele","type_text":"Theo gi\u00e1 tr\u1ecb c\u1ed1 \u0111\u1ecbnh","unit_text":"KWh","is_default":1,"status_text":"\u0110ang s\u1eed d\u1ee5ng","subtraction":1},{"id":23352,"name":"Ti\u1ec1n n\u01b0\u1edbc","type":"constant","unit":"khoi","price":18000,"rooms":[{"id":102158,"name":"Ph\u00f2ng 1","sort":null,"value":102158,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102159,"name":"Ph\u00f2ng 2","sort":null,"value":102159,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102160,"name":"Ph\u00f2ng 3","sort":null,"value":102160,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102161,"name":"Ph\u00f2ng 4","sort":null,"value":102161,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102162,"name":"Ph\u00f2ng 5","sort":null,"value":102162,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102163,"name":"Ph\u00f2ng 6","sort":null,"value":102163,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"}],"value":null,"frames":[],"status":"is_active","history":null,"user_id":8151,"block_id":7081,"category":"water","type_text":"Theo gi\u00e1 tr\u1ecb c\u1ed1 \u0111\u1ecbnh","unit_text":"Kh\u1ed1i","is_default":1,"status_text":"\u0110ang s\u1eed d\u1ee5ng","subtraction":1}],"circle_order":6,"deadline_bill":10,"bill_setting":{"note":{"content":null},"enable_qr":1,"payment_default":"cash","show_circle_day":0,"single_send_zalo":0,"template_bill_zalo":1,"enable_rounding_money":1,"extract_receipt_expense":0},"app_renter_setting":{"allow_update_car":1,"default_password":123456789,"allow_close_clock":0,"auto_create_account":0,"allow_ticket_contract":1,"allow_update_customer":1},"room_group":[{"id":1,"name":"T\u1ea7ng tr\u1ec7t","index":0,"label":"T\u1ea7ng tr\u1ec7t","value":1},{"id":2,"name":"T\u1ea7ng 1","index":1,"label":"T\u1ea7ng 1","value":2}],"max_member":1,"open_door":null,"close_door":null,"rule":null,"extension":null,"data_log":{"menu_label":{"pay_bill":0,"room_list":"0\/6","new_session":6,"deposit_request":6,"terminate_contract":0}},"setting":{"car_function":1,"post_function":1,"agent_function":1,"asset_function":1,"price_item_ele":3,"price_item_wifi":0,"price_item_trash":0,"price_item_water":3,"task_job_function":1,"send_sms_when_create_bill":1,"contract_document_function":0},"province_id":72,"district_id":712,"ward_id":25732,"address_component":{"address":"63, An T\u1ecbnh, Tr\u1ea3ng B\u00e0ng, T\u00e2y Ninh","ward_id":"25732","position":{"latitude":"10.7829132","longitude":"106.6961898"},"district_id":"712","province_id":"72","address_detail":"63"},"address":"63, An T\u1ecbnh, Tr\u1ea3ng B\u00e0ng, T\u00e2y Ninh","latitude":10.7829132,"longitude":106.6961898,"auto_create_room":1,"post_ids":[]}'>
+                            <div style="width: 100%; height: 100%; align-items: center;
+                            display: inherit;
+                            text-align: center;
+                            justify-content: center; color: #000" data-bs-toggle="tooltip" data-bs-placement="top" title="Chỉnh sửa Nhà trọ">
+                                <i data-feather="edit"> </i>
+                            </div>
+                        </div>
+                                               
+                        <a class="btn-round btn-go-to"
+                           data-bs-toggle="tooltip" data-bs-placement="top" title="Tới quản lý Nhà trọ"
+                           href="/quan-ly/nha-tro/7081">
+                            <i data-feather="arrow-right"> </i>
+                        </a>
+                    </div>
+                            </div>
+        </div>
+    </div>
+</div>
+ <script type="text/javascript">
+     $(document).ready(function() {
+         $("#manageBlock .btn-edit").click(function(e){
+             let ModalAddBlock = $($(this).data('bsTarget'));
+             ModalAddBlock &&
+             ModalAddBlock.data('block', $(this).data('block'));
+         });
+
+         $("#manageBlock .btn-delete").click(function(e){
+             Swal.fire({
+                 title: 'Thông báo!',
+                 text: "Bạn có chắc chắn muốn xóa nhà trọ",
+                 icon: 'warning',
+                 showCancelButton: true,
+                 cancelButtonColor: '#d33',
+                 confirmButtonColor: '#3085d6',
+                 confirmButtonText: 'Vâng! tôi muốn xóa',
+                 cancelButtonText: 'Không xóa'
+             }).then((result) => {
+                 if (result.isConfirmed) {
+                    $.transferData({
+                        method: "GET",
+                        url: __helper.url.urlPattern(__routeApi.block.delete, {
+                                block_id : parseInt($(this).data('id')) }),
+                        success: (res) => {
+                            Swal.fire({
+                                title: 'Thành công!',
+                                text: res.message,
+                                icon: 'success',
+                                confirmButtonColor: '#3c9e47',
+                                confirmButtonText: 'Đóng'
+                            }).then((result) => {
+                                window.location.href = "/quan-ly";
+                            });
+                        }
+                    });
+                 }
+             });
+         });
+     });
+ </script>
+                <!-- Modal add block -->
+<div class="modal fade" data-bs-backdrop="static"  id="addBlock" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div style="margin-right: 15px;outline: 0;box-shadow: 0 0 0 .25rem rgb(76 175 80 / 16%);opacity: 1;border-radius: 100%;width: 36px;height: 36px;justify-content: center;align-items: center;display: flex;background-color: #b1e1b8;">
+                <i data-feather="home"> </i>
+                </div>
+                <h5 class="modal-title">Thêm nhà trọ</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" class="needs-validation" id="add-block-form" novalidate>
+                    <input type="hidden" name="_token" value="CZqXP04OzKEuLEt01gkxMY2DrN3sCqnCK8eSZ2o4">                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="title-item-small">
+                                <b>Thông tin:</b>
+                                <i class="des">Các thông tin nhà trọ cơ bản</i>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <select data-format="numeric" id="category" name="category" class="form-select form-control" required>
+                                                                                                                        <option value="0">Nhà trọ</option>
+                                                                                    <option value="1">Ký túc xá/sleepbox</option>
+                                                                                    <option value="2">Chung cư mini</option>
+                                                                                    <option value="5">Tòa nhà chung cư</option>
+                                                                                    <option value="3">Nhà nguyên căn</option>
+                                                                                    <option value="4">Văn phòng cho thuê</option>
+                                                                                                            </select>
+                                <label for="category">Loại nhà trọ</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" name="name" id="name" required
+                                    placeholder="Tên nhà trọ">
+                                <label for="name">Tên nhà trọ</label>
+                                <div class="invalid-feedback">
+                                    Vui lòng nhập tên nhà trọ
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 mt-2 invisible d-none">
+                                                                                                <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="room_type_room" name="room_type" value="room">
+                                        <label class="form-check-label" for="room_type_room">
+                                            <b>Thuê theo phòng</b>
+                                            <p>Tính tiền thuê theo phòng</p>
+                                        </label>
+                                    </div>
+                                                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="room_type_bed" name="room_type" value="bed">
+                                        <label class="form-check-label" for="room_type_bed">
+                                            <b>Thuê theo giường</b>
+                                            <p>Tính tiền theo giường</p>
+                                        </label>
+                                    </div>
+                                                                                    </div>
+
+                        <div class="col-12">
+                            <div class="title-item-small">
+                                <b>Chọn phương thức khởi tạo dữ liệu</b>
+                                <i class="des">Chọn 1 trong 3 phương thức tạo khởi tạo dữ liệu</i>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-2 type-input-room hide-when-edit d-flex" style="text-align: center;">
+                            <style type="text/css">
+                                .type-input-room .item{
+                                    width: 100%;
+                                    border: 1px solid #ccc;
+                                    margin: 5px;
+                                    padding: 5px;
+                                    border-radius: 10px;
+                                }
+                            </style>
+                            <div class="item">
+                                <div class="form-check form-check-inline">
+                                    <input data-format="numeric" class="form-check-input" type="radio" name="auto_create_room" id="enable" checked value="1">
+                                    <label class="form-check-label" for="enable">
+                                        <b>Tạo dữ liệu <span class="room_type_name">phòng</span> tự động </b>
+                                    </label>
+                                </div>
+                            </div> 
+                            <div class="item">  
+                                <div class="form-check form-check-inline">
+                                    <input data-format="numeric" class="form-check-input" type="radio" name="auto_create_room" id="excel" value="2">
+                                    <label class="form-check-label" for="excel">
+                                        <b>Tạo dữ liệu <span class="room_type_name">phòng</span> từ Excel</b>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="form-check form-check-inline">
+                                    <input data-format="numeric" class="form-check-input" type="radio" name="auto_create_room" id="disable" value="0">
+                                    <label class="form-check-label" for="disable">
+                                        <b>Tạo dữ liệu <span class="room_type_name">phòng</span> thủ công </b>
+                                    </label>
+                                </div>
+                            </div>    
+                        </div>
+
+                        <div class="col-12 mt-2 info-auto-create-room-enable">
+                            <div class="loz-alert info mt-2 mb-2">
+                                <div class="icon flex-0">
+                                    <i data-feather="info" size="20"> </i>
+                                </div>
+                                <div class="des flex-1">
+                                    <b>Ghi chú:</b> Vui lòng chọn số tầng và nhập số <span class="room_type_name">phòng</span> để hệ thống tự động tạo dữ liệu <span class="room_type_name">phòng</span> cho bạn
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt-2 d-none info-auto-create-room-disable">
+                            <div class="loz-alert warning mt-2 mb-2">
+                                <div class="icon flex-0">
+                                    <i data-feather="info" size="20"> </i>
+                                </div>
+                                <div class="des flex-1">
+                                    <b>Ghi chú:</b> Bạn phải thực hiện tạo dữ liệu cho từng <span class="room_type_name">phòng</span> bằng thủ công.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-none import-from-excel-layout">
+                            <style type="text/css">
+                                .stepProgress {
+                                    position: relative;
+                                    padding-left: 45px;
+                                    list-style: none;
+                                }
+                                .stepProgress::before {
+                                    display: inline-block;
+                                    content: '';
+                                    position: absolute;
+                                    top: 0;
+                                    left: 15px;
+                                    width: 10px;
+                                    height: 100%;
+                                    border-left: 2px solid #CCC;
+                                }
+                                .stepProgress-item {
+                                    position: relative;
+                                    counter-increment: list;
+                                }
+                                .stepProgress-item:not(:last-child) {
+                                    padding-bottom: 20px;
+                                }
+                                .stepProgress-item::before {
+                                    display: inline-block;
+                                    content: '';
+                                    position: absolute;
+                                    left: -30px;
+                                    height: 100%;
+                                    width: 10px;
+                                }
+                                .stepProgress-item::after {
+                                    content: '';
+                                    display: inline-block;
+                                    position: absolute;
+                                    top: 0;
+                                    left: -39px;
+                                    width: 20px;
+                                    height: 20px;
+                                    border: 2px solid #CCC;
+                                    border-radius: 50%;
+                                    background-color: #FFF;
+                                }
+                            </style>
+                            <ul class="stepProgress">
+                                <li class="stepProgress-item">Bước 1: Tải file mẫu</li>
+                                <li class="stepProgress-item">Bước 2: Nhập dữ liệu của bạn vào file mẫu</li>
+                                <li class="stepProgress-item">Bước 3: Upload file mẫu lên để nhập liệu</li>
+                            </ul>
+                            <div class="row g-2">
+                                <div class="col-6 mt-2 import-excel">
+                                    <div class="image-upload-simple" style="height: 100px;">
+                                        <input type="file" style="display: none" id="file-excel"  accept=".xlsx">
+                                        <div class="container-upload " id="import-excel-trigger" style="border: 2px dashed #ccc;">
+                                            <div class="placeholder __add-more-imge" style="display: grid;cursor: pointer !important;width: 100%;align-items: center;justify-content: center;height: 100%;margin:-10px;">
+                                                <div class="icon-upload" style="margin:auto"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload-cloud"><polyline points="16 16 12 12 8 16"></polyline><line x1="12" y1="12" x2="12" y2="21"></line><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path><polyline points="16 16 12 12 8 16"></polyline></svg>
+                                                </div>
+                                                <label style="text-decoration:underline" id="text-import">File Excel cần nhập dữ liệu</label>
+                                            </div>
+                                        </div>
+                                        <div class="invalid-feedback"> Vui lòng chọn file Excel</div>
+                                    </div>
+                                </div>
+                                <div class="col-6 mt-2 download-template-excel">
+                                    <a href="/download-template-excel" style=" color: inherit;">
+                                        <div class="image-upload-simple" style="height: 100px;">
+                                            <div class="container-upload " id="download-excel-trigger" style="border: 2px dashed #ccc;">
+                                                <div class="placeholder __add-more-imge" style="display: grid;cursor: pointer !important;width: 100%;align-items: center;justify-content: center;height: 100%;margin:-10px;">
+                                                    <div class="icon-upload" style="margin:auto">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                                            <polyline points="8 17 12 21 16 17" />
+                                                            <line x1="12" x2="12" y1="12" y2="21" />
+                                                            <path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29" />
+                                                        </svg>
+                                                    </div>
+                                                    <label style="text-decoration:underline" id="text-download">Tải file Excel mẫu</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 mt-2 count_floor">
+                            <div class="form-floating">
+                                <select data-format="numeric" id="count_floor" name="count_floor" class="form-select form-control" required>
+                                                                                                                        <option value="1">Tầng trệt (không có tầng)</option>
+                                                                                    <option value="2">2 tầng (Gồm 1 trệt + 1 tầng)</option>
+                                                                                    <option value="3">3 tầng (Gồm 1 trệt + 2 tầng)</option>
+                                                                                    <option value="4">4 tầng (Gồm 1 trệt + 3 tầng)</option>
+                                                                                    <option value="5">5 tầng (Gồm 1 trệt + 4 tầng)</option>
+                                                                                    <option value="6">6 tầng (Gồm 1 trệt + 5 tầng)</option>
+                                                                                    <option value="7">7 tầng (Gồm 1 trệt + 6 tầng)</option>
+                                                                                    <option value="8">8 tầng (Gồm 1 trệt + 7 tầng)</option>
+                                                                                                            </select>
+                                <label for="count_floor">Loại nhà trọ</label>
+                            </div>
+                        </div>
+                       
+                        <div class="col-6 mt-2 total-room">
+                            <div class="form-floating">
+                                <input data-format="numeric" type="text" class="form-control" name="room_total" id="room_total" placeholder="Số phòng/giường" required>
+                                <label for="room_total">Số <span class="room_type_name">phòng</span></label>
+                                <div class="invalid-feedback">
+                                    Vui lòng nhập tổng số <span class="room_type_name">phòng</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="title-item-small">
+                                <b>Địa chỉ:</b>
+                                <i class="des">Giúp cho khách thuê của bạn có thể tìm thấy nhà trọ của bạn dễ
+                                    dàng hơn</i>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div id="block_address" class="address_component_container row g-2">
+    <div class="col-6 mt-2">
+        <div class="form-floating">
+            <select data-format="numeric" name="address_component[province_id]" class="form-select form-control province" required>
+                <option value="">Tỉnh/Thành phố</option>
+            </select>
+            <label for="province">Chọn Tỉnh/Thành phố</label>
+            <div class="invalid-feedback">
+                Vui lòng chọn thành phố
+            </div>
+        </div>
+    </div>
+    <div class="col-6 mt-2">
+        <div class="form-floating">
+            <select data-format="numeric" name="address_component[district_id]" class="form-select form-control district" required>
+                <option value="">Quận/Huyện</option>
+            </select>
+            <label for="district">Chọn Quận/Huyện</label>
+            <div class="invalid-feedback">
+                Vui lòng chọn quận hoặc huyện
+            </div>
+        </div>
+    </div>
+    <div class="col-12 mt-2">
+        <div class="form-floating">
+            <select data-format="numeric" name="address_component[ward_id]" class="form-select form-control ward" required>
+                <option value="">Phường/Xã</option>
+            </select>
+            <label for="ward">Chọn Phường/Xã</label>
+            <div class="invalid-feedback">
+                Vui lòng chọn phường hoặc xã
+            </div>
+        </div>
+    </div>
+    <div class="col-12 mt-2">
+        <div class="form-floating">
+            <input type="text" class="form-control address_detail" name="address_component[address_detail]"
+                placeholder="ví dụ: 122 - Đường Nguyễn Duy Trinh" required>
+            <label for="address_detail">Địa chỉ chi tiết. Ví dụ: 122 - Đường Nguyễn Duy Trinh</label>
+            <div class="invalid-feedback">
+                Vui lòng nhập địa chỉ chi tiết
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        let __el = {
+            province: $("#block_address").find(".province"),
+            district: $("#block_address").find(".district"), 
+            ward    : $("#block_address").find(".ward"),
+
+            address_detail : $("#block_address").find(".address_detail"),
+            address_show_container: $("#block_address").find(".address-detail-show-container"),  
+            address_show: $("#block_address").find(".address-detail-show"),   
+        };
+
+        function getAddressFull(){
+            let arrayText = [
+                __el.address_detail.val(),
+                __el.ward.find('option:selected').text().trim(),
+                __el.district.find('option:selected').text().trim(),
+                __el.province.find('option:selected').text().trim() 
+            ];
+            if(arrayText[0].lengh!=='' && arrayText[1].lengh!=='' && arrayText[2].lengh!=='' && arrayText[2].lengh!==''){
+                __el.address_show_container.show();
+                __el.address_show.text(arrayText.join(', '));
+            }else{
+                __el.address_show_container.hide();
+            }
+        }
+
+        __el.address_detail.keyup((e)=>{
+            getAddressFull();
+        });
+
+        __el.province.change(function(){
+            __el.district.empty();
+            __el.ward.empty();
+
+            $.transferData({
+                url: __helper.url.urlPattern(__routeApi.location.showProvince, {
+                        id : parseInt($(this).val())
+                    }),
+                method: 'GET',
+                success:function(res){
+                     __el.district.append(`<option value=''>Quận/Huyện</option>`);
+                    $.each(res.data.districts, function(key, value) {
+                        __el.district.append(`<option value='${value.id}'>${value.name}</option>`);
+                    });
+                    getAddressFull();
+                }
+            });
+
+        });
+
+        __el.district.change(function(){
+            __el.ward.empty();
+            $.transferData({
+                url: __helper.url.urlPattern(__routeApi.location.showDistrict, {
+                        id : parseInt($(this).val())
+                    }),
+                method: 'GET',
+                success:function(res){
+                    __el.ward.append(`<option value=''>Phường/Xã</option>`);
+                    $.each(res.data.wards, function(key, value) {
+                        __el.ward.append(`<option value='${value.id}'>${value.name}</option>`);
+                    });
+                    getAddressFull();
+                }
+            });
+        });
+
+        __el.ward.change(function(){
+            getAddressFull();
+        });
+    });
+</script> 
+
+                        </div>
+                       
+                        <div class="col-12 mt-2 text-center" style="display: none">
+                            <div style="border: 1px solid #ccc; border-radius: 5px; padding: 10px">
+                                <i data-feather="map-pin"></i>
+                                <input type="hidden" required value="10.7829132" class="form-control" name="address_component[position][latitude]" id="address_component[position][latitude]">
+                                <input type="hidden" required value="106.6961898" class="form-control" name="address_component[position][longitude]" id="address_component[position][longitude]">
+                                <div class="invalid-feedback">
+                                    Vui lòng thêm vị trí nhà trọ
+                                </div>
+                                <b>Vị trí nhà trọ</b>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="title-item-small">
+                                <b>Thông tin cơ bản:</b>
+                                <i class="des not-edit">Thông tin diện tích, giá thuê, số lượng thành viên</i>
+                                <i class="des note" style="color:red; display: none"> <b>*Các thông tin dưới đây chỉ áp dụng cho lúc tạo nhà trọ tự động và khởi tạo đăng tin cho thuê</b></i>
+                            </div>
+                        </div>
+
+                        <div class="col-6 hide-when-not-room">
+                            <div class="form-floating">
+                                <input data-format="numeric" type="text" class="form-control" name="area" id="area" value="15" required placeholder="Nhập diện tích">
+                                <label for="area">Diện tích (m2)</label>
+                                <div class="invalid-feedback">
+                                    Vui lòng nhập diện tích
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input data-format="numeric" type="text" class="form-control" name="room_amount" id="room_amount" placeholder="Giá thuê" required>
+                                <label for="room_amount">Giá thuê trung bình (đ)</label>
+                                <div class="invalid-feedback">
+                                    Vui lòng nhập giá thuê
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 hide-when-not-room">
+                            <div class="form-floating">
+                                <select data-format="numeric" id="max_member" name="max_member" class="form-select form-control">
+                                                                                                                        <option value="1">1 người ở</option>
+                                                                                    <option value="2">2 người ở</option>
+                                                                                    <option value="3">3 người ở</option>
+                                                                                    <option value="4">4 người ở</option>
+                                                                                    <option value="5">5-6 người ở</option>
+                                                                                    <option value="6">7-10 người ở</option>
+                                                                                    <option value="0">Không giới hạn</option>
+                                                                                                            </select>
+                                <label for="max_member">Tối đa người ở / <span class="room_type_name">phòng</span></label>
+                            </div>
+                        </div>
+
+                        <div class="col-12 hide-when-edit">
+                            <div class="title-item-small">
+                                <b>Cài đặt dịch vụ:</b>
+                                <i class="des">Thiết lập các dịch vụ khi khách thuê sử dụng khi thuê</i>
+                            </div>
+                        </div>
+
+                        <div class="col-6 mt-2 hide-when-edit">
+                            <div class="form-floating">
+                                <select data-format="numeric" id="setting[price_item_ele]" name="setting[price_item_ele]" class="form-select form-control">
+                                    <option value="0">Miễn phí/Không sử dụng</option>
+                                    <option value="1">Tính theo người</option>
+                                    <option value="2">Tính theo tháng</option>
+                                    <option value="3" selected>Tính theo đồng hồ (phổ biến)</option>
+                                </select>
+                                <label for="setting[price_item_ele]">Dịch vụ điện</label>
+                            </div>
+                        </div>
+                        <div class="col-6 mt-2 hide-when-edit">
+                            <div class="form-floating">
+                                <select data-format="numeric" id="setting[price_item_water]" name="setting[price_item_water]" class="form-select form-control">
+                                    <option value="0">Miễn phí/Không sử dụng</option>
+                                    <option value="1">Tính theo người</option>
+                                    <option value="2">Tính theo tháng</option>
+                                    <option value="3" selected>Tính theo đồng hồ (phổ biến)</option>
+                                </select>
+                                <label for="setting[price_item_water]">Dịch vụ nước</label>
+                            </div>
+                        </div>
+                        <div class="col-6 mt-2 hide-when-edit">
+                            <div class="form-floating">
+                                <select data-format="numeric" id="setting[price_item_trash]" name="setting[price_item_trash]" class="form-select form-control">
+                                    <option value="0">Miễn phí/Không sử dụng</option>
+                                    <option value="1">Tính theo người</option>
+                                    <option value="2">Tính theo tháng</option>
+                                </select>
+                                <label for="setting[price_item_trash]">Dịch vụ rác</label>
+                            </div>
+                        </div>
+
+                        <div class="col-6 mt-2 hide-when-edit">
+                            <div class="form-floating">
+                                <select data-format="numeric" id="setting[price_item_wifi]" name="setting[price_item_wifi]" class="form-select form-control">
+                                    <option value="0">Miễn phí/Không sử dụng</option>
+                                    <option value="1">Tính theo người</option>
+                                    <option value="2">Tính theo tháng</option>
+                                </select>
+                                <label for="setting[price_item_wifi]">Dịch vụ wifi/internet</label>
+                            </div>
+                        </div>
+
+                        <div class="col-12 hide-when-edit">
+                            <div class="title-item-small">
+                                <b>Cài đặt tính năng:</b>
+                                <i class="des">Thiết lập các tính năng cho nhà trọ</i>
+                            </div>
+                        </div>
+
+                        <div class="col-6 mt-2 hide-when-edit">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" value="1" id="setting[asset_function]" name="setting[asset_function]"
+                                       checked>
+                                <label class="form-check-label" for="setting[asset_function]">
+                                    <b>Quản lý tài sản</b>
+                                    <p>Quản lý tài sản khách thuê sử dụng</p>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-6 mt-2 hide-when-edit">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" value="1" id="setting[car_function]" name="setting[car_function]" checked>
+                                <label class="form-check-label" for="setting[car_function]">
+                                    <b>Quản lý xe</b>
+                                    <p>Các thông tin xe của khách thuê</p>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-6 mt-2">
+                            <div class="form-check form-switch">
+                                <input data-format="numeric" class="form-check-input" type="checkbox" value="1" id="setting[agent_function]" name="setting[agent_function]" checked>
+                                <label class="form-check-label" for="setting[agent_function]">
+                                    <b>Quản lý mô giới</b>
+                                    <p>Các thông tin về mô giới</p>
+                                </label>
+                            </div>
+                        </div>
+                
+                        <div class="col-6 mt-2">
+                            <div class="form-check form-switch">
+                                <input data-format="numeric" class="form-check-input" type="checkbox" value="1" id="setting[post_function]" name="setting[post_function]" checked>
+                                <label class="form-check-label" for="setting[post_function]">
+                                    <b>Quản lý tin đăng</b>
+                                    <p>Các thông tin về tin đăng</p>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-6 mt-2 hide-when-edit">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" value="1" id="setting[send_sms_when_create_bill]" name="setting[send_sms_when_create_bill]"
+                                    checked>
+                                <label class="form-check-label" for="setting[send_sms_when_create_bill]">
+                                    <b>Gửi tin nhắn tự động cho khách thuê</b>
+                                    <p>Giửi tin nhắn SMS tự động cho khách thuê sau khi lập phiếu</p>
+                                </label>
+                            </div>
+
+                        </div>
+
+                        <div class="col-12">
+                            <div class="title-item-small">
+                                <b>Cài đặt cho phiếu thu (hóa đơn):</b>
+                                <i class="des">Thiết lập cho hóa đơn khi bạn lập hóa đơn tiền thuê cho khách
+                                    thuê</i>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input data-format="numeric" type="text" class="form-control" id="circle_order" name="circle_order" placeholder="Ngày lập hóa đơn"  min="1" max="31" required>
+                                <label for="circle_order">Ngày lập hóa đơn và trong khoảng 1 đến 31</label>
+                                <div class="invalid-feedback">
+                                    Vui lòng nhập ngày lập hóa đơn
+                                </div>
+                            </div>
+                            <div class="loz-alert info mt-2 mb-2">
+                                <div class="icon flex-0">
+                                    <i data-feather="info" size="20"> </i>
+                                </div>
+                                <div class="des flex-1">
+                                    <b>Thông tin:</b> Khi đến ngày lập hóa đơn hệ thống sẽ nhắc nhở qua
+                                    thông báo
+                                </div>
+                            </div>
+                            <p>
+                                - Là ngày lập hóa đơn tiền điện, nước...<br>
+                                - Nhập một ngày trong tháng. Nếu không nhập mặc định là cuối tháng.
+                            </p>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input data-format="numeric" type="text" class="form-control" id="deadline_bill" name="deadline_bill"
+                                    placeholder="Ngày lập hóa đơn" min="1" max="20" required>
+                                <label for="deadline_bill">Hạn đóng tiền</label>
+                                <div class="invalid-feedback">
+                                    Vui lòng nhập hạn đóng tiền và trong khoảng 1 đến 20 ngày
+                                </div>
+                            </div>
+                            <div class="loz-alert info mt-2 mb-2">
+                                <div class="icon flex-0">
+                                    <i data-feather="info" size="20"> </i>
+                                </div>
+                                <div class="des flex-1">
+                                    <b>Thông tin:</b> Khi khách đóng tiền không đúng thời hạn hệ thống sẽ nhắc nhở
+                                </div>
+                            </div>
+                            <p>
+                                <b>Ví dụ:</b> Bạn lập phiếu ngày 01 và hạn đóng tiền thuê trọ ở đây là 5 ngày thì ngày 05
+                                sẽ là ngày hết hạn
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer modal-footer--sticky">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" id="submit-block" class="btn btn-primary">
+                    <i data-feather="plus"> </i>
+                    Thêm nhà trọ
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        var __el = {
+            form    : $('#add-block-form'),
+            modal   : $("#addBlock"),
+            submit  : $('#submit-block'),
+            province: $("#province"),
+            district: $("#district"),
+            ward    : $("#ward"),
+
+        };
+
+        let dataBlock =  null;
+
+        const excelFile = (file)=> {
+            try {
+                var reader = new FileReader();
+                reader.readAsBinaryString(file);
+                reader.onload = function(e) {
+            
+                    var data = e.target.result;
+
+                    var workbook = XLSX.read(data, {
+                        type : 'binary',
+                        UTC  : false
+                    });
+
+                    if(workbook.SheetNames && workbook.SheetNames.length!==0){
+                        const jsonData = XLSX.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]], { header: 1 });
+                        if (jsonData.length !== 0) {
+                            let header = jsonData[0];
+                            let data = [];
+                            jsonData.forEach((row, rowIndex) => {
+                                if(row.length!==0 && rowIndex !== 0){
+                                    data[rowIndex] = []
+                                    row.forEach((value, colIndex) => {
+                                        let header = jsonData[0][colIndex];
+                                        data[rowIndex].push({
+                                            colIndex: colIndex,
+                                            name: header,
+                                            value: value
+                                        });
+                                    })
+                                }
+                            
+                            })
+
+                            $.transferData({
+                                method: "POST",
+                                url: __helper.url.urlPattern(__routeApi.checkDataFromFile),
+                                data : {
+                                    data_excel: data
+                                },
+                                success: (res) => {
+                                    __el.form.find('#count_floor').val(res.data.count_floor).change();
+                                    Swal.fire({
+                                        title: 'Thành công!',
+                                        text: res.message,
+                                        icon: 'success',
+                                        confirmButtonColor: '#3c9e47',
+                                        confirmButtonText: 'Đóng'
+                                    });
+                                },
+                                fail: (res) => {
+                                    Swal.fire({
+                                        title: 'Dữ liệu không chính xác',
+                                        html: res.message,
+                                        icon: 'error',
+                                        confirmButtonText: 'Đã hiểu'
+                                    });
+
+                                    $('#file-excel').val('');
+                                    $('#text-import').text('Chưa có tệp nào được chọn');
+                                }
+                            });
+                        }
+                    }
+                }
+            }catch(e){
+                console.error(e);
+            }
+        }
+
+        const changeRoomType = (room_type)=>{
+            if(room_type ==='room'){
+                __el.form.find('input[name="room_total"]').attr('placeholder', 'Nhập số phòng');
+                __el.form.find('.room_type_name').text('phòng');
+                __el.form.find('.hide-when-not-room').show();
+
+            }else{
+                __el.form.find('input[name="room_total"]').attr('placeholder', 'Nhập số giường');
+                __el.form.find('.room_type_name').text('giường');
+                __el.form.find('.hide-when-not-room').hide();
+            }
+        };
+
+        __el.form.find("#import-excel-trigger").on("click", function() {
+            __el.form.find("#file-excel").click();
+        });
+        
+        __el.modal.find("#province").change(function(){
+            __el.modal.find("#district").empty();
+            __el.modal.find("#ward").empty();
+
+            $.transferData({
+                url: __helper.url.urlPattern(__routeApi.location.showProvince, {
+                        id : parseInt($(this).val())
+                    }),
+                method: 'GET',
+                loadingEle:false,
+                success:function(res){
+                    __el.modal.find("#district").append(`<option value=''>Chọn Quận/Huyện</option>`);
+                    $.each(res.data.districts, function(key, value) {
+                        __el.modal.find("#district").append(`<option value='${value.id}'>${value.name}</option>`);
+                    });
+                }
+            });
+
+        });
+
+        __el.modal.find("#district").change(function(){
+            __el.modal.find("#ward").empty();
+            $.transferData({
+                url: __helper.url.urlPattern(__routeApi.location.showDistrict, {
+                        id : parseInt($(this).val())
+                    }),
+                method: 'GET',
+                loadingEle:false,
+                success:function(res){
+                    __el.modal.find("#ward").append(`<option value=''>Chọn Phường/Xã</option>`);
+                    $.each(res.data.wards, function(key, value) {
+                        __el.modal.find("#ward").append(`<option value='${value.id}'>${value.name}</option>`);
+                    });
+                }
+            });
+        });
+
+
+        __el.form.on("change","#file-excel", function(e) {
+            var file = e.target.files[0];
+            if (file) {
+                __el.form.find("#text-import").text(file.name)
+                excelFile(file);
+            } else {
+                alert("Vui lòng chọn file excel để tiếp tục!");
+            }
+        });
+
+        __el.form.on('change', 'input[name="room_type"]', function (e) {
+            changeRoomType($(this).val())
+        });
+
+        __el.form.on('change', 'select[name="category"]', function (e) {
+            if($(this).val() == 1)
+                __el.form.find('#room_type_bed').prop('checked', true).change();
+            else
+                __el.form.find('#room_type_room').prop('checked', true).change();
+                
+        });
+
+        __el.form.on('change', 'input[name="auto_create_room"]', function (e) {
+            if (__el.form.find("#disable").is(':checked')) {
+                __el.form.find("#file-excel").removeAttr('required'); 
+                __el.form.find("#room_total").removeAttr('required');
+
+                __el.form.find("#room_total").attr("disabled", true);
+                __el.form.find("#room_total").val(0);
+
+                __el.form.find('.total-room').removeClass("d-none");
+                __el.form.find('.count_floor').removeClass("d-none");   
+                __el.form.find('.import-from-excel-layout').addClass("d-none");  
+                __el.form.find(".info-auto-create-room-enable").addClass("d-none");
+                __el.form.find(".info-auto-create-room-disable").removeClass("d-none");
+                __el.form.find('.total-room').addClass("d-none");
+                __el.form.find('.count_floor').addClass("d-none");  
+
+                __el.form.find('#file-excel').val('');
+                __el.form.find('#text-import').text('File Excel cần nhập dữ liệu');
+
+            } else if (__el.form.find("#enable").is(':checked')) {
+                __el.form.find("#room_total").attr('required', 'required');
+                __el.form.find("#file-excel").removeAttr('required');   
+
+                __el.form.find("#room_total").removeAttr("disabled");
+                __el.form.find("#room_total").val('');
+
+                __el.form.find('.total-room').removeClass("d-none");
+                __el.form.find('.count_floor').removeClass("d-none");   
+                __el.form.find(".info-auto-create-room-enable").removeClass("d-none");
+                __el.form.find(".info-auto-create-room-disable").addClass("d-none");
+
+                __el.form.find('.import-from-excel-layout').addClass("d-none"); 
+
+                __el.form.find('#file-excel').val('');
+                __el.form.find('#text-import').text('File Excel cần nhập dữ liệu');
+
+            } else if (__el.form.find("#excel").is(':checked')) {
+                __el.form.find('.total-room').addClass("d-none");
+                __el.form.find('.count_floor').addClass("d-none");    
+                __el.form.find(".info-auto-create-room-enable").addClass("d-none");
+                __el.form.find('.import-from-excel-layout').removeClass("d-none");     
+                __el.form.find(".info-auto-create-room-disable").addClass("d-none");
+                __el.form.find("#room_total").removeAttr('required');  
+                 
+                __el.form.find("#file-excel").attr('required', 'required');    
+            }
+        });
+
+        __el.form.on('change', '#room_total', function (e) {
+            if(parseInt($(this).val()) === 0){
+                __el.form.find('#auto_create_room').prop('checked', false);
+                __el.form.find("#auto_create_room").attr("disabled", true);
+            }else{
+                __el.form.find('#auto_create_room').prop('checked', true);
+                __el.form.find("#auto_create_room").removeAttr("disabled");
+            }
+        });
+
+        
+        new __modalForm(
+            __el.modal.get(0),
+            __el.form.get(0),
+            __el.submit.get(0)
+        ).start(null, {
+            __openModalForm: function () {
+                __el.form.get(0).reset();
+                dataBlock = __el.modal.data('block');
+                __el.modal.find('.title-disable').remove();
+                __el.modal.find('input[name="count_floor"]').remove();
+                __el.modal.find("#province").empty();
+                __el.modal.find("#district").empty();
+                __el.modal.find("#ward").empty();
+                if(dataBlock){
+                    __el.modal.find('.count_floor').before(`
+                    <div class="col-12 title-disable">
+                        <div class="title-item-small">
+                            <b>Thông tin không thể chỉnh sửa:</b>
+                            <i class="des">Các thông tin dưới đây không thể được chỉnh sửa</i>
+                        </div>
+                    </div>`);
+                    __el.modal.find('.not-edit').hide();
+                    __el.modal.find('.note').show();
+                    __el.modal.find('#count_floor').attr("disabled", true);
+                    __el.modal.find('#count_floor').after(`<input type="hidden" data-format="numeric" class="form-control" name="count_floor" placeholder="Số phòng/giường" value="${dataBlock.count_floor}">`);
+                    __el.modal.find('#room_total').attr("readonly", true);
+                    __el.modal.find('.hide-when-edit').addClass("d-none");
+                    
+                    $.transferData({
+                        method: "POST",
+                        url: __helper.url.urlPattern(__routeApi.location.init),
+                        data: {
+                            'province_id': dataBlock.province_id,
+                            'district_id': dataBlock.district_id,
+                            'ward_id': dataBlock.ward_id,
+                        },
+                        loadingEle:false,
+                        success: (res) => {
+                            $.each(res.data.provinces, function(key, province) {
+                                __el.modal.find(".province").append(`<option value='${province.id}'>${province.short_name}</option>`);
+                                if(parseInt(province.id) === parseInt(dataBlock.province_id))
+                                    $(`.province option[value=${province.id}]`).prop('selected', true);
+                            });
+
+                            $.each(res.data.districts, function(key, district) {
+                                __el.modal.find(".district").append(`<option value='${district.id}'>${district.name}</option>`);
+                                if(parseInt(district.id) === parseInt(dataBlock.district_id))
+                                    $(`.district option[value=${district.id}]`).prop('selected', true);
+                            });
+
+                            $.each(res.data.wards, function(key, ward) {
+                                __el.modal.find(".ward").append(`<option value='${ward.id}'>${ward.name}</option>`);
+                                if(parseInt(ward.id) === parseInt(dataBlock.ward_id))
+                                    $(`.ward option[value=${ward.id}]`).prop('selected', true);
+                            });
+                        },
+                    });
+
+                    __el.modal.find('.modal-title').text(`Chỉnh sửa ${dataBlock.category_name} ${dataBlock.name}`);
+                    __el.modal.find('.modal-footer .btn-primary').text(`Chỉnh sửa ${dataBlock.category_name}`);
+                    __el.form.setObjectToForm(dataBlock);
+                    changeRoomType(dataBlock.room_type);
+                }else{
+                    __el.modal.find('.not-edit').show();
+                    __el.modal.find('.note').hide();
+                    __el.modal.find('input[name="count_floor"]').remove();
+                    __el.modal.find('.title-disable').remove();
+                    __el.modal.find('#count_floor').attr("disabled", false);
+                    __el.modal.find('#room_total').attr("readonly", false);
+                    __el.form.find('input[name="room_type"]').val(['room']);
+                    __el.modal.find('.hide-when-edit').removeClass("d-none");
+                    changeRoomType('room');
+
+                    __el.modal.find(".district").empty();
+                    __el.modal.find(".ward").empty();
+                    if(!__el.modal.find(".province option[value='79']").length){
+                        $.transferData({
+                            method: "GET",
+                            url: __helper.url.urlPattern(__routeApi.location.provinces),
+                            loadingEle:false,
+                            success: (res) => {
+                                __el.modal.find(".province").empty();
+                                __el.modal.find(".province").append(`<option value=''>Chọn Tỉnh/Thành phố</option>`);
+                                $.each(res.data, function(key, value) {
+                                    __el.modal.find(".province").append(`<option value='${value.id}'>${value.short_name}</option>`);
+                                });
+                            },
+                        });
+                    }
+                }
+            },
+            __closeModalForm: function () {
+                __el.form.get(0).reset();
+                __el.form.get(0).classList.remove('was-validated');
+
+                __el.modal.data('block', null);
+
+                __el.modal.find('.modal-title').text("Thêm nhà trọ");
+                __el.modal.find('.modal-footer .btn-primary').text("Thêm nhà trọ");
+                __el.modal.find('input[name="auto_create_room"][value="1"]').prop('checked', true).change();
+            },
+            __submitModalForm: function(e){
+                let data = __el.form.getObjectOfForm();
+                if (!__el.form.get(0).checkValidity()) {
+                    __el.form.get(0).classList.add('was-validated');
+                    Swal.fire({
+                        title: 'Thông báo!',
+                        text: "Vui lòng nhập đầy đủ thông tin trước khi thực hiện",
+                        icon: 'error',
+                        confirmButtonText: 'Đã hiểu'
+                    });
+                    return false;
+                }
+
+                if(parseInt(__el.form.find('input[name="auto_create_room"]:checked').val()) === 2){}
+                    data.file = $("#file-excel")[0].files[0]
+     
+                data.address_component['address'] = ([
+                    __el.modal.find(".address_detail").val(),
+                    __el.modal.find(".ward option:selected").val() ? __el.modal.find(".ward option:selected").text() : '',
+                    __el.modal.find(".district option:selected").val() ? __el.modal.find(".district option:selected").text() : '',
+                    __el.modal.find(".province option:selected").val() ? __el.modal.find(".province option:selected").text() : '',
+                ]).join(', ');
+
+                let url  = !dataBlock ? __helper.url.urlPattern(__routeApi.block.create) : __helper.url.urlPattern(__routeApi.block.update, {
+                    block_id : parseInt(dataBlock.id)
+                });
+  
+                $.transferForm({
+                    method: "POST",
+                    url,
+                    data ,
+                    success: function(res) {
+                        Swal.fire({
+                            title: 'Thành công!',
+                            text: res.message,
+                            icon: 'success',
+                            confirmButtonColor: '#3c9e47',
+                            confirmButtonText: 'Đóng'
+                        }).then((result) => {
+                            window.location.href = "/quan-ly";
+                        });
+                    },
+                    fail:(res)=>{
+                        Swal.fire({
+                            title: 'Thông báo!',
+                            text: res.message,
+                            icon: 'error',
+                            confirmButtonText: 'Đã hiểu'
+                        });
+                    }
+                });
+            },
+        });
+    });
+</script>
+    </div>
+    <div class="text-center mt-5"><span style="color: #727272; font-style: italic;">Copyright @ <strong style="color: #000">HPT-NTMT</strong> 2020</span></div>
+<div class="text-center"><p style="color: #727272; font-style: italic;">Version <strong style="color: #000">1.3.8</strong></p></div>
+<div class="zalo-container fix item-contact">
+    <a id="zalo-btn"
+       href="https://zalo.me/0965227453"
+       target="_blank" rel="noopener">
+        <div class="animated_zalo infinite zoomIn_zalo cmoz-alo-circle"></div>
+        <div class="animated_zalo infinite pulse_zalo cmoz-alo-circle-fill"></div>
+        <span>
+            <img width="100%"
+                   src="https://quanlytro.me/images/icons/zalo-icon-white.webp"
+                   alt="Liên hệ với LOZIDO - Quản lý nhà cho thuê qua Zalo">
+        </span>
+    </a>
+</div>
+
+<script>
+    feather.replace();
+
+    $(document).ready(function () {
+        $(document).find('input[data-format="numeric"][type="text"]').map((key, element) => {
+            element.addEventListener('keyup', e => {
+                let value = $(element).val();
+                let number = __helper.convertStringToNumber(value);
+                let newVal = __format.currencyInput(number);
+                
+                $(element).val(value ==='' ? '': isNaN(number) ? '': newVal);
+            });
+        });
+
+        $(document).find('input[data-format="stringNumber"]').map((key, element) => {
+            element.addEventListener('keyup', e => {
+                $(element).val(__format.phone($(element).val()));
+            });
+        });
+
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+
+        setTimeout(() => {
+                $.transferData({
+                    url: __helper.url.urlPattern(__routeApi.notification.all,{
+                        page: 1
+                    }),
+                    loadingEle:false,
+                    success: (res) => {
+                        $('.count-notification').text(res?.data?.unread_count ?? 0);
+                        res?.data?.notifications?.length > 0 &&
+                        $(".notication-dropdown").html('') &&
+                        res.data.notifications.map((notification)=>{
+                            $(".notication-dropdown").append($(`
+                                <li style="cursor: pointer" class="item-notication d-flex align-items-center">
+                                        <div class="icon ${!notification?.read_at ? 'not-read':''}">
+                                            <i data-feather="bell" size="20"></i>
+                                        </div>
+                                        <div class="content">
+                                            <div class="des">
+                                                <b>
+                                                    ${notification?.data?.title ?? ''}
+                                                </b>
+                                                <p>${notification?.data?.body ?? ''}</p>
+                                            </div>
+                                            <div class="time">${notification?.created_at ?? ''}</div>
+                                        </div>
+                                </li>
+                            `).click((e)=>{
+                                Swal.fire({
+                                    title: 'Thông báo!',
+                                    text: "Tính năng đi đến thông báo đang phát triển. Hệ thống sẽ hoàn thành sớm!",
+                                    icon: 'warning',
+                                    confirmButtonText: 'Đã hiểu'
+                                });
+                            }));
+                        });
+                        feather.replace();
+                    },
+                    fail:(res)=>{
+
+                    }
+            });
+        }, 5000);
+       
+    });
+</script>
+</body>
+</html>

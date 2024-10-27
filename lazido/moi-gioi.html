@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="vi" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="geo.region" content="vi">
+    <meta name="language" content="vi">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>LOZIDO - Môi giới</title>
+    <meta name="keywords" content="Phần mềm nhà trọ, phần mềm phòng trọ, phần mềm quản lý nhà trọ, phần mềm quản lý nhà trọ, quản lý nhà trọ, quản lý trọ, quản lý phòng trọ">
+    <meta name="description" content="Phần mềm quản lý nhà  trọ trên điện thoại, máy tính, máy tính bảng, iPad hỗ trợ chủ nhà quản lý nhà trọ, phòng trọ  dễ dàng và tiện lợi mọi lúc mọi nơi, tiết kiệm thời gian và công sức">
+
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="csrf-token" content="CZqXP04OzKEuLEt01gkxMY2DrN3sCqnCK8eSZ2o4">
+
+    <meta name="author" content="LOZIDO - Quản lý nhà cho thuê">
+    <meta name="copyright" content="LOZIDO - Quản lý nhà cho thuê - Platform Quan ly nha tro, phong tro">
+    <meta name="abstract" content="Phần mềm quản lý nhà trọ, phòng trọ, ký túc xá, chung cư tốt nhất hiện nay">
+
+    <meta property="og:image" content="https://quanlytro.me/householder-admin/images/lozido_facebook-recovered.jpg">
+    <meta property="og:image:secure_url" content="https://quanlytro.me/householder-admin/images/lozido_facebook-recovered.jpg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="370">
+    <meta property="og:image:type" content="image/webp">
+
+    <link rel="shortcut icon" href="https://quanlytro.me/images/favicon.ico" type="image/x-icon">
+    <link rel="alternate" href="https://quanlytro.me/mo-gioi" hreflang="vi-vn" />
+
+    <script type="text/javascript">
+        var recaptcha_site_key = '6Ld0LAYeAAAAABA67PAls5DpnkfNJ-rkgHbsSilR';
+        var __environment = 'production';
+    </script>
+
+    <script src="https://quanlytro.me/plugins/jquery-3.6.0/jquery.min.js"></script>
+    <script src="https://quanlytro.me/plugins/jquery-3.6.0/jquery-ui-1.8.13.min.js"></script>
+    <script src="https://quanlytro.me/plugins/feather.min.js"></script>
+    <!-- <script src="https://quanlytro.me/plugins/sweetalert2@11"></script>
+    <script src="https://quanlytro.me/bootstrap-5.0/js/popper.min.js"></script> -->
+    <script src="https://quanlytro.me/bootstrap-5.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="https://quanlytro.me/householder-admin/js/helper.js?version=1.3.8"></script>
+    <script type="text/javascript" src="https://quanlytro.me/householder-admin/js/format.js?version=1.3.8"></script>
+    <script type="text/javascript" src="https://quanlytro.me/householder-admin/js/route-api.js?version=1.3.8"></script>
+    <script type="text/javascript" src="https://quanlytro.me/householder-admin/js/index.js?version=1.3.8"></script>
+    <script type="text/javascript" src="https://quanlytro.me/householder-admin/js/transporter.js?version=1.3.8"></script>
+    <script type="text/javascript" src="https://quanlytro.me/householder-admin/js/upload-image.js?version=1.3.8"></script>
+    <style>
+        .modal.show .btn-close {
+            outline: 0;
+            box-shadow: 0 0 0 .25rem rgb(255 87 34 / 9%);
+            opacity: 1;
+            border-radius: 100%;
+            padding: 10px;
+        }
+        .btn{
+            font-size: 14px!important;
+            font-weight: 600!important;
+        }
+    </style>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        var __current_block = JSON.parse(JSON.stringify({"id":7081,"name":"ASUS","name_full":"Nh\u00e0 tr\u1ecd ASUS","user_id":8151,"category":0,"category_name":"Nh\u00e0 tr\u1ecd","category_name_short":"Nh\u00e0 tr\u1ecd","room_type":"room","room_type_name":"ph\u00f2ng","type":"floors","room_total":6,"count_floor":2,"area":15,"room_amount":36,"ele_amount":0,"water_amount":0,"price_items_cache":[{"id":23351,"name":"Ti\u1ec1n \u0111i\u1ec7n","type":"constant","unit":"kwh","price":1700,"rooms":[{"id":102158,"name":"Ph\u00f2ng 1","sort":null,"value":102158,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102159,"name":"Ph\u00f2ng 2","sort":null,"value":102159,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102160,"name":"Ph\u00f2ng 3","sort":null,"value":102160,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102161,"name":"Ph\u00f2ng 4","sort":null,"value":102161,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102162,"name":"Ph\u00f2ng 5","sort":null,"value":102162,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102163,"name":"Ph\u00f2ng 6","sort":null,"value":102163,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"}],"value":null,"frames":[],"status":"is_active","history":null,"user_id":8151,"block_id":7081,"category":"ele","type_text":"Theo gi\u00e1 tr\u1ecb c\u1ed1 \u0111\u1ecbnh","unit_text":"KWh","is_default":1,"status_text":"\u0110ang s\u1eed d\u1ee5ng","subtraction":1},{"id":23352,"name":"Ti\u1ec1n n\u01b0\u1edbc","type":"constant","unit":"khoi","price":18000,"rooms":[{"id":102158,"name":"Ph\u00f2ng 1","sort":null,"value":102158,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102159,"name":"Ph\u00f2ng 2","sort":null,"value":102159,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102160,"name":"Ph\u00f2ng 3","sort":null,"value":102160,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102161,"name":"Ph\u00f2ng 4","sort":null,"value":102161,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102162,"name":"Ph\u00f2ng 5","sort":null,"value":102162,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"},{"id":102163,"name":"Ph\u00f2ng 6","sort":null,"value":102163,"status":"is_empty","group_id":null,"priority":null,"circle_day":null,"room_amount":null,"status_text":"\u0110ang tr\u1ed1ng","circle_month":null,"active_status":"pending_create_bill","priority_text":"Kh\u00f4ng x\u00e1c \u0111\u1ecbnh","customer_count":null,"active_status_text":"Ch\u1edd k\u1ef3 thu t\u1edbi"}],"value":null,"frames":[],"status":"is_active","history":null,"user_id":8151,"block_id":7081,"category":"water","type_text":"Theo gi\u00e1 tr\u1ecb c\u1ed1 \u0111\u1ecbnh","unit_text":"Kh\u1ed1i","is_default":1,"status_text":"\u0110ang s\u1eed d\u1ee5ng","subtraction":1}],"circle_order":6,"deadline_bill":10,"bill_setting":{"note":{"content":null},"enable_qr":1,"payment_default":"cash","show_circle_day":0,"single_send_zalo":0,"template_bill_zalo":1,"enable_rounding_money":1,"extract_receipt_expense":0},"app_renter_setting":{"allow_update_car":1,"default_password":123456789,"allow_close_clock":0,"auto_create_account":0,"allow_ticket_contract":1,"allow_update_customer":1},"room_group":[{"id":1,"name":"T\u1ea7ng tr\u1ec7t","index":0,"label":"T\u1ea7ng tr\u1ec7t","value":1},{"id":2,"name":"T\u1ea7ng 1","index":1,"label":"T\u1ea7ng 1","value":2}],"max_member":1,"open_door":null,"close_door":null,"rule":null,"extension":null,"data_log":{"menu_label":{"pay_bill":0,"room_list":"0\/6","new_session":6,"deposit_request":6,"terminate_contract":0}},"setting":{"car_function":1,"post_function":1,"agent_function":1,"asset_function":1,"price_item_ele":3,"price_item_wifi":0,"price_item_trash":0,"price_item_water":3,"task_job_function":1,"send_sms_when_create_bill":1,"contract_document_function":0},"province_id":72,"district_id":712,"ward_id":25732,"address_component":{"address":"63, An T\u1ecbnh, Tr\u1ea3ng B\u00e0ng, T\u00e2y Ninh","ward_id":"25732","position":{"latitude":"10.7829132","longitude":"106.6961898"},"district_id":"712","province_id":"72","address_detail":"63"},"address":"63, An T\u1ecbnh, Tr\u1ea3ng B\u00e0ng, T\u00e2y Ninh","latitude":10.7829132,"longitude":106.6961898,"auto_create_room":1,"post_ids":[]}));
+
+        var __permission_block = JSON.parse(JSON.stringify(null));
+
+        let user = JSON.parse(JSON.stringify({"staff":false,"free":false,"trial":true,"fee":false}));
+       
+    </script>
+    <link href="/bootstrap-5.0/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+                        <link href="/householder-admin/css/common.cssversion=1.3.8.css"
+                rel="stylesheet">
+            </head>
+
+<body style="overflow-x: hidden">
+    
+    <div id="app_loading" class="text-center" style="padding:40vh 10px">
+        <div class="inner-loading">
+            <img style="margin: auto" src="/images/icons/loading.gif" alt="Đang tải..." width="50px"/>
+            <i class="loading_text" style="font-size: 13px; margin-top: -10px;">Đang tải dữ liệu...</i>
+        </div>
+    </div>
+    <header>
+    <div class="header-inner">
+                <div class="header-sticky">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#lozido-main-menu" aria-controls="lozido-main-menu" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"> </span>
+                    </button>
+                    <nav class="collapse navbar-collapse lozido-main-menu">
+                        <ul class="navbar-nav main-menu-left  me-auto mb-2 mb-lg-0">
+                            <li class="nav-item menu-item active">
+                                <a href="/" class="nav-link ">
+                                    <i data-feather="arrow-left"></i>
+                                                                            <img width="180px" src="/images/logo-lozido-quan-ly-tro-white.png"/>
+                                                                    </a>
+                            </li>
+                        </ul>
+
+                        <ul class="topbar-items main-menu-right navbar-nav">
+                                                                                                <li class="nav-item menu-item ">
+                                        <a href="/quan-ly.html" class="nav-link ">
+                                            <i data-feather="home"></i>
+                                            <span style="margin-top: 5px" class="text">Quản lý nhà</span>
+                                        </a>
+                                    </li>
+                                                                                                                                                                <li class="nav-item menu-item ">
+                                        <a href="/bao-cao.html" class="nav-link ">
+                                            <i data-feather="pie-chart"></i>
+                                            <span style="margin-top: 5px" class="text">Tổng báo cáo</span>
+                                        </a>
+                                    </li>
+                                                                                                                                                                <li class="nav-item menu-item ">
+                                        <a href="/dang-tin.html" class="nav-link ">
+                                            <i data-feather="plus"></i>
+                                            <span style="margin-top: 5px" class="text">Đăng tin</span>
+                                        </a>
+                                    </li>
+                                                                                                                                                                <li class="nav-item menu-item active">
+                                        <a href="/moi-gioi.html" class="nav-link ">
+                                            <i data-feather="users"></i>
+                                            <span style="margin-top: 5px" class="text">Môi giới</span>
+                                        </a>
+                                    </li>
+                                                                                                                                                                <li class="nav-item menu-item ">
+                                        <a href="/phan-quyen.html" class="nav-link ">
+                                            <i data-feather="box"></i>
+                                            <span style="margin-top: 5px" class="text">Công ty/nhóm</span>
+                                        </a>
+                                    </li>
+                                                                                                                                                                <li class="nav-item menu-item ">
+                                        <a href="/cai-dat.html" class="nav-link ">
+                                            <i data-feather="settings"></i>
+                                            <span style="margin-top: 5px" class="text">Cài đặt chung</span>
+                                        </a>
+                                    </li>
+                                                                                                                                                                                                                                                                                            <li class="nav-item btn-group menu-item ">
+                                        <a href="javascript:;" class="nav-link" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="count-notification badge">0</span>
+                                            <i data-feather="bell"></i>
+                                            <span style="margin-top: 5px" class="text">Thông báo</span>
+                                        </a>
+                                        <ul class="dropdown-menu notication-dropdown dropdown-menu-lg-end">
+                                            <div class="text-center" style="padding: 20px">
+                                                <img style="margin: auto" src="/images/icons/loading.gif" alt="Đang tải..." width="50px"/>
+                                                <div>
+                                                    <i class="loading_text" style="font-size: 13px; margin-top: -10px;">Đang tải thông báo...</i>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </li>
+
+                                                                                                                                <li class="nav-item menu-item ">
+                                        <a href="/tai-khoan.html" class="nav-link ">
+                                            <i data-feather="user"></i>
+                                            <span style="margin-top: 5px" class="text">Tài khoản</span>
+                                        </a>
+                                    </li>
+                                                                                                                                                                <li class="nav-item menu-item ">
+                                        <a href="/dang-xuat.html" class="nav-link ">
+                                            <i data-feather="log-out"></i>
+                                            <span style="margin-top: 5px" class="text">Đăng xuất</span>
+                                        </a>
+                                    </li>
+                                                                                                                    </ul>
+                    </nav>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <div>
+        <div class="page-setting">
+    <div class="container">
+        <div class="header-item">
+            <h4 class="title-item">
+                Môi giới
+                <i style="font-size: 14px;
+            font-weight: normal;">Các thiết lập cho người môi giới</i>
+            </h4>
+        </div>
+        <div class="card-feature overflow-hidden">
+            <div class="d-flex">
+                <div class="col-md-3" style="border-right: 1px solid #eee; padding:0">
+                    <!-- Nav tabs -->
+                    <ul class="nav setting-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#agent">
+                                <i data-feather="user"></i>
+                                Danh sách người môi giới
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-9">
+                    <div style="padding: 15px">
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <style>
+    .btn-secondary {
+        color: #fff!important;
+        background-color: #6c757d!important;
+        border-color: #6c757d!important;
+    }
+</style>
+<div id="agent" class="container tab-pane active"><br>
+    <div class="header-item">
+        <div class="container tab-pane"><br>
+            <h3>Danh sách người môi giới</h3>
+        </div>
+                <button class="add-round" data-bs-toggle="modal" data-bs-target="#agentModal" data-target="agent">
+            <span data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Thêm môi giới">
+                <i data-feather="plus"></i>
+            </span>
+        </button>
+            </div>
+    <div id="list-agent" class="row" style="padding: 10px;">
+        <table class="table" id="table-agent">
+            <tr>
+                <td><b>Tên </b></td>
+                <td><b>SDT</b></td>
+                <td><b>Nguồn</b></td>
+                <td><b>Tình trạng tài khoản</b></td>
+                <td><b>Phần trăm hoa hồng</b></td>
+                <td colspan="2"><b>Thao tác</b></td>
+            </tr>
+                    </table>
+    </div>
+</div>
+<script type="text/javascript">
+   $(document).ready(function() {
+        $('#agent').on('click','.btn-edit', function(){
+            let ModalAgent = $($(this).data('bsTarget'));
+            ModalAgent &&
+            ModalAgent.data('agent', $(this).data('agent'));
+        })
+
+        $('#agent').on('click','#delete-agent', function(){
+            Swal.fire({
+                title: 'Thông báo!',
+                text: "Bạn có chắc chắn muốn xóa người môi giới này",
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonColor: '#d33',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Vâng! tôi muốn xóa',
+                cancelButtonText: 'Không xóa'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                   $.transferData({
+                       method: "GET",
+                       url: __helper.url.urlPattern(__routeApi.agent.delete, {
+                            id : parseInt($(this).data('id')) }),
+                       success: (res) => {
+                           Swal.fire({
+                               title: 'Thành công!',
+                               text: res.message,
+                               icon: 'success',
+                               confirmButtonColor: '#3c9e47',
+                               confirmButtonText: 'Đóng'
+                           }).then((result) => {
+                                $(`#agent-${$(this).data('id')}`).remove();
+                           });
+                       }
+                   });
+                }
+            });
+        })
+    });
+</script>                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Modal deposit temp -->
+<div class="modal fade" data-bs-backdrop="static"  id="agentModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div style="margin-right: 15px;outline: 0;box-shadow: 0 0 0 .25rem rgb(76 175 80 / 16%);opacity: 1;border-radius: 100%;width: 36px;height: 36px;justify-content: center;align-items: center;display: flex;background-color: #b1e1b8;">
+                <i data-feather="gift"> </i>
+                </div>
+                <h5 class="modal-title">Thêm môi giới</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" class="needs-validation" id="agent-form" novalidate>
+                    <input type="hidden" name="_token" value="CZqXP04OzKEuLEt01gkxMY2DrN3sCqnCK8eSZ2o4">                    <div class="row g-2">
+                        <div class="col-12">
+                            <div class="title-item-small">
+                                <b>Thông tin người môi giới</b>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" name="name" id="name"
+                                       oninput="this.value = __format.capitalizeFirstStr(this.value)"
+                                       placeholder="Nhập tên" required>
+                                <label for="customer_name">Tên</label>
+                                <div class="invalid-feedback">
+                                    Vui lòng nhập tên
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input data-format="stringNumber" type="text" class="form-control" name="phone"
+                                       id="phone"
+                                       placeholder="Nhập sdt" required>
+                                <label for="phone">Số điện thoại</label>
+                                <div class="invalid-feedback">
+                                    Vui lòng nhập sdt
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" name="source"
+                                       id="source" placeholder="Nhập nguôn môi giới">
+                                <label for="source">Nguồn</label>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <select data-format="numeric" id="commission_rate" name="commission_rate" class="form-select form-control" required>
+                                    <option value="">---- % hoa hồng mặc định----</option>
+                                                                                                                        <option value="0">0%</option>
+                                                                                    <option value="10">10%</option>
+                                                                                    <option value="20">20%</option>
+                                                                                    <option value="30">30%</option>
+                                                                                    <option value="40">40%</option>
+                                                                                    <option value="50">50%</option>
+                                                                                    <option value="60">60%</option>
+                                                                                    <option value="70">70%</option>
+                                                                                    <option value="80">80%</option>
+                                                                                    <option value="90">90%</option>
+                                                                                    <option value="100">100%</option>
+                                                                                                            </select>
+                                <label for="commission_rate">Mức hoa hồng</span></label>
+                                <div class="invalid-feedback">
+                                    Vui lòng chon % hoa hồng
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer modal-footer--sticky">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" id="submit-agent-form" class="btn btn-primary">
+                    Lưu
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+     $(document).ready(function() {
+        let __el = {
+            form: $('#agent-form'),
+            modal: $("#agentModal"),
+            submit: $('#submit-agent-form')
+        };  
+
+        let dataAgent =  null;
+        let api = __helper.url.urlPattern(__routeApi.agent.create);
+        new __modalForm(
+            __el.modal.get(0),
+            __el.form.get(0),
+            __el.submit.get(0)
+        ).start(null, {
+            __openModalForm: function({relatedTarget}) {
+                __el.form.get(0).reset();
+                dataAgent = __el.modal.data('agent');
+
+                if(dataAgent){
+                    __el.modal.find('.modal-title').text("Chỉnh sửa môi giới");
+                    __el.modal.find('.modal-footer .btn-primary').text("Chỉnh sửa");
+
+                    api = __helper.url.urlPattern(__routeApi.agent.update,{id:parseInt(dataAgent.id)});
+
+                    __el.form.setObjectToForm(dataAgent);
+                }else{
+                    api = __helper.url.urlPattern(__routeApi.agent.create);
+                }
+            },
+            __closeModalForm: function () {
+                __el.form.get(0).reset();
+                __el.form.get(0).classList.remove('was-validated');
+                __el.modal.data('agent', null);
+                __el.modal.find('.modal-title').text("Thêm thông tin môi giới");
+                __el.modal.find('.modal-footer .btn-primary').text("Thêm");
+            },
+            __submitModalForm: function() {
+                let data = __el.form.getObjectOfForm();
+                if (!__el.form.get(0).checkValidity()) {
+                    __el.form.get(0).classList.add('was-validated');
+                    Swal.fire({
+                        title: 'Thông báo!',
+                        text: "Vui lòng nhập đầy đủ thông tin trước khi thực hiện",
+                        icon: 'error',
+                        confirmButtonText: 'Đã hiểu'
+                    });
+                    return false;
+                }
+
+                if(dataAgent)
+                    data.id = dataAgent.id;
+                
+                let commission_rate = $('select[name="commission_rate"] option:selected').text();
+
+                if(!commission_rate){
+                    Swal.fire({
+                        title: 'Thông báo!',
+                        text: "Vui lòng chọn % hoa hồng",
+                        icon: 'error',
+                        confirmButtonText: 'Đã hiểu'
+                    });
+                    return false;
+                }
+    
+                $.transferData({
+                    method: "POST",
+                    url: api,
+                    data,
+                    success: function(res) {
+                        let new_data = res.data;
+                        Swal.fire({
+                            title: 'Thành công!',
+                            text: res.message,
+                            icon: 'success',
+                            confirmButtonColor: '#3c9e47',
+                            confirmButtonText: 'Đã hiểu'
+                        }).then((result)=>{
+                            bootstrap.Modal.getInstance(__el.modal.get(0)).hide();
+                        });
+
+                        let newHtml = ` <td>${new_data.name}</td>
+                                        <td>${new_data.phone}</td>
+                                        <td>${new_data.source ?? ''}</td>
+                                        <td style="color:${new_data.status_color}">${new_data.status_text}</td>
+                                        <td>${new_data.commission_rate}%</td>
+                                        <td>
+                                            <div class="btn-round btn-edit"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#agentModal"
+                                                    data-agent='${(JSON.stringify(new_data))}' style="width: 25px!important;height: 25px!important">
+                                                <div style="width: 100%; height: 100%; align-items: center;
+                                                display: inherit;
+                                                text-align: center;
+                                                justify-content: center; color: #000" data-bs-toggle="tooltip" data-bs-placement="top" title="Chỉnh sửa">
+                                                    <i data-feather="edit"> </i>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="btn-round btn-delete" id="delete-agent" data-id="${new_data.id}" data-bs-toggle="tooltip" data-bs-placement="top" title="Xóa" style="width: 25px!important;height: 25px!important">
+                                                <i data-feather="trash-2"> </i>
+                                            </div>
+                                        </td>`
+                                        
+                        if(dataAgent){
+                            if ($(`#agent-${new_data.id}`).length) {
+                                $("#agent > .row > #table-agent > tbody").find(`#agent-${new_data.id}`).html(newHtml);
+                            }
+                        }else{
+                            $("#agent > .row > #table-agent > tbody").append(`
+                            <tr id="bank-${new_data.id}">
+                                ${newHtml}}
+                            </tr>`); 
+                        }
+                    },
+                    fail: (res) => {
+                        Swal.fire({
+                            title: 'Thông báo!',
+                            text: res.message,
+                            icon: 'error',
+                            confirmButtonText: 'Đã hiểu'
+                        });
+                    },
+                    error: function (e) {
+                        Swal.fire({
+                            title: 'Thông báo!',
+                            text: e,
+                            icon: 'error',
+                            confirmButtonText: 'Đã hiểu'
+                        });
+                    }
+                });
+            },
+        });
+     })
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        if(window.location.hash!==''){
+            var triggerEl = document.querySelector(`.setting-tabs a[href="${window.location.hash}"]`)
+            var tab = new bootstrap.Tab(triggerEl);
+            tab.show();
+        }
+    });
+</script>
+    </div>
+    <div class="text-center mt-5"><span style="color: #727272; font-style: italic;">Copyright @ <strong style="color: #000">HPT-NTMT</strong> 2020</span></div>
+<div class="text-center"><p style="color: #727272; font-style: italic;">Version <strong style="color: #000">1.3.8</strong></p></div>
+<div class="zalo-container fix item-contact">
+    <a id="zalo-btn"
+       href="https://zalo.me/0965227453"
+       target="_blank" rel="noopener">
+        <div class="animated_zalo infinite zoomIn_zalo cmoz-alo-circle"></div>
+        <div class="animated_zalo infinite pulse_zalo cmoz-alo-circle-fill"></div>
+        <span>
+            <img width="100%"
+                   src="https://quanlytro.me/images/icons/zalo-icon-white.webp"
+                   alt="Liên hệ với LOZIDO - Quản lý nhà cho thuê qua Zalo">
+        </span>
+    </a>
+</div>
+
+<script>
+    feather.replace();
+
+    $(document).ready(function () {
+        $(document).find('input[data-format="numeric"][type="text"]').map((key, element) => {
+            element.addEventListener('keyup', e => {
+                let value = $(element).val();
+                let number = __helper.convertStringToNumber(value);
+                let newVal = __format.currencyInput(number);
+                
+                $(element).val(value ==='' ? '': isNaN(number) ? '': newVal);
+            });
+        });
+
+        $(document).find('input[data-format="stringNumber"]').map((key, element) => {
+            element.addEventListener('keyup', e => {
+                $(element).val(__format.phone($(element).val()));
+            });
+        });
+
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+
+        setTimeout(() => {
+                $.transferData({
+                    url: __helper.url.urlPattern(__routeApi.notification.all,{
+                        page: 1
+                    }),
+                    loadingEle:false,
+                    success: (res) => {
+                        $('.count-notification').text(res?.data?.unread_count ?? 0);
+                        res?.data?.notifications?.length > 0 &&
+                        $(".notication-dropdown").html('') &&
+                        res.data.notifications.map((notification)=>{
+                            $(".notication-dropdown").append($(`
+                                <li style="cursor: pointer" class="item-notication d-flex align-items-center">
+                                        <div class="icon ${!notification?.read_at ? 'not-read':''}">
+                                            <i data-feather="bell" size="20"></i>
+                                        </div>
+                                        <div class="content">
+                                            <div class="des">
+                                                <b>
+                                                    ${notification?.data?.title ?? ''}
+                                                </b>
+                                                <p>${notification?.data?.body ?? ''}</p>
+                                            </div>
+                                            <div class="time">${notification?.created_at ?? ''}</div>
+                                        </div>
+                                </li>
+                            `).click((e)=>{
+                                Swal.fire({
+                                    title: 'Thông báo!',
+                                    text: "Tính năng đi đến thông báo đang phát triển. Hệ thống sẽ hoàn thành sớm!",
+                                    icon: 'warning',
+                                    confirmButtonText: 'Đã hiểu'
+                                });
+                            }));
+                        });
+                        feather.replace();
+                    },
+                    fail:(res)=>{
+
+                    }
+            });
+        }, 5000);
+       
+    });
+</script>
+</body>
+
+</html>

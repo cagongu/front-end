@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Đăng nhập</title>
+    <script src="https://quanlytro.me/plugins/jquery-3.6.0/jquery.min.js"></script>
+    <script src="https://quanlytro.me/plugins/jquery-3.6.0/jquery-ui-1.8.13.min.js"></script>
+    <script src="https://quanlytro.me/bootstrap-5.0/js/bootstrap.min.js"></script>
+    <script src="https://quanlytro.me/plugins/sweetalert2@11"></script>
+
+    <link href="https://quanlytro.me/bootstrap-5.0/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+
+    <meta name="csrf-token" content="CZqXP04OzKEuLEt01gkxMY2DrN3sCqnCK8eSZ2o4">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript">
+        var recaptcha_site_key = '6Ld0LAYeAAAAABA67PAls5DpnkfNJ-rkgHbsSilR';
+        var __environment = 'production';
+    </script>
+    
+    <style type="text/css">
+        /* Zalo */
+        .zalo-container {
+            position: relative;
+            width: 40px;
+            height: 40px;
+        }
+
+        .zalo-container.fix {
+            width: 40px;
+            height: 40px;
+            position: fixed;
+            right: 15px;
+            bottom: 110px;
+            z-index: 10;
+        }
+
+        .zalo-container a {
+            display: block;
+        }
+
+        .zalo-container span {
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            -ms-align-items: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #1182FC;
+            position: relative;
+        }
+
+        @keyframes  zoomIn_zalo {
+            from {
+                opacity: 0;
+                transform: scale3d(.3, .3, .3);
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .zoomIn_zalo {
+            animation-name: zoomIn_zalo;
+        }
+
+        .animated_zalo {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+
+        .animated_zalo.infinite {
+            animation-iteration-count: infinite;
+        }
+
+        .cmoz-alo-circle {
+            width: 50px;
+            height: 50px;
+            top: -5px;
+            right: -5px;
+            position: absolute;
+            background-color: transparent;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            border-radius: 100%;
+            border: 2px solid rgba(17, 130, 252, .8);
+            opacity: .1;
+            border-color: #1182FC;
+            opacity: .5;
+        }
+
+        .cmoz-alo-circle-fill {
+            width: 60px;
+            height: 60px;
+            top: -10px;
+            position: absolute;
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -ms-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            border-radius: 100%;
+            border: 2px solid transparent;
+            -webkit-transition: all .5s;
+            -moz-transition: all .5s;
+            -o-transition: all .5s;
+            transition: all .5s;
+            background-color: rgba(17, 130, 252, 0.45);
+            opacity: .75;
+            right: -10px;
+        }
+
+        @-webkit-keyframes pulse_zalo {
+            from {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+
+            50% {
+                -webkit-transform: scale3d(1.05, 1.05, 1.05);
+                transform: scale3d(1.05, 1.05, 1.05);
+            }
+
+            to {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        @keyframes  pulse_zalo {
+            from {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+
+            50% {
+                -webkit-transform: scale3d(1.05, 1.05, 1.05);
+                transform: scale3d(1.05, 1.05, 1.05);
+            }
+
+            to {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        .pulse_zalo {
+            -webkit-animation-name: pulse_zalo;
+            animation-name: pulse_zalo;
+        }
+    </style>
+    <style type="text/css">
+        .login-container {
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        .login-content-container {
+            max-width: 800px;
+            min-width: 300px;
+            width: 100%;
+            align-self: center;
+        }
+
+        .login-form-container {
+            border-radius: 10px;
+            box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+            overflow: hidden;
+        }
+
+        .login-form-1 {
+            padding: 5%;
+
+        }
+
+        .login-form-1 h3 {
+            text-align: center;
+            color: #333;
+        }
+
+        .login-form-2 {
+            padding: 3%;
+            background: linear-gradient(to left, #7dc242, #3b9d46);
+        }
+
+        .login-form-2 h3 {
+            text-align: center;
+            color: #fff;
+        }
+
+        .login-container form {
+            padding: 5%;
+        }
+
+        .container-input {
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+
+        .container-input input {
+            border: 0px;
+            border-radius: 0px;
+            padding: 15px 10px;
+            font-weight: bold;
+        }
+
+        .btnSubmit {
+            width: 50%;
+            border-radius: 5px;
+            padding: 1.5%;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            background-color: #3c9e47;
+            color: white;
+            background-image: linear-gradient(to right, #7dc242, #3b9d46);
+            display: inline-block;
+            width: 100%;
+            margin: 10px 0px;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .btnSubmitZalo{
+            width: 50%;
+            border-radius: 5px;
+            padding: 1.5%;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            background-color: #1282fc;
+            color: white;
+            display: inline-block;
+            width: 100%;
+            margin: 5px 0px 10px 0px;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        .ForgetPwd {
+            color: #0062cc;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .message{
+            padding: 0;
+            text-align: center;
+        }
+
+        #app_loading {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background-color: #ffffffc2;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            color: #000;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        #app_loading.show {
+            display: inherit !important;
+        }
+
+        h1.title {
+            font-weight: 700;
+            line-height: 130%;
+            color: #3d9e46;
+        }
+
+        h1.title .title-feature {
+            color: #fe9801;
+        }
+
+        h2.title {
+            font-weight: 800;
+            line-height: 130%;
+            color: #000;
+        }
+
+        h2.title .title-feature {
+            color: #3c9e46;
+        }
+
+        .image-dowload-app{
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .invalid-feedback {
+            position: absolute;
+            bottom: 3px;
+            left: 10px;
+            font-size: 11px;
+        }
+
+        .password-container {
+            position: relative;
+        }
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body style="background-color: #f7fafc;background: url(householder-admin/images/login-background.webp) no-repeat;
+background-size: contain;
+justify-content: center;
+background-position-y: 60%;">
+    <div id="app_loading" class="text-center" style="padding:100px 10px;">
+        <img src="https://quanlytro.me/images/icons/loading.gif" alt="Đang tải..." width="50px"/>
+        <div class="loading_text">Đang tải...</div>
+    </div>
+    <div class="container">
+        <div class="login-container d-flex" id="login">
+            <div class="login-content-container">
+                <div class="col-md-12 text-center mt-5">
+                    <a href="/" title="LOZIDO - Quản lý nhà cho thuê">
+                        <img style="border-radius: 100%;
+                        border: 2px solid #18a451;
+                        margin: 15px 0px;
+                        box-shadow: 0 1rem 2rem 0 rgb(0 0 0 / 3%), 0 0.5rem 1rem 0 rgb(0 0 0 / 5%);" width="80px" class="custom-logo img-responsive" src="https://quanlytro.me/images/icons/Icon-lozido-white.png"
+                            alt="Logo LOZIDO - Quản lý nhà cho thuê" title="LOZIDO - Quản lý nhà cho thuê">
+                    </a>
+                    <h2 class="mb-4 title"><span class="title-feature">NHÀ TRỌ - KÝ TÚC XÁ - CHUNG CƯ</span></br>Quản lý chuyên nghiệp!</h1>
+                </div>
+                <div class="row login-form-container">
+                    <div class="col-md-6 login-form-1" style="background-color: #fff;">
+                        <h3>Đăng nhập tài khoản</h3>
+                        <form method="POST" class="needs-validation" id="login-form" novalidate>
+                                                                                    <input type="hidden" name="_token" value="CZqXP04OzKEuLEt01gkxMY2DrN3sCqnCK8eSZ2o4">                            <div class="container-input">
+                                <div class="form-group">
+                                    <input style="border-bottom: 1px solid #ccc;" type="text" name="phone" class="form-control"
+                                        placeholder="Số diện thoại *" value="" required data-format="stringNumber" />
+                                    <div class="invalid-feedback">
+                                        Vui lòng nhập số điện thoại
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" name="password" placeholder="Nhập mật khẩu *"
+                                        value="" required/>
+                                        <i class="fas fa-eye-slash toggle-password" id="togglePassword">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
+                                                <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755q-.247.248-.517.486z"/>
+                                                <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829"/>
+                                                <path d="M3.35 5.47q-.27.24-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12z"/>
+                                            </svg>
+                                        </i>
+                                    <div class="invalid-feedback">
+                                        Vui lòng nhập mật khẩu
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" id="submit-login" class="btnSubmit btn btn-primary">
+                                    Đăng nhập
+                                </button>
+                            </div>
+                            <div class="form-group d-flex justify-content-between">
+                                <a type="button" class="btn btn-link" href="/dang-ky">
+                                    Tạo  tài khoản
+                                </a>
+                                <a type="button" class="btn btn-link" href="/quen-mat-khau">
+                                    Quên mật khẩu
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                                            <div class="col-md-6 login-form-2 text-center" style="color: #fff">
+                            <div>
+                                <img width="110px" style="border-radius: 10px;border: 2px solid #1d6b1b;" src="/images/qr-code.png" data-src="/images/qr-code.png" class="lazy img-responsive" alt="tải ứng dùng tìm phòng qua mã qr">
+                                <h6 style="margin-top: 10px">Quét mã tải app</h6>
+                            </div>    
+                            <div class="row mt-2 g-2">
+                                <div class="col-sm-12 col-md-6 text-center text-md-end aos-init aos-animate" data-aos="fade-right">
+                                    <a href="https://play.google.com/store/apps/details?id=com.lozido_room_mobile" target="_blank">
+                                        <img class="img-responsive image-dowload-app" width="160px" src="https://quanlytro.me/images/tai-ung-dung-tim-phong-tro-tren-android.png" alt="Tải ứng dụng trên Android" title="Tải ứng dụng trên Android">
+                                    </a>
+                                </div>
+                                <div class="col-sm-12 col-md-6 text-center text-md-start aos-init aos-animate" data-aos="fade-left">
+                                    <a href="https://apps.apple.com/vn/app/id1560928216" target="_blank">
+                                        <img class="img-responsive image-dowload-app" width="160px" src="https://quanlytro.me/images/tai-ung-dung-tim-phong-tro-tren-ios.png" alt="Tải ứng dụng trên iOS" title="Tải ứng dụng trên iOS">
+                                    </a>
+                                </div>
+                                <i style="margin-top: 15px; font-size: 13px;" class="text-center">* Để đăng nhập bạn phải có tài khoản. Vui lòng đăng ký tài khoản nếu chưa có</i>
+                            </div>
+
+                        </div>
+                                    </div>
+                <div class="text-center mt-5">
+                    <p>Copyright @ <strong>LOZIDO - Quản lý nhà cho thuê</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="zalo-container fix item-contact">
+        <a id="zalo-btn"
+           href="https://zalo.me/0965227453"
+           target="_blank" rel="noopener">
+            <div class="animated_zalo infinite zoomIn_zalo cmoz-alo-circle"></div>
+            <div class="animated_zalo infinite pulse_zalo cmoz-alo-circle-fill"></div>
+            <span>
+                <img width="100%"
+                       src="https://quanlytro.me/images/icons/zalo-icon-white.webp"
+                       alt="Liên hệ với LOZIDO - Quản lý nhà cho thuê qua Zalo">
+            </span>
+        </a>
+    </div>
+</body>
+
+<script type="text/javascript" src="https://quanlytro.me/householder-admin/js/helper.js?version=1.0.0"></script>
+<script type="text/javascript" src="https://quanlytro.me/householder-admin/js/format.js?version=1.0.0"></script>
+<script type="text/javascript" src="https://quanlytro.me/householder-admin/js/route-api.js?version=1.0.0"></script>
+<script type="text/javascript" src="https://quanlytro.me/householder-admin/js/index.js?version=1.0.0"></script>
+<script type="text/javascript" src="https://quanlytro.me/householder-admin/js/transporter.js?version=1.0.0"></script>
+<script type="text/javascript" src="https://quanlytro.me/householder-admin/js/upload-image.js?version=1.0.0"></script>
+
+<script src="https://www.google.com/recaptcha/api.js?render=6Ld0LAYeAAAAABA67PAls5DpnkfNJ-rkgHbsSilR"></script>
+
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
+<script type="text/javascript">
+    var recaptcha_site_key = '6Ld0LAYeAAAAABA67PAls5DpnkfNJ-rkgHbsSilR';
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var __el = {
+            form    : $('#login-form'),
+            modal   : $("#login"),
+            submit  : $('#submit-login'),
+        };
+
+        $(document).find('input[data-format="stringNumber"]').map((key, element) => {
+            element.addEventListener('keyup', e => {
+                $(element).val(__format.phone($(element).val()));
+            });
+        });
+
+        __el.submit.click((e) => {
+            let data = __el.form.getObjectOfForm();
+            if (!__el.form.get(0).checkValidity()) {
+                __el.form.get(0).classList.add('was-validated');
+                Swal.fire({
+                    title: 'Thông báo!',
+                    text: "Vui lòng nhập đầy đủ thông tin trước khi thực hiện",
+                    icon: 'error',
+                    confirmButtonText: 'Đã hiểu'
+                });
+                return false;
+            }
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6Ld0LAYeAAAAABA67PAls5DpnkfNJ-rkgHbsSilR', {action: 'submit'}).then(function(token) {
+                    $.transferData({
+                        method: "POST",
+                        url: __helper.url.urlPattern(__routeApi.login),
+                        data:{...data  ?? {}, captcha: token},
+                        textLoading: 'Đang đăng nhập tài khoản...',
+                        success: function (res) {
+                            window.location.href = "/quan-ly";
+                        },
+                        fail: (res) => {
+                            Swal.fire({
+                                title: 'Thông báo!',
+                                text: res.message,
+                                icon: 'error',
+                                confirmButtonText: 'Đã hiểu'
+                            });
+                        }
+                    });
+                });
+            });
+        });
+
+        __el.form.find('input').keypress(function(event) {
+            if (event.which === 13) {
+                event.preventDefault();
+
+                __el.submit.click();
+            }
+        });
+
+        $('#togglePassword').click(function() {
+            var passwordField =  $("input[name='password']");
+            var type = passwordField.attr('type');
+            if (type === 'password') {
+                passwordField.attr('type', 'text');
+                $(this).empty();
+                $(this).append(`
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
+                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
+                </svg>
+                `);
+            } else {
+                passwordField.attr('type', 'password');
+                $(this).empty();
+                $(this).append(`
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
+                    <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755q-.247.248-.517.486z"/>
+                    <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829"/>
+                    <path d="M3.35 5.47q-.27.24-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12z"/>
+                </svg>
+                `);
+            }
+        });
+    });
+</script>
+</html>
