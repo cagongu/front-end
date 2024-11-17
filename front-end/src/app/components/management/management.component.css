@@ -1,0 +1,56 @@
+.scrollable-content {
+    overflow-x: auto;
+    white-space: nowrap;
+    flex: 1;
+    position: relative;
+    scroll-behavior: smooth;
+    /* Thêm hiệu ứng cuộn mượt */
+}
+
+.scrollable-content-container button {
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 50%;
+    height: 96%;
+    width: 50px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.scrollable-content-container button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background: #000;
+    z-index: -1;
+}
+
+.scrollable-content-container button:hover::before {
+    background-color: #2f8932;
+}
+
+.scrollable-content-container button.hidden {
+    opacity: 0;
+    pointer-events: none;
+    /* Ngăn chặn sự kiện chuột khi ẩn */
+}
+
+.scrollable-content-container .scroll-left {
+    left: 0px;
+    flex: 0 0 auto;
+    background: linear-gradient(to right, rgb(255 255 255), rgb(255 255 255 / 0%));
+}
+
+.scrollable-content-container .scroll-right {
+    right: 0px;
+    flex: 0 0 auto;
+    background: linear-gradient(to left, rgb(255 255 255), rgb(255 255 255 / 0%));
+}

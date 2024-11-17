@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="vi" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="geo.region" content="vi">
+    <meta name="language" content="vi">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>LOZIDO - Quản lý nhà cho thuê</title>
+    <meta name="keywords"
+        content="Phần mềm nhà trọ, phần mềm phòng trọ, phần mềm quản lý nhà trọ, phần mềm quản lý nhà trọ, quản lý nhà trọ, quản lý trọ, quản lý phòng trọ">
+    <meta name="description"
+        content="Phần mềm quản lý nhà  trọ trên điện thoại, máy tính, máy tính bảng, iPad hỗ trợ chủ nhà quản lý nhà trọ, phòng trọ, ký túc xá  dễ dàng và tiện lợi mọi lúc mọi nơi, tiết kiệm thời gian và công sức">
+
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow">
+
+    <meta property="og:image" content="https://quanlytro.me/householder-admin/images/lozido_facebook-recovered.jpg">
+    <meta property="og:image:secure_url"
+        content="https://quanlytro.me/householder-admin/images/lozido_facebook-recovered.jpg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="370">
+    <meta property="og:image:type" content="image/webp">
+
+    <link rel="alternate" href="https://quanlytro.me/quan-ly" hreflang="vi-vn" />
+
+    <link href="/householder-admin/css/common.cssversion=1.3.8.css" rel="stylesheet">
+    <link href="/householder-admin/css/block.cssversion=1.3.8.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div id="app_loading" class="text-center" style="padding:40vh 10px">
+        <div class="inner-loading">
+            <img style="margin: auto" src="https://quanlytro.me/images/icons/loading.gif" alt="Đang tải..."
+                width="50px" />
+            <i class="loading_text" style="font-size: 13px; margin-top: -10px;">Đang tải dữ liệu...</i>
+        </div>
+    </div>
+    <header>
+        <app-header></app-header>
+    </header>
+    <div>
+        <div>
+            <div style="min-height: 125px;display: flex;padding: 0px 10px 0px 0px;">
+
+                <!-- Quản list quản lý nhà -->
+                <div class="col-md-3 d-flex align-items-center justify-content-center" style="margin-right: 10px;">
+                    <div class="current-block d-flex align-items-center" style="position: relative"
+                        data-bs-toggle="modal" data-bs-target="#manageBlock">
+                        <div class="d-flex align-items-center" style="flex-direction: row; flex:1">
+                            <div class="icon-blocks">
+                                <span class="count-block">1</span>
+                                <i class="fa-solid fa-house"></i>
+                            </div>
+
+                            <div class="m-2" style="padding: 20px 0px 20px 5px; flex:1">
+                                <span style="font-size: 16px; font-weight: bold;">Đang quản lý</span>
+                                <h4
+                                    style="font-size: 20px; color: #15a05c; padding:0px; margin:0px; white-space: nowrap;max-width: 150px; overflow: hidden; text-overflow: ellipsis; ">
+                                    <span>{{dormitory[index].name}}</span>
+                                </h4>
+                            </div>
+                        </div>
+                        <button class="shadow" id="add-block" style="position: absolute;
+                        right: -14px;
+                        top: 29px;
+                        border-radius: 100%;
+                        height: 35px;
+                        width: 35px;
+                        text-align: center;
+                        padding: 0px;
+                        background-color: #7dc343;
+                        color: #fff;
+                        border: 1px solid #7dc443;
+                        z-index: 10;" data-bs-toggle="modal" data-bs-target="#addBlock">
+                            <span data-bs-toggle="tooltip" data-bs-placement="top" title="Thêm mới nhà cho thuê">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <app-houseforrent-management></app-houseforrent-management>
+                <!-- End -->
+
+                <!-- danh sách các quản lý -->
+                <div class="col-md-9" style="align-items: center; justify-content: space-between; display: flex;">
+                    <div class=" scrollable-content-container"
+                        style="position: relative; align-items: center; justify-content: space-between; display: flex;overflow: hidden;">
+                        <div style="display: flex; flex-wrap: nowrap; overflow-x: auto; position: relative;"
+                            class="scrollable-content">
+                            <a href="/quan-ly" class="item-menu">
+                                <div class="icon text-center">
+                                    <img width=45px src="/images/icons/menus/thu_tien.png" />
+                                </div>
+                                <div class="key">
+                                    <span class="title"><b>Quản lý phòng</b></span>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="item-menu">
+                                <div class="icon text-center">
+                                    <img width=45px src="/images/icons/menus/thu_tien.png" />
+                                </div>
+                                <div class="key">
+                                    <span class="title"><b>Quản lý hóa đơn</b></span>
+                                </div>
+                            </a>
+
+                            <a href="#" class="item-menu">
+                                <div class="icon text-center">
+                                    <img width=45px src="/images/icons/menus/ghi_chu.png" />
+                                </div>
+                                <div class="key">
+                                    <span class="title"><b>Quản lý dịch vụ</b></span>
+                                </div>
+                            </a>
+
+                            <a href="#" class="item-menu">
+                                <div class="icon text-center">
+                                    <img width=45px src="/images/icons/menus/ghi_chu.png" />
+                                </div>
+                                <div class="key">
+                                    <span class="title"><b>Quản lý tài sản</b></span>
+                                </div>
+                            </a>
+
+                            <a href="#" class="item-menu">
+                                <div class="icon text-center">
+                                    <img width=45px src="/images/icons/menus/report_customer_use.png" />
+                                </div>
+                                <div class="key">
+                                    <span class="title"><b>Quản lý hợp đồng</b></span>
+                                </div>
+                            </a>
+
+                            <a href="#" class="item-menu">
+                                <div class="icon text-center">
+                                    <img width=45px src="/images/icons/menus/danh_sach_lien_he.png" />
+                                </div>
+                                <div class="key">
+                                    <span class="title"><b>Quản lý khách thuê</b></span>
+                                </div>
+                            </a>
+
+                            <a href="#" class="item-menu">
+                                <div class="icon text-center">
+                                    <img width=45px src="/images/icons/menus/thu_tien.png" />
+                                </div>
+                                <div class="key">
+                                    <span class="title"><b>Thu/Chi - Tổng kết</b></span>
+                                </div>
+                            </a>
+
+                            <a href="#" class="item-menu">
+                                <div class="icon text-center">
+                                    <img width=45px src="/images/icons/menus/setting.png" />
+                                </div>
+                                <div class="key">
+                                    <span class="title"><b>Cài đặt</b></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- END danh sách các quản lý -->
+
+            </div>
+
+            <div
+                style="padding:15px 15px 15px 15px; background-color: #fff; border-radius: 10px; margin: 0 10px 10px 10px">
+                <style>
+                    .box-home,
+                    .item-home {
+                        position: relative;
+                    }
+
+                    .icon-home {
+                        border-radius: 100%;
+                        width: 60px;
+                        height: 60px;
+                        background: hsla(0, 0%, 100%, .2);
+                        color: #fff;
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-right: 15px;
+                    }
+
+                    .icon-warning {
+                        display: flex;
+                        background-color: #ffe9e9;
+                        border-radius: 100%;
+                        color: red;
+                        width: 50px;
+                        height: 50px;
+                        align-items: center;
+                        justify-content: center;
+                        margin-right: 15px;
+                    }
+
+                    .item-home .title {
+                        flex: 1;
+                    }
+
+                    .item-home h3 {
+                        font-size: 20px;
+                        margin-top: 5px;
+                        font-weight: bold
+                    }
+
+                    .item-home h3 span {
+                        font-size: 18px;
+                    }
+
+                    .create-home {
+                        position: absolute;
+                        bottom: 10px;
+                        right: 10px;
+                        border-radius: 40px 0 0 0px;
+                        width: 60px;
+                        height: 55px;
+                        background: hsla(0, 0%, 100%, .2);
+                        z-index: 2;
+                        color: #fff;
+                        text-align: center;
+                    }
+
+                    .create-home span {
+                        width: 40px;
+                        height: 40px;
+                        line-height: 30px;
+                        background: #fff;
+                        text-align: center;
+                        color: #000;
+                        border-radius: 50%;
+                        display: flex;
+                        margin: 8px 0 0 17px;
+                        justify-content: center;
+                        align-items: center;
+                        border: 0.5px solid #ccc;
+                    }
+
+                    .box-home {
+                        padding: 15px;
+                        border-radius: 10px;
+                        color: #fff !important;
+                        display: block;
+                        background-color: #ffffff !important;
+                        border: 0.5px solid #eeeeee;
+                        box-shadow: 0 4px 6px 0 rgb(0 0 0 / 6%);
+                    }
+
+                    .bt-home {
+                        width: 60px;
+                        height: 60px;
+                        line-height: 60px;
+                        text-align: center;
+                        border-radius: 10px;
+                        font-size: 30px;
+                        margin: 0 0 20px 0;
+                        background: hsla(0, 0%, 100%, .2);
+                    }
+
+                    .box-banner-home {
+                        border-radius: 10px;
+                        color: #fff;
+                        overflow: hidden;
+                    }
+
+                    .txt-banner-home {
+                        width: 70%;
+                        float: left;
+                        padding: 20px;
+                    }
+
+                    .box-banner-home img {
+                        width: 30%;
+                        float: left;
+                    }
+
+                    .txt-banner-home a {
+                        text-decoration: underline;
+                        color: #fff;
+                    }
+
+                    .span-purple {
+                        background-color: #8433e5;
+                    }
+
+                    .span-blue {
+                        background-color: #03a9f4;
+                    }
+
+                    .span-pink {
+                        background-color: #ff046d;
+                    }
+
+
+                    .span-primary {
+                        background-color: #3ca05c;
+                    }
+
+                    .span-primary-white {
+                        background-color: #d0ffdf;
+                        color: #3ca05c !important;
+                    }
+
+                    .span-primary-white .icon-home {
+                        color: #3ca05c !important;
+                    }
+
+                    .span-primary-white .icon-home {
+                        background: hsl(139deg 100% 94.84%) !important
+                    }
+
+                    .span-green {
+                        background-color: #8bc34a;
+                    }
+
+                    .span-yellow {
+                        background-color: #ff9800;
+                    }
+
+                    .span-blue-2 {
+                        background-color: #018dff;
+                    }
+
+                    .span-red {
+                        background-color: #ff6161;
+                    }
+
+                    .span-gray {
+                        background-color: #696464;
+                    }
+
+                    .span-red-white {
+                        background-color: #fff4f4;
+                        color: red !important;
+                    }
+
+                    .span-red-white .icon-home {
+                        color: red !important;
+                    }
+
+                    .span-red-white .icon-home {
+                        background: hsl(0deg 100% 90.2% / 20%) !important;
+                    }
+
+                    .span-yellow-white {
+                        background-color: #ffc1072e;
+                        color: #ff4b00 !important;
+                    }
+
+                    .span-yellow-white .icon-home {
+                        color: #ff4b00 !important;
+                    }
+
+                    .span-yellow-white .icon-home {
+                        background: hsl(36deg 100% 50% / 40%) !important
+                    }
+
+                    .tabulator-menu.tabulator-popup-container {
+                        width: 40%;
+                        display: table;
+                    }
+
+                    .tabulator-menu .tabulator-menu-item {
+                        width: 50%;
+                        flex: 1;
+                        display: inline-block;
+                    }
+                </style>
+                <div class="page-home">
+
+                    <!-- Report preview-->
+                    <div>
+                        <div class="row g-3 row-box-home" style="margin-top: 0px;">
+                            <div class="col-sm-3" style="margin-top:0">
+                                <div class="item-home" data-bs-toggle="modal" data-bs-target="#reportBillDebt">
+                                    <a href="javascript:;" class="create-home">
+                                        <span><i class="fa-solid fa-arrow-right"></i></span>
+                                    </a>
+                                    <a href="javascript:;" class="box-home span-red-white">
+                                        <div class="d-flex align-items-center">
+                                            <span class="icon-home">
+                                                <img width="36px"
+                                                    src="https://img.icons8.com/?size=100&amp;id=2Sa1k4ZpFptq&amp;format=png">
+                                            </span>
+                                            <div>
+                                                <span class="title">
+                                                    Tổng số tiền khách nợ
+                                                </span>
+                                                <h3>0đ</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3" style="margin-top:0">
+                                <div class="item-home" data-bs-toggle="modal" data-bs-target="#reportContractDeposit">
+                                    <a href="javascript:;" class="create-home">
+                                        <span><i class="fa-solid fa-arrow-right"></i></span>
+                                    </a>
+                                    <a href="javascript:;" class="box-home span-primary-white">
+                                        <div class="d-flex align-items-center">
+                                            <span class="icon-home">
+                                                <img width="36px"
+                                                    src="https://img.icons8.com/?size=100&amp;id=lxOi5Rk3GnMh&amp;format=png">
+                                            </span>
+                                            <div>
+                                                <span class="title">
+                                                    Tổng số tiền cọc
+                                                </span>
+                                                <h3>0đ</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3" style="margin-top:0">
+                                <div class="item-home" data-bs-toggle="modal" data-bs-target="#reportDepositTemp">
+                                    <a href="javascript:;" class="create-home">
+                                        <span><i class="fa-solid fa-arrow-right"></i></span>
+                                    </a>
+                                    <a href="javascript:;" class="box-home span-primary-white">
+                                        <div class="d-flex align-items-center">
+                                            <span class="icon-home">
+                                                <img width="36px"
+                                                    src="https://img.icons8.com/?size=100&amp;id=VLkxUf20RHGE&amp;format=png">
+                                            </span>
+                                            <div>
+                                                <span class="title">
+                                                    Tổng số tiền cọc giữ chỗ phòng
+                                                </span>
+                                                <h3>0đ</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3" style="margin-top:0">
+                                <div class="item-home report">
+                                    <a href="javascript:;" class="create-home">
+                                        <span><i class="fa-solid fa-arrow-right"></i></span>
+                                    </a>
+                                    <a href="javascript:;" class="box-home span-red-white">
+                                        <div class="d-flex align-items-center">
+                                            <span class="icon-home">
+                                                <img width="36px"
+                                                    src="https://img.icons8.com/?size=48&amp;id=yjYAciFYtvzW&amp;format=png">
+                                            </span>
+                                            <div>
+                                                <span class="title">
+                                                    Sự cố phòng
+                                                </span>
+                                                <h3>0 Vấn đề</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end report preview -->
+
+                  <app-list-room></app-list-room>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

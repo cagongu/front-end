@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Đăng nhập</title>
+
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body style="background-color: #f7fafc;background: url(/householder-admin/images/login-background.webp) no-repeat;
+background-size: contain;
+justify-content: center;
+background-position-y: 60%;">
+  <div id="app_loading" class="text-center" style="padding:100px 10px;">
+    <img src="/images/icons/loading.gif" alt="Đang tải..." width="50px" />
+    <div class="loading_text">Đang tải...</div>
+  </div>
+  <div class="container">
+    <div class="login-container d-flex" id="login">
+      <div class="login-content-container">
+        <div class="col-md-12 text-center mt-5">
+          <a href="/" title="LOZIDO - Quản lý nhà cho thuê">
+            <img style="border-radius: 100%;
+                        border: 2px solid #18a451;
+                        margin: 15px 0px;
+                        box-shadow: 0 1rem 2rem 0 rgb(0 0 0 / 3%), 0 0.5rem 1rem 0 rgb(0 0 0 / 5%);" width="80px"
+              class="custom-logo img-responsive" src="https://quanlytro.me/images/icons/Icon-lozido-white.png"
+              alt="Logo LOZIDO - Quản lý nhà cho thuê" title="LOZIDO - Quản lý nhà cho thuê">
+          </a>
+          <h2 class="mb-4 title"><span class="title-feature">NHÀ TRỌ - KÝ TÚC XÁ - CHUNG CƯ</span><br>Quản lý chuyên
+            nghiệp!</h2>
+        </div>
+        <div class="row login-form-container">
+          <div class="col-md-6 login-form-1" style="background-color: #fff;">
+            <h3>Đăng nhập tài khoản</h3>
+            <form class="needs-validation" id="login-form" (ngSubmit)="onSubmit()" #loginForm="ngForm" novalidate>
+              <div class="container-input">
+                <div class="form-group">
+                  <input style="border-bottom: 1px solid #ccc;" type="text" name="username" class="form-control"
+                    [(ngModel)]="form.username" placeholder="Tên đăng nhập *" #username="ngModel" required />
+                  <div *ngIf="username.invalid && username.touched" class="invalid-feedback">
+                    Vui lòng nhập tên đăng nhập
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" name="password" [(ngModel)]="form.password"
+                    placeholder="Nhập mật khẩu *" #password="ngModel" required/>
+                  <div *ngIf="password.invalid && password.touched" class="invalid-feedback">
+                    Vui lòng nhập mật khẩu
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <button type="submit" id="submit-login" class="btnSubmit btn btn-primary">
+                  Đăng nhập
+                </button>
+              </div>
+              <div class="form-group d-flex justify-content-between">
+                <a type="button" class="btn btn-link" href="/dang-ky">
+                  Tạo tài khoản
+                </a>
+                <a type="button" class="btn btn-link" href="/quen-mat-khau.html">
+                  Quên mật khẩu
+                </a>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-6 login-form-2 text-center" style="color: #fff">
+            <div>
+              <img width="110px" style="border-radius: 10px;border: 2px solid #1d6b1b;" src="/images/qr-code.png"
+                data-src="/images/qr-code.png" class="lazy img-responsive" alt="tải ứng dùng tìm phòng qua mã qr">
+              <h6 style="margin-top: 10px">Quét mã tải app</h6>
+            </div>
+            <div class="row mt-2 g-2">
+              <div class="col-sm-12 col-md-6 text-center text-md-end aos-init aos-animate" data-aos="fade-right">
+                <a href="https://play.google.com/store/apps/details?id=com.lozido_room_mobile" target="_blank">
+                  <img class="img-responsive image-dowload-app" width="160px"
+                    src="/images/tai-ung-dung-tim-phong-tro-tren-android.png" alt="Tải ứng dụng trên Android"
+                    title="Tải ứng dụng trên Android">
+                </a>
+              </div>
+              <div class="col-sm-12 col-md-6 text-center text-md-start aos-init aos-animate" data-aos="fade-left">
+                <a href="https://apps.apple.com/vn/app/id1560928216" target="_blank">
+                  <img class="img-responsive image-dowload-app" width="160px"
+                    src="/images/tai-ung-dung-tim-phong-tro-tren-ios.png" alt="Tải ứng dụng trên iOS"
+                    title="Tải ứng dụng trên iOS">
+                </a>
+              </div>
+              <i style="margin-top: 15px; font-size: 13px;" class="text-center">* Để đăng nhập bạn phải có tài khoản.
+                Vui
+                lòng đăng ký tài khoản nếu chưa có</i>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="zalo-container fix item-contact">
+    <a id="zalo-btn" href="https://zalo.me/0965227453" target="_blank" rel="noopener">
+      <div class="animated_zalo infinite zoomIn_zalo cmoz-alo-circle"></div>
+      <div class="animated_zalo infinite pulse_zalo cmoz-alo-circle-fill"></div>
+      <span>
+        <img width="100%" src="/images/icons/zalo-icon-white.webp"
+          alt="Liên hệ với LOZIDO - Quản lý nhà cho thuê qua Zalo">
+      </span>
+    </a>
+  </div>
+</body>
+
+</html>

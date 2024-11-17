@@ -1,0 +1,240 @@
+<!-- Tab panes -->
+<div class="tab-pane" id="manage" role="tabpanel" aria-labelledby="manage-tab">
+    <style>
+        .tabulator-row.done-background {
+            background-color: #4caf5029 !important
+        }
+
+        .tabulator-row.cancel-background {
+            background-color: #eeeeee82 !important
+        }
+
+        .tabulator-row.enable-background {
+            background-color: #ff57220f !important
+        }
+    </style>
+    <div style="margin-top: 30px;" row>
+        <div class="header-item">
+            <h4 class="title-item">
+                Quản lý danh sách phòng
+                <i class="des">Tất cả danh sách phòng trong {{dormitory[index].typeOfRental + " " + dormitory[index].name}}</i>
+            </h4>
+            <div style="display: flex">
+
+                <button class="add-round" data-bs-toggle="modal" data-bs-target="#addRoom">
+                    <span data-bs-toggle="tooltip" data-bs-placement="left" title="Thêm phòng">
+                        <i class="fa-solid fa-plus"></i>
+                    </span>
+                </button>
+
+                <div class="d-flex" style="margin-left: 40px;">
+                    <div class="dropdown">
+                        <button style="height: 100%" class="btn btn-primary dropdown-toggle" type="button"
+                            id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i data-feather="file-text"> </i>
+                            Ẩn/Hiện cột
+                            <span id="count_exclude_column"
+                                style="position: absolute;top: -12px;right: -10px;background-color: #dc3545;font-size: 12px;width: 20px;height: 20px;display: flex;align-items: center;justify-content: center;border-radius: 5px;color: #fff;">0</span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="list-show-column">
+                            <li>
+                                <label class="dropdown-item">
+                                    <input type="checkbox" checked class="form-check-input" name="group_id"
+                                        value="group_id"> Nhóm
+                                </label>
+                            </li>
+                            <li>
+                                <label class="dropdown-item">
+                                    <input type="checkbox" checked class="form-check-input"
+                                        name="deposit_contract_amount" value="deposit_contract_amount"> Mức tiền cọc
+                                </label>
+                            </li>
+                            <li>
+                                <label class="dropdown-item">
+                                    <input type="checkbox" checked class="form-check-input" name="debt_amount"
+                                        value="debt_amount"> Tiền nợ
+                                </label>
+                            </li>
+                            <li>
+                                <label class="dropdown-item">
+                                    <input type="checkbox" checked class="form-check-input" name="customers"
+                                        value="customers"> Khách thuê
+                                </label>
+                            </li>
+                            <li>
+                                <label class="dropdown-item">
+                                    <input type="checkbox" checked class="form-check-input" name="circle_day"
+                                        value="circle_day"> Ngày lập hóa đơn
+                                </label>
+                            </li>
+                            <li>
+                                <label class="dropdown-item">
+                                    <input type="checkbox" checked class="form-check-input" name="circle_month"
+                                        value="circle_month"> Chu kỳ thu tiền
+                                </label>
+                            </li>
+                            <li>
+                                <label class="dropdown-item">
+                                    <input type="checkbox" checked class="form-check-input" name="date_join"
+                                        value="date_join"> Ngày vào ở
+                                </label>
+                            </li>
+                            <li>
+                                <label class="dropdown-item">
+                                    <input type="checkbox" checked class="form-check-input" name="date_terminate"
+                                        value="date_terminate"> Thời hạn hợp
+                                    đồng
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- table list room -->
+        <div class="body-item">
+            <table class="table  table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col">Tên phòng</th>
+                        <th scope="col">Giá thuê</th>
+                        <th scope="col">Ngày lập hóa đơn</th>
+                        <th scope="col">Chu kỳ thu tiền</th>
+                        <th scope="col">Ngày vào ở</th>
+                        <th scope="col">Thời hạn hợp đồng</th>
+                        <th scope="col">Tình trạng</th>
+                        <th scope="col">Tài chính</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let room of dormitory[index].rooms">
+                        <tr *ngIf="floorNumber !== room.floorNumber">
+                            <!-- Gọi hàm để thay đổi floorNumber -->
+                            <th colspan="11">Tầng {{ room.floorNumber }}</th>
+                            {{updateFloorNumber(room.floorNumber)}}
+                          </tr>
+                        <tr>
+                            <th scope="row">{{ room.roomNumber }}</th>
+                            <td><i class="fa-solid fa-door-open"></i></td>
+                            <td>{{ room.roomName }}</td>
+                            <td>{{ room.rentalPrice | currency: 'VND' }}</td> <!-- Định dạng giá tiền -->
+                            <td>{{ room.invoiceDate ? (room.invoiceDate | date: 'dd/MM/yyyy') : 'Chưa có' }}</td>
+                            <!-- Định dạng ngày -->
+                            <td>{{ room.billingCycle }} tháng</td>
+                            <td>{{ room.moveInDate ? (room.moveInDate | date: 'dd/MM/yyyy') : 'Chưa có' }}</td>
+                            <!-- Định dạng ngày -->
+                            <td>{{ room.contractDuration }} tháng</td>
+                            <td>{{ room.status }}</td>
+                            <td>{{ room.financialStatus }}</td>
+                            <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+                        </tr>
+                    </ng-container>
+
+                </tbody>
+            </table>
+        </div>
+        <!-- end table list room -->
+
+    </div>
+</div>
+<!-- end tab panes -->
+
+<!-- Modal Tạo Phòng Trọ -->
+<div class="modal fade" id="addRoom" tabindex="-1" aria-labelledby="addRoomModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addRoomModalLabel">Thêm Phòng Trọ Mới</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addRoomForm" (ngSubmit)="onCreateRoom()" #addRoomForm="ngForm">
+                    <div class="row">
+                        <!-- Tên phòng -->
+                        <div class="form-group col-lg-6 p-2">
+                            <label for="roomName">Tên Phòng</label>
+                            <input type="text" class="form-control" id="roomName" [(ngModel)]="room.roomName"
+                                name="roomName" placeholder="Nhập tên phòng" required>
+                        </div>
+
+                        <!-- số tầng -->
+                        <div class="form-group col-lg-6 p-2">
+                            <label for="area">số tầng</label>
+                            <input type="number" class="form-control" id="floorNumber" [(ngModel)]="room.floorNumber" name="floorNumber"
+                                placeholder="Nhập số tầng" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Giá Thuê -->
+                        <div class="form-group col-lg-6 p-2">
+                            <label for="rentalPrice">Giá Thuê</label>
+                            <input type="number" class="form-control" id="rentalPrice" [(ngModel)]="room.rentalPrice"
+                                name="rentalPrice" placeholder="Nhập giá thuê" required>
+                        </div>
+
+                        <!-- Diện Tích -->
+                        <div class="form-group col-lg-6 p-2">
+                            <label for="area">Diện Tích</label>
+                            <input type="number" class="form-control" id="area" [(ngModel)]="room.area" name="area"
+                                placeholder="Nhập diện tích" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Số Tiền Cọc -->
+                        <div class="form-group col-lg-6 p-2">
+                            <label for="depositAmount">Số Tiền Cọc</label>
+                            <input type="number" class="form-control" id="depositAmount"
+                                [(ngModel)]="room.depositAmount" name="depositAmount" placeholder="Nhập số tiền cọc"
+                                required>
+                        </div>
+
+                        <!-- Ngày Thanh Toán -->
+                        <div class="form-group col-lg-6 p-2">
+                            <label for="invoiceDate">Ngày Thanh Toán</label>
+                            <input type="number" class="form-control" id="invoiceDate" [(ngModel)]="room.invoiceDate"
+                                name="invoiceDate" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Số Người Tối Đa -->
+                        <div class="form-group col-lg-4 p-2">
+                            <label for="maxOccupants">Số Người Tối Đa</label>
+                            <input type="number" class="form-control" id="maxOccupants" [(ngModel)]="room.maxOccupants"
+                                name="maxOccupants" placeholder="Nhập số người tối đa" required>
+                        </div>
+
+                        <!-- Chu Kỳ Thanh Toán -->
+                        <div class="form-group col-lg-4 p-2">
+                            <label for="paymentCycle">Chu Kỳ Thanh Toán</label>
+                            <select class="form-control" id="paymentCycle" [(ngModel)]="room.paymentCycle"
+                                name="paymentCycle" required>
+                                <option value=1>Hàng tháng</option>
+                                <option value=3>Hàng quý</option>
+                                <option value=12>Hàng năm</option>
+                            </select>
+                        </div>
+
+                        <!-- Tình Trạng Phòng -->
+                        <div class="form-group col-lg-4 p-2">
+                            <label for="roomStatus">Tình Trạng Phòng</label>
+                            <select class="form-control" id="roomStatus" [(ngModel)]="room.roomStatus" name="roomStatus"
+                                required>
+                                <option value="VACANT">Chưa cho thuê</option>
+                                <option value="OCCUPIED">Đã cho thuê</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Tạo Phòng Trọ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Tạo Phòng Trọ -->
