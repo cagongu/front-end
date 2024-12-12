@@ -14,7 +14,8 @@ export class StorageService {
   isLoggedIn: boolean = false;
 
   clean(): void {
-    window.sessionStorage.clear();
+    window.localStorage.clear();
+    this.isLoggedIn = false; 
   }
 
   public saveUser(): void {

@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 
 export class AuthService {
+ 
 
   AUTH_PATH: string = 'http://localhost:8888/api/v1/identity/auth'
   USER_PATH: string = 'http://localhost:8888/api/v1/identity/users';
@@ -59,6 +60,11 @@ export class AuthService {
       },
     })
 
+  }
+
+  logout(): void {
+    this.storage.clean(); 
+    console.log("Logged out successfully!");
   }
 }
 interface Permissions{

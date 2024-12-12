@@ -10,12 +10,33 @@ import { HousesForRent } from '../common/house-for-rent';
   providedIn: 'root'
 })
 export class RoomService {
+ 
+
   DORMITORY_PATH = 'http://localhost:8087/dormitory';
   ROOM_PATH = 'http://localhost:8087/room'
+  RESERVATION_PATH = "http://localhost:8087/reservation";
+  CONTRACT_PATH = 'http://localhost:8087/contract';
 
   constructor(private http: HttpClient, private storageService: StorageService) { }
 
-  public getAllDormitoryByOwnerId(): Observable<HouseForRentResponse> {
+  renewContract(contactId: string | undefined, 
+    reNewContractForm: { 
+      renewalDate: string; 
+      renewalEndDate: string; 
+      rentPrice: number; 
+    }) : Observable<any>{
+
+      const url = this.CONTRACT_PATH + `/${contactId}`;
+    return this.http.put<any>(url, reNewContractForm)
+  }
+
+  createNewContract(contractForm: any) : Observable<any>{
+    const url = this.CONTRACT_PATH;
+
+    return this.http.post<any>(url, contractForm);
+  }
+
+  getAllDormitoryByOwnerId(): Observable<any> {
     const user = this.storageService.getUser();
 
     return this.http.get<HouseForRentResponse>(this.DORMITORY_PATH).pipe(
@@ -28,27 +49,14 @@ export class RoomService {
     );
   }
 
-  public createNewHouseforRent(house: {
-    houseName: string;
-    typeOfRental: string;
-    totalRooms: number;
-    totalFloors: number;
-    province: string;
-    district: string;
-    ward: string;
-    streetDetail: string;
-    electricityStatus: string;
-    waterStatus: string;
-    wifiStatus: string,
-    trashStatus: string
-  }): Observable<CreateHouseResponse> {
+  createNewHouseforRent(house: any): Observable<CreateHouseResponse> {
     const user = this.storageService.getUser();
 
     const newHouse = {
       name: house.houseName,
       typeOfRental: house.typeOfRental,
-      totalFloors: house.totalFloors,
       totalRooms: house.totalRooms,
+      totalFloors: house.totalFloors,
       ownerId: user?.id,
       activeStatus: 'ACTIVE_STATUS',
       address: {
@@ -94,28 +102,22 @@ export class RoomService {
       ]
     }
 
+    console.log(newHouse)
+
     return this.http.post<CreateHouseResponse>(this.DORMITORY_PATH, newHouse);
   }
 
-  public createListNewRoom(
-    room: {
-      rentalPrice: number;
-      area: number;
-      depositAmount: number;
-      invoiceDate: number;
-      maxOccupants: number;
-      paymentCycle: number;
-      roomStatus: string;
-    },
+  createListNewRoom(
+    room: any,
     houseforrentId: string,
     totalFloors: number,
     totalRooms: number
   ) {
-    const roomsPerFloor = Math.ceil(totalRooms / totalFloors); // Tính số phòng trên mỗi tầng
+    const roomsPerFloor = Math.ceil(totalRooms / totalFloors);
 
     for (let i = 0; i < totalRooms; i++) {
-      const floorNumber = Math.floor(i / roomsPerFloor) + 1; // Xác định số tầng
-      const roomNumber = i + 1; // Số phòng bắt đầu từ 1
+      const floorNumber = Math.floor(i / roomsPerFloor) + 1;
+      const roomNumber = i + 1;
       const roomName = "Phòng " + roomNumber;
 
       // Tạo đối tượng new room
@@ -145,48 +147,77 @@ export class RoomService {
     }
   }
 
-  public createNewRoom(
-    room: {
-      roomName: string;
-      floorNumber: number;
-      rentalPrice: number;
-      area: number;
-      depositAmount: number;
-      invoiceDate: number;
-      maxOccupants: number; 
-      paymentCycle: number; 
-      roomStatus: string;
-    }, id: string) { 
-      const newRoom = {
-        roomName: room.roomName,
-        floorNumber: room.floorNumber,
-        area: room.area,
-        rentalPrice: room.rentalPrice,
-        depositAmount: room.depositAmount,
-        invoiceDate: room.invoiceDate,
-        billingCycle: room.paymentCycle,
-        financialStatus: "BILLING_CYCLE",
-        status: room.roomStatus,
-        maxOccupants: room.maxOccupants,
-        housesForRentId: id
-      };
+  createNewRoom(
+    room: any, id: string, length: number) {
+    const newRoom = {
+      roomName: room.roomName,
+      floorNumber: room.floorNumber,
+      roomNumber: length + 1,
+      area: room.area,
+      rentalPrice: room.rentalPrice,
+      depositAmount: room.depositAmount,
+      invoiceDate: room.invoiceDate,
+      billingCycle: room.paymentCycle,
+      financialStatus: "BILLING_CYCLE",
+      status: room.roomStatus,
+      maxOccupants: room.maxOccupants,
+      housesForRentId: id
+    };
 
-      this.http.post(this.ROOM_PATH, newRoom).subscribe(response => {
-        console.log(`Room ${room.roomName} created successfully.`);
-      }, error => {
-        console.error(`Error creating room ${room.roomName}:`, error);
-      });
+    this.http.post(this.ROOM_PATH, newRoom).subscribe(response => {
+      console.log(`Room ${room.roomName} created successfully.`);
+    }, error => {
+      console.error(`Error creating room ${room.roomName}:`, error);
+    });
+  }
 
+  getCurrentReservationByRoomId(roomId: string): Observable<any> {
+    const url = `http://localhost:8087/reservation/currentReservation/${roomId}`;
+
+    return this.http.get<any>(url);
+  }
+
+  editHouse(house: any, dorId: string): Observable<any> {
+    const user = this.storageService.getUser();
+
+    const edit = {
+      name: house.houseName,
+      typeOfRental: house.typeOfRental,
+      ownerId: user?.id,
+      address: {
+        province: house.province,
+        district: house.district,
+        ward: house.ward,
+        streetDetail: house.streetDetail
+      }
     }
+
+    const url = `${this.DORMITORY_PATH}/${dorId}`;
+
+    return this.http.put<any>(url, edit)
+  }
+
+  getRoomById(roomId: string): Observable<any> {
+    const url = `${this.ROOM_PATH}/${roomId}`;
+
+    return this.http.get<any>(url);
+  }
+
+  depositRoom(deposit_form: any, roomId: string) {
+    const url = this.RESERVATION_PATH + `/${roomId}`;
+
+    return this.http.post(url, deposit_form);
+  }
 
 }
 
 export interface Service {
+  serviceId: string;
   serviceName: string; // Tên dịch vụ
-  serviceMetrics: number; // Đơn vị đo lường cho dịch vụ
   costType: 'FIXED' | 'VARIABLE'; // Loại chi phí (Cố định hay biến đổi)
   servicePriceDefault: number; // Giá dịch vụ mặc định
   unitOfMeasurement: 'KWH' | 'CUBIC_METER' | 'MONTH'; // Đơn vị đo lường
+  activeStatus: string;
 }
 
 export interface House {

@@ -15,6 +15,11 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
+    path: '',
+    component: ManagementComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'quan-ly',
     component: ManagementComponent,
     canActivate: [AuthGuard]

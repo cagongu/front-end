@@ -1,5 +1,4 @@
 <!-- Modal manage block -->
-<!-- Modal manage block -->
 <div class="modal fade" id="manageBlock" tabindex="-1" aria-labelledby="manageBlockLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -7,7 +6,8 @@
                 <i style="margin-right: 15px" data-feather="home"> </i>
                 <h5 class="modal-title" id="manageBlockLabel">
                     Danh sách nhà trọ của bạn
-                    <p style="font-size: 14px; font-weight: normal; font-style: italic; margin: 0">Tới {{dormitory.length}} nhà trọ
+                    <p style="font-size: 14px; font-weight: normal; font-style: italic; margin: 0">Tới
+                        {{dormitory.length}} nhà trọ
                         và quản lý</p>
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
@@ -24,7 +24,8 @@
                         <i class="fa-solid fa-trash"></i>
                     </div>
 
-                    <div class="btn-round btn-edit" data-bs-toggle="modal" data-bs-target="#addBlock">
+                    <a class="btn-round btn-edit" data-bs-toggle="modal" data-bs-target="#editBlock"
+                        (click)="getEditData(i)">
                         <div style="width: 100%; height: 100%; align-items: center;
                     display: inherit;
                     text-align: center;
@@ -32,19 +33,18 @@
                             title="Chỉnh sửa Nhà trọ">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </div>
-                    </div>
+                    </a>
 
                     <a class="btn-round btn-go-to" data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="Tới quản lý Nhà trọ" (click)="getIndex(i, dor.id)" href="/quan-ly">
+                        title="Tới quản lý Nhà trọ" (click)="setIndex(i, dor.id)" href="/quan-ly">
                         <i class="fa-solid fa-arrow-right"></i>
-                     </a>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!-- Modal manage block -->
-
 
 <!-- Modal Tạo Nhà Trọ -->
 <div class="modal fade" id="addBlock" tabindex="-1" aria-labelledby="addHouseModalLabel" aria-hidden="true">
@@ -100,27 +100,38 @@
                     <div class="row">
                         <div class="d-flex flex-column p-2">
                             <b>Địa chỉ:</b>
-                            <i class="des">Giúp cho khách thuê của bạn Áp dụng thể tìm thấy nhà trọ của bạn dễ dàng hơn</i>
+                            <i class="des">Giúp cho khách thuê của bạn Áp dụng thể tìm thấy nhà trọ của bạn dễ dàng
+                                hơn</i>
                         </div>
                         <!-- Tỉnh/Thành phố -->
                         <div class="form-group col-lg-4 p-2">
                             <label for="province">Tỉnh/Thành phố</label>
-                            <input type="text" class="form-control" id="province" [(ngModel)]="house.province"
-                                name="province" placeholder="Nhập tỉnh thành phố" required>
+                            <select id="province" class="form-control" [(ngModel)]="house.province" name="province"
+                                (change)="onProvinceChange($event)">
+                                <option value="">Chọn Tỉnh/Thành</option>
+                                <option *ngFor="let province of provinces" [value]="province.code">{{ province.name }}
+                                </option>
+                            </select>
                         </div>
 
                         <!-- Quận/Huyện -->
                         <div class="form-group col-lg-4 p-2">
                             <label for="district">Quận/Huyện</label>
-                            <input type="text" class="form-control" id="district" [(ngModel)]="house.district"
-                                name="district" placeholder="Nhập quận huyện" required>
+                            <select class="form-control" id="district" [(ngModel)]="house.district" name="district"
+                                (change)="onDistrictChange($event)">
+                                <option value="">Chọn Quận/Huyện</option>
+                                <option *ngFor="let district of districts" [value]="district.code">{{ district.name }}
+                                </option>
+                            </select>
                         </div>
 
                         <!-- Phường/Xã -->
                         <div class="form-group col-lg-4 p-2">
                             <label for="ward">Phường/Xã</label>
-                            <input type="text" class="form-control" id="ward" [(ngModel)]="house.ward" name="ward"
-                                placeholder="Nhập phường xã" required>
+                            <select class="form-control" id="ward" [(ngModel)]="house.ward" name="ward">
+                                <option value="">Chọn Phường/Xã</option>
+                                <option *ngFor="let ward of wards" [value]="ward.code">{{ ward.name }}</option>
+                            </select>
                         </div>
 
                         <!-- Địa chỉ chi tiết -->
@@ -133,7 +144,7 @@
                     <div class="row">
                         <div class="d-flex flex-column p-2">
                             <b>Cài đặt dịch vụ:</b>
-                            <i class="des">Giúp cho khách thuê của bạn Áp dụng thể tìm thấy nhà trọ của bạn dễ dàng hơn</i>
+                            <i class="des">Áp dụng dịch vụ nhà trọ của bạn dễ dàng quản lý hơn</i>
                         </div>
                         <!-- Trạng thái Điện -->
                         <div class="form-group col-lg-6 p-2">
@@ -155,8 +166,8 @@
                             </select>
                         </div>
 
-                         <!-- Trạng thái Rác -->
-                         <div class="form-group col-lg-6 p-2">
+                        <!-- Trạng thái Rác -->
+                        <div class="form-group col-lg-6 p-2">
                             <label for="electricityStatus">Trạng thái Rác</label>
                             <select class="form-control" id="electricityStatus" [(ngModel)]="house.wifiStatus"
                                 name="electricityStatus" required>
@@ -175,7 +186,7 @@
                             </select>
                         </div>
 
-                        
+
                     </div>
                     <button type="submit" class="btn btn-primary">Tạo Nhà Trọ</button>
                 </form>
@@ -184,6 +195,95 @@
     </div>
 </div>
 <!-- Modal Tạo Nhà Trọ -->
+
+<!-- Modal chỉnh sửa Nhà Trọ -->
+<div class="modal fade" id="editBlock" tabindex="-1" aria-labelledby="editHouseModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editHouseModalLabel">Chỉnh Sửa Nhà Trọ</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editHouseForm" (ngSubmit)="onEditHouse()" #editHouseForm="ngForm">
+                    <div class="row">
+                        <div class="d-flex flex-column p-2">
+                            <b>Thông tin phòng:</b>
+                            <i class="des">Chỉnh sửa các thông tin cơ bản của phòng</i>
+                        </div>
+
+                        <!-- Tên Nhà Trọ -->
+                        <div class="form-group col-lg-6 p-2">
+                            <label for="houseName">Tên Nhà Trọ</label>
+                            <input type="text" class="form-control" id="houseName" [(ngModel)]="house.houseName"
+                                name="houseName" placeholder="Nhập tên nhà trọ" required>
+                        </div>
+
+                        <!-- Loại Hình Cho Thuê -->
+                        <div class="form-group col-lg-6 p-2">
+                            <label for="typeOfRental">Loại Hình Cho Thuê</label>
+                            <select class="form-control" id="typeOfRental" [(ngModel)]="house.typeOfRental"
+                                name="typeOfRental" required>
+                                <option value="Dormitory">Nhà trọ</option>
+                                <option value="Building">Căn hộ</option>
+                                <option value="Office">Văn phòng</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="d-flex flex-column p-2">
+                            <b>Địa chỉ:</b>
+                            <i class="des">Giúp cho khách thuê của bạn Áp dụng thể tìm thấy nhà trọ của bạn dễ dàng
+                                hơn</i>
+                        </div>
+                        <!-- Tỉnh/Thành phố -->
+                        <div class="form-group col-lg-4 p-2">
+                            <label for="province">Tỉnh/Thành phố</label>
+                            <select id="province" class="form-control" [(ngModel)]="house.province" name="province"
+                                (change)="onProvinceChange($event)">
+                                <option value="">Chọn Tỉnh/Thành</option>
+                                <option *ngFor="let province of provinces" [value]="province.code">{{ province.name
+                                    }}
+                                </option>
+
+                            </select>
+                        </div>
+
+                        <!-- Quận/Huyện -->
+                        <div class="form-group col-lg-4 p-2">
+                            <label for="district">Quận/Huyện</label>
+                            <select class="form-control" id="district" [(ngModel)]="house.district" name="district"
+                                (change)="onDistrictChange($event)">
+                                <option value="">Chọn Quận/Huyện</option>
+                                <option *ngFor="let district of districts" [value]="district.code">{{ district.name }}
+                                </option>
+                            </select>
+                        </div>
+
+                        <!-- Phường/Xã -->
+                        <div class="form-group col-lg-4 p-2">
+                            <label for="ward">Phường/Xã</label>
+                            <select class="form-control" id="ward" [(ngModel)]="house.ward" name="ward">
+                                <option value="">Chọn Phường/Xã</option>
+                                <option *ngFor="let ward of wards" [value]="ward.code">{{ ward.name }}</option>
+                            </select>
+                        </div>
+
+                        <!-- Địa chỉ chi tiết -->
+                        <div class="form-group col-lg-12 p-2">
+                            <label for="streetDetail">Địa chỉ chi tiết</label>
+                            <input type="text" class="form-control" id="streetDetail" [(ngModel)]="house.streetDetail"
+                                name="streetDetail" placeholder="Nhập địa chỉ chi tiết" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Hoàn tất</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal chỉnh sửa Nhà Trọ -->
 
 <!-- Modal Tạo Phòng Trọ -->
 <div class="modal fade" id="addRoomModal" tabindex="-1" aria-labelledby="addRoomModalLabel" aria-hidden="true">

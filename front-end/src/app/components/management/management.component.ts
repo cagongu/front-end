@@ -9,7 +9,8 @@ import { RoomService } from '../../services/room.service';
 })
 export class ManagementComponent {
   dormitory: HousesForRent[] = [];
-  index: number = parseInt( sessionStorage.getItem('DORMITORY_INDEX') || '0', 10);
+  currentRoom: any; 
+  index: number = parseInt(sessionStorage.getItem('DORMITORY_INDEX') || '0', 10);
 
   constructor(private roomService: RoomService) { }
 
@@ -17,6 +18,7 @@ export class ManagementComponent {
     this.roomService.getAllDormitoryByOwnerId().subscribe(
       res => {
         this.dormitory = res.result;
+        console.log(res);
       }
     )
   }

@@ -1,0 +1,662 @@
+<div style="padding:15px 15px 15px 15px; background-color: #fff; border-radius: 10px; margin: 0 10px 10px 10px">
+    <style>
+        .content-room-info .item {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .deposit-temp-info .item {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .image {
+            width: 100%;
+            max-width: 400px;
+            cursor: pointer;
+        }
+
+        .zoomed-img {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .zoomed-img img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+    </style>
+    <div class="page-room">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="content-room-info" style="position: sticky; top:0px">
+                    <h4 class="title-item">
+                        Thông tin phòng
+                        <i class="des">Thông tin chi tiết của phòng</i>
+                    </h4>
+                    <div class="card-feature" style="padding: 10px;">
+                        <div class="item d-flex justify-content-between">
+                            <span>Tên phòng</span>
+                            <span><b>{{room?.roomName}}</b></span>
+                        </div>
+                        <div class="item d-flex justify-content-between">
+                            <span>Nhóm phòng</span>
+                            <span><b>{{room?.floorNumber}}</b></span>
+                        </div>
+                        <div class="item d-flex justify-content-between">
+                            <span>Giá thuê</span>
+                            <span><b>{{room?.rentalPrice}}</b></span>
+                        </div>
+                        <div class="item d-flex justify-content-between">
+                            <span>Ngày lập hóa đơn</span>
+                            <span><b>{{room?.invoiceDate}}</b></span>
+                        </div>
+                        <div class="item d-flex justify-content-between">
+                            <span>Ngày vào ở</span>
+                            <span><b>{{room?.moveInDate | date: 'dd/MM/yyyy'}}</b></span>
+                        </div>
+                        <div class="item d-flex justify-content-between">
+                            <span>Thời hạn hợp đồng</span>
+                            <span><b>{{currentContract?.terminationDate | date: 'dd/MM/yyyy'}}</b></span>
+                        </div>
+                        <div class="item d-flex justify-content-between">
+                            <span>Trạng thái</span>
+                            <b [ngSwitch]="room?.status">
+                                <span *ngSwitchCase="'OCCUPIED'">Đang ở</span>
+                                <span *ngSwitchCase="'VACANT'">Đang trống</span>
+                                <span *ngSwitchCase="'NOTICE_GIVEN'">Đang báo kết thúc</span>
+                                <span *ngSwitchCase="'CONTRACT_EXPIRING_SOON'">Sắp hết hạn hợp đồng</span>
+                                <span *ngSwitchCase="'CONTRACT_OVERDUE'">Đã quá hạn hợp đồng</span>
+                                <span *ngSwitchCase="'RESERVED'">Đang cọc giữ chỗ</span>
+                                <span *ngSwitchCase="'PAYMENT_DUE'">Đang nợ tiền</span>
+                                <span *ngSwitchDefault>Không xác định</span>
+                            </b>
+                        </div>
+
+                        <div class="item d-flex justify-content-between">
+                            <span>Trạng thái tài chính</span>
+                            <span>
+                                <b [ngSwitch]="room?.financialStatus">
+                                    <span *ngSwitchCase="'BILLING_CYCLE'">Chu kỳ thu tiền</span>
+                                    <span *ngSwitchCase="'IN_COLLECTION'">Đang thu tiền</span>
+                                    <span *ngSwitchCase="'OVERDUE'">Quá hạn thanh toán</span>
+                                    <span *ngSwitchDefault>Không xác định</span>
+                                </b>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h4 class="title-item">
+                    Dịch vụ sử dụng
+                    <i class="des">Danh sách dịch vụ sử dụng</i>
+                </h4>
+                <div class="card-feature" style="padding: 10px;">
+                    <div class="row" style="padding: 10px;">
+                        <table class="table table-bordered text-center">
+                            <tbody>
+                                <tr>
+                                    <td><b>Tên dịch vụ</b></td>
+                                    <td><b>Chỉ số dịch vụ</b></td>
+                                    <td><b>Loại</b></td>
+                                    <td><b>Đơn giá</b></td>
+                                </tr>
+                                <tr *ngFor="let service of room?.serviceCustoms">
+                                    <td><b>{{service.service.serviceName}}</b></td>
+                                    <td>
+                                        <div>
+                                            <span style="margin-right: 10px;">Chỉ số hiện
+                                                tại:<b>{{service.serviceMetrics}}</b></span>
+                                            <span style="display: none">Số mới:<b>0</b></span>
+                                        </div>
+                                    </td>
+
+                                    <td>Cố định</td>
+                                    <td>
+                                        <b>{{service.service.servicePriceDefault}}</b>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <h4 class="title-item">
+                    Danh sách khách thuê
+                    <i class="des">Thông tin khách thuê của phòng</i>
+                </h4>
+                <style>
+                    #list-customers .item-feature:hover {
+                        border-color: #14a05c !important;
+                    }
+                </style>
+                <div class="card-feature" style="padding: 10px;" id="list-customers">
+                    <div class="row g-2">
+                        <div style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#addCustomer"
+                            data-room-id="106030"
+                            data-customer="{&quot;id&quot;:35190,&quot;block_id&quot;:7382,&quot;room_id&quot;:106030,&quot;contract_id&quot;:32003,&quot;avatar&quot;:null,&quot;name&quot;:&quot;Hophucthai&quot;,&quot;phone&quot;:&quot;0392208046&quot;,&quot;zalo&quot;:null,&quot;sex&quot;:1,&quot;sex_text&quot;:&quot;Nam&quot;,&quot;birthday&quot;:1103302800000,&quot;birthday_format&quot;:&quot;18\/12\/2004&quot;,&quot;address_component&quot;:{&quot;address&quot;:null,&quot;ward_id&quot;:null,&quot;district_id&quot;:null,&quot;province_id&quot;:null,&quot;address_detail&quot;:null},&quot;job&quot;:null,&quot;is_contract&quot;:1,&quot;is_contract_text&quot;:&quot;\u0110\u1ea1i di\u1ec7n h\u1ee3p \u0111\u1ed3ng&quot;,&quot;is_contract_color&quot;:&quot;#7dc242&quot;,&quot;is_admin&quot;:1,&quot;is_admin_text&quot;:&quot;Ng\u01b0\u1eddi li\u00ean h\u1ec7&quot;,&quot;is_verify&quot;:0,&quot;is_verify_text&quot;:&quot;Ch\u01b0a \u0111\u1ea7y \u0111\u1ee7&quot;,&quot;is_registry&quot;:0,&quot;is_registry_text&quot;:&quot;Ch\u01b0a c\u00f3 t\u1ea1m tr\u00fa&quot;,&quot;identity_number&quot;:&quot;064204004004&quot;,&quot;identity_place&quot;:null,&quot;identity_date&quot;:null,&quot;identity_date_format&quot;:null,&quot;image_identity_after&quot;:null,&quot;image_identity_before&quot;:null,&quot;relationship&quot;:null,&quot;status&quot;:1,&quot;status_text&quot;:&quot;\u0110ang \u1edf&quot;,&quot;room&quot;:{&quot;id&quot;:106030,&quot;name&quot;:&quot;Gi\u01b0\u1eddng 1&quot;,&quot;group_id&quot;:1,&quot;sort&quot;:1,&quot;car&quot;:null,&quot;asset&quot;:[],&quot;room_amount&quot;:2500000,&quot;customer_count&quot;:1,&quot;circle_day&quot;:1,&quot;circle_month&quot;:1,&quot;room_amount_date_from&quot;:1733616000000,&quot;room_amount_date_to&quot;:1733616000000,&quot;status&quot;:&quot;is_active&quot;,&quot;active_status&quot;:&quot;pending_create_bill&quot;,&quot;date_join&quot;:1733590800000,&quot;deposit_contract_amount&quot;:2500000,&quot;room_request&quot;:0},&quot;room_group_text&quot;:&quot;T\u1ea7ng tr\u1ec7t&quot;}"
+                            class="col-6 customer">
+                            <div class="col-6 item-feature d-flex align-items-center justify-content-between mb-2">
+                                <div class="info" style="flex: 1">
+                                    <h6>{{ room?.reservation?.[0]?.tenantName }}</h6>
+                                    <p>{{ room?.reservation?.[0]?.contactNumber}}</p>
+                                </div>
+
+                                <div class="badge" style="background-color: #15A05C; margin-right: 10px">Người liên hệ
+                                </div>
+
+                                <div class="badge" style="background-color: #7dc242">Đại diện hợp đồng</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="title-item">
+                    Lịch sử hóa đơn
+                    <i class="des">Lịch sử thu tiền của giường</i>
+                </h4>
+                <div class="card-feature" style="padding: 10px;">
+                    <div style="border-radius: 10px;">
+                        <div style="border-radius: 10px; padding: 30px; text-align:center">
+                            <img width="200px" src="https://quanlytro.me/images/empty-box-4085812-3385481.webp">
+                            <h4>Lịch sử thu tiền trống</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="title-item">
+                    Lịch sử thuê của giường
+                    <i class="des">Ghi nhận lại các phiên khách ở qua thời kỳ của giường</i>
+                </h4>
+                <div class="card-feature" style="padding: 10px;"*ngIf="room?.reservation?.length === 0">
+                    <div class="row" style="padding: 10px;">
+                        <table class="table table-bordered text-center" id="room-history">
+                            <tbody>
+                                <tr>
+                                    <td><b>Chủ hợp đồng</b></td>
+                                    <td><b>Số điện thoại</b></td>
+                                    <td><b>Giá phòng - Giá cọc</b></td>
+                                    <td><b>Ngày ký hợp đồng</b></td>
+                                    <td><b>Ngày kết thúc hợp đồng</b></td>
+                                    <td><b>Trạng thái</b></td>
+                                    <td><b>Hành động</b></td>
+                                </tr>
+                                <tr style=" cursor: pointer;" class="row-history" data-id="32003" data-bs-toggle="modal"
+                                    data-bs-target="#contractHistory">
+                                    <td>
+                                        <b> {{ room?.reservation?.[0]?.tenantName }}</b>
+                                    </td>
+                                    <td>
+                                        {{room?.reservation?.[0]?.contactNumber}}
+                                    </td>
+                                    <td>
+                                        <strong>{{room?.rentalPrice}}</strong>
+                                        <div>
+                                            {{room?.depositAmount}}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {{room?.contracts?.[0]?.moveInDate}}
+                                    </td>
+                                    <td>
+                                        {{room?.contracts?.[0]?.terminationDate}}
+                                    </td>
+                                    <td>
+                                        <span style="color: #7dc242">Trong thời hạn hợp đồng</span>
+                                    </td>
+                                    <td>
+                                        <span style="color: blue;text-decoration:underline">Xem chi tiết</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript"
+        src="https://quanlytro.me/householder-admin/plugins/flatpickr/js/flatpickr-4.6.9.min.js"></script>
+    <script type="text/javascript"
+        src="https://quanlytro.me/householder-admin/plugins/flatpickr/js/month-select-4.6.9.min.js"></script>
+    <script type="text/javascript" src="https://quanlytro.me/householder-admin/plugins/flatpickr/js/vn.js"></script>
+    <script type="text/javascript" src="https://quanlytro.me/householder-admin/plugins/xlsx.full.min.js"></script>
+
+    <script type="text/javascript"
+        src="https://quanlytro.me/householder-admin/js/tabulator-setting.js?version=1.3.9"></script>
+
+    <link href="https://quanlytro.me/householder-admin/plugins/flatpickr/css/flatpickr.min.css" rel="stylesheet">
+    <link href="https://quanlytro.me/householder-admin/plugins/flatpickr/css/month-select.min.css" rel="stylesheet">
+
+    <!-- Modal deposit temp -->
+    <style type="text/css">
+        #billDetail .item.d-flex.justify-content-between {
+            padding: 10px;
+        }
+
+        #billDetail .item.d-flex.justify-content-between:not(:last-child) {
+            border-bottom: 0.5px solid #ccc;
+        }
+    </style>
+
+    <div class="modal fade" data-bs-backdrop="static" id="contractHistory" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div
+                        style="margin-right: 15px;outline: 0;box-shadow: 0 0 0 .25rem rgb(76 175 80 / 16%);opacity: 1;border-radius: 100%;width: 36px;height: 36px;justify-content: center;align-items: center;display: flex;background-color: #b1e1b8;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-file-text">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <h5 class="modal-title">Thông tin hợp đồng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="position: relative; display: grid;">
+                    <div class="loading" style="position: absolute;
+width: 100%;
+height: 100%;
+background-color: #00000030;
+align-items: center;
+justify-content: center;
+display: flex;">
+                        <div class="text-center" style="padding: 20px">
+                            <img style="margin: auto" src="https://quanlytro.me/images/icons/loading.gif"
+                                alt="Đang tải..." width="50px">
+                            <div>
+                                <i class="loading_text" style="font-size: 13px; margin-top: -10px;">Đang tải...</i>
+                            </div>
+                        </div>
+                    </div>
+                    <form method="POST" class="needs-validation" id="contract-history-form" novalidate="">
+                        <div class="row mt-2 bill-detail">
+                            <div class="contract-info">
+                                <div class="row row_contract">
+                                    <div class="col-12">
+                                        <h4 class="title-item">
+                                            <b>Thông tin hợp đồng</b>
+                                        </h4>
+                                    </div>
+
+                                    <div class="col-6 mt-2">
+                                        <span>Đại diện hợp đồng: <b class="customer_name">Nguyễn Văn A</b> </span>
+                                    </div>
+                                    <div class="col-6 mt-2">
+                                        <span>Số điện thoại: <b class="customer_phone">0254855858</b> </span>
+                                    </div>
+                                    <div class="col-6 mt-2">
+                                        <span>Giá tiền thuê phòng: <b class="room_amount">2.000.000đ</b> </span>
+                                    </div>
+                                    <div class="col-6 mt-2">
+                                        <span>Giá tiền cọc: <b class="deposit_contract_amount">2.000.000đ</b> </span>
+                                    </div>
+                                    <div class="col-6 mt-2">
+                                        <span>Ngày ký hợp đồng: <b class="date_contract">24/02/2024</b> </span>
+                                    </div>
+                                    <div class="col-6 mt-2">
+                                        <span>Ngày kết thúc hợp đồng <b class="date_terminate">24/02/2025</b> </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="customer-info" style="margin-top: 20px;">
+                                <div class="col-12">
+                                    <h4 class="title-item">
+                                        <b>Thông tin tin khách thuê cho kỳ này</b>
+                                    </h4>
+                                </div>
+                                <div class="row row_customer">
+                                </div>
+                            </div>
+                            <div class="documents" style="margin-top: 20px;">
+                                <div class="col-12">
+                                    <h4 class="title-item">
+                                        <b>Hình ảnh chứng từ</b>
+                                    </h4>
+                                </div>
+                                <div class="row row_document">
+                                    <div class="document-offline col-md-6">
+                                        <div class="img" style="display: flex;">
+
+                                        </div>
+                                        <div class="text">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="document-online col-md-6">
+                                        <div class="img">
+
+                                        </div>
+                                        <div class="text">
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer modal-footer--sticky">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal deposit temp -->
+    <div class="modal fade" data-bs-backdrop="static" id="addCustomer" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div
+                        style="margin-right: 15px;outline: 0;box-shadow: 0 0 0 .25rem rgb(76 175 80 / 16%);opacity: 1;border-radius: 100%;width: 36px;height: 36px;justify-content: center;align-items: center;display: flex;background-color: #b1e1b8;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-user-plus">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="8.5" cy="7" r="4"></circle>
+                            <line x1="20" y1="8" x2="20" y2="14"></line>
+                            <line x1="23" y1="11" x2="17" y2="11"></line>
+                        </svg>
+                    </div>
+                    <h5 class="modal-title">Thêm thông tin khách thuê</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" class="needs-validation" id="add-customer-form" novalidate="">
+                        <input type="hidden" name="_token" value="5p1OkngahhVHLqrYaJINvA9RJicav6vUnabovdQC">
+                        <div class="row g-2">
+                            <div class="col-12">
+                                <div class="title-item-small">
+                                    <b>Thông tin các nhân của khách thuê:</b>
+                                    <i class="des">Các thông tin về khách thuê và tiền cọc</i>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-2 text-center">
+                                <div id="avatar" class="image-upload-simple avatar">
+                                </div>
+                            </div>
+
+                            <div class="col-6 mt-2">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="name" id="customer_name"
+                                        oninput="this.value = __format.capitalizeFirstStr(this.value)"
+                                        placeholder="Nhập tên khách thuê" required="">
+                                    <label for="customer_name">Tên khách thuê</label>
+                                    <div class="invalid-feedback">
+                                        Vui lòng nhập tên khách thuê
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 mt-2">
+                                <div class="form-floating">
+                                    <input data-format="stringNumber" type="text" class="form-control" name="phone"
+                                        id="customer_phone" placeholder="Nhập sdt khách thuê">
+                                    <input data-format="stringNumber" type="hidden" class="form-control"
+                                        name="old_phone" placeholder="Nhập sdt người ở">
+                                    <label for="customer_phone">Số điện thoại khách thuê</label>
+                                    <div class="invalid-feedback">
+                                        Vui lòng nhập sdt khách thuê
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-2">
+                                <div class="form-check form-check-inline">
+                                    <input data-format="numeric" class="form-check-input" type="radio"
+                                        name="identity_type" id="cccd" checked="" value="0">
+                                    <label class="form-check-label" for="cccd">Đinh dạng CCCD</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input data-format="numeric" class="form-check-input" type="radio"
+                                        name="identity_type" id="passport" value="1">
+                                    <label class="form-check-label" for="passport">Đinh dạng Passport/Visa</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-2">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="identity_number" id="identity_number"
+                                        placeholder="Nhập số CMND/CCCD">
+                                    <label id="label-identity-number" for="identity_number">CMND/CCCD</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-2">
+                                <div class="form-floating">
+                                    <input type="text" data-format="stringNumber" class="form-control" name="zalo"
+                                        id="customer_zalo" placeholder="Nhập công Zalo khách thuê">
+                                    <label for="customer_zalo">Zalo của khách</label>
+                                    <div class="invalid-feedback">
+                                        Vui lòng nhập Zalo của khách
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control date-flat-picker" name="birthday"
+                                            id="birthday" data-format="date" placeholder="Ngày vào ở"
+                                            pattern="\d{1,2}\/\d{1,2}\/\d{4}">
+                                        <label for="birthday">Ngày sinh</label>
+                                    </div>
+                                    <label class="input-group-text" for="birthday"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-calendar">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        </svg></label>
+                                </div>
+                                <div class="invalid-feedback">
+                                    Vui lòng nhập ngày sinh và phải đúng định dạng
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-floating">
+                                    <select id="customer_sex" name="sex" class="form-select form-control" required="">
+                                        <option value="1" selected="">Nam</option>
+                                        <option value="0">Nữ</option>
+                                        <option value="-1">Chưa xác định</option>
+                                    </select>
+                                    <label for="customer_sex">Giới tính</label>
+                                </div>
+
+                            </div>
+                            <div class="col-12">
+                                <div id="customer_address" class="address_component_container row g-2">
+                                    <div class="col-6 mt-2">
+                                        <div class="form-floating">
+                                            <select data-format="numeric" name="address_component[province_id]"
+                                                class="form-select form-control province" required="">
+                                                <option value="">Tỉnh/Thành phố</option>
+                                            </select>
+                                            <label for="province">Chọn Tỉnh/Thành phố</label>
+                                            <div class="invalid-feedback">
+                                                Vui lòng chọn thành phố
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mt-2">
+                                        <div class="form-floating">
+                                            <select data-format="numeric" name="address_component[district_id]"
+                                                class="form-select form-control district" required="">
+                                                <option value="">Quận/Huyện</option>
+                                            </select>
+                                            <label for="district">Chọn Quận/Huyện</label>
+                                            <div class="invalid-feedback">
+                                                Vui lòng chọn quận hoặc huyện
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mt-2">
+                                        <div class="form-floating">
+                                            <select data-format="numeric" name="address_component[ward_id]"
+                                                class="form-select form-control ward" required="">
+                                                <option value="">Phường/Xã</option>
+                                            </select>
+                                            <label for="ward">Chọn Phường/Xã</label>
+                                            <div class="invalid-feedback">
+                                                Vui lòng chọn phường hoặc xã
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mt-2">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control address_detail"
+                                                name="address_component[address_detail]"
+                                                placeholder="ví dụ: 122 - Đường Nguyễn Duy Trinh" required="">
+                                            <label for="address_detail">Địa chỉ chi tiết. Ví dụ: 122 - Đường Nguyễn Duy
+                                                Trinh</label>
+                                            <div class="invalid-feedback">
+                                                Vui lòng nhập địa chỉ chi tiết
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-12 mt-2">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="job" id="customer_job"
+                                        placeholder="Nhập công việc khách thuê">
+                                    <label for="customer_job">Nhập công việc</label>
+                                    <div class="invalid-feedback">
+                                        Vui lòng nhập công việc của khách thuê
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control date-flat-picker" name="identity_date"
+                                            id="identity_date" data-format="date" placeholder="Ngày cấp "
+                                            pattern="\d{1,2}\/\d{1,2}\/\d{4}">
+                                        <label for="identity_date">Ngày cấp CMND/CCCD</label>
+                                    </div>
+                                    <label class="input-group-text" for="identity_date"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-calendar">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        </svg></label>
+                                </div>
+                                <div class="invalid-feedback">
+                                    Vui lòng nhập ngày đúng định dạng
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="identity_place" id="identity_place"
+                                        placeholder="Nhập số CMND/CCCD">
+                                    <label for="identity_place">Nơi cấp CMND/CCCD</label>
+                                    <div class="invalid-feedback">
+                                        Vui nhập nơi cấp CMND/CCCD
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 mt-2">
+                                <div id="image_identity_before_ele" class="image-upload-simple">
+                                </div>
+                            </div>
+
+                            <div class="col-6 mt-2">
+                                <div id="image_identity_after_ele" class="image-upload-simple">
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="title-item-small">
+                                    <b>Thông tin quản lý:</b>
+                                    <i class="des">Các thông tin về khách thuê và tiền cọc</i>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-2" style="border-bottom: 1px solid #eee">
+                                <div class="form-check form-switch">
+                                    <input data-format="numeric" class="form-check-input" type="checkbox" value="1"
+                                        id="is_admin" name="is_admin">
+                                    <label class="form-check-label" for="is_admin">
+                                        <b>Là người liên hệ của phòng</b>
+                                        <p>Là người chịu trách nhiệm nhận hóa đơn, báo cáo các vấn đề của phòng</p>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-2" style="border-bottom: 1px solid #eee">
+                                <div class="form-check form-switch">
+                                    <input data-format="numeric" class="form-check-input" type="checkbox" value="1"
+                                        id="is_registry" name="is_registry">
+                                    <label class="form-check-label" for="is_registry">
+                                        <b>Đã đăng ký tạm trú</b>
+                                        <p>Tình trạng đăng ký tạm trú của khách thuê</p>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-2">
+                                <div class="form-check form-switch">
+                                    <input data-format="numeric" class="form-check-input" type="checkbox" value="1"
+                                        id="is_verify" name="is_verify">
+                                    <label class="form-check-label" for="is_verify">
+                                        <b>Thông tin đã được xác minh</b>
+                                        <p>Tình trạng cung cấp thông tin hoặc giấy tờ để chuẩn bị làm tạm trú</p>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer modal-footer--sticky">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" id="submit-add-customer" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-plus">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        Thêm thông tin khách thuê
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

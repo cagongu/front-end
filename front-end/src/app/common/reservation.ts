@@ -3,8 +3,11 @@ export interface Reservation {
     description: string;
     tenantName: string;
     contactNumber: string;
-    reservationDate: Date;
+    status :string;
+    reservationDate: string;
     depositAmount: number;
-    moveInDate: Date;
+    current: number;
+    moveInDate: string;
     notes: string;
+    createdDate: Date;
   }

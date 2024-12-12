@@ -13,7 +13,7 @@ export interface Contract {
   idCard: string;
   dob: Date;
   gender: string;
-  isCurrent: boolean;
+  current: boolean;
   room: Room;
   paymentDate: Date;
   notes: string;

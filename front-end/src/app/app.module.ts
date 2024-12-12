@@ -12,6 +12,7 @@ import { ManagementComponent } from './components/management/management.componen
 import { HeaderComponent } from './components/management/header/header.component';
 import { ListRoomComponent } from './components/list-room/list-room.component';
 import { HouseforrentManagementComponent } from './components/houseforrent-management/houseforrent-management.component';
+import { RoomDetailComponent } from './components/option/room-detail/room-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HouseforrentManagementComponent } from './components/houseforrent-manag
     ManagementComponent,
     HeaderComponent,
     ListRoomComponent,
-    HouseforrentManagementComponent
+    HouseforrentManagementComponent,
+    RoomDetailComponent
   ],
   imports: [
     BrowserModule,

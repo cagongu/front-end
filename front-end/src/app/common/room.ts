@@ -17,11 +17,9 @@ export interface Room {
     invoiceDate: number;
     billingCycle: number;
     moveInDate: Date;
-    contractDuration: Date;
+    contractDuration: number;
     financialStatus: string;
     status: string;
-    electricityDefault: number;
-    waterDefault: number;
     maxOccupants: number;
     createdDate: Date;
     lastModifiedDate: Date;

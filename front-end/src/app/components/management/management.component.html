@@ -55,7 +55,8 @@
                         data-bs-toggle="modal" data-bs-target="#manageBlock">
                         <div class="d-flex align-items-center" style="flex-direction: row; flex:1">
                             <div class="icon-blocks">
-                                <span class="count-block">1</span>
+                                <span *ngIf=" dormitory.length > 0" class="count-block">{{dormitory.length}}</span>
+                                <span *ngIf=" dormitory.length === 0" class="count-block">0</span>
                                 <i class="fa-solid fa-house"></i>
                             </div>
 
@@ -63,7 +64,7 @@
                                 <span style="font-size: 16px; font-weight: bold;">Đang quản lý</span>
                                 <h4
                                     style="font-size: 20px; color: #15a05c; padding:0px; margin:0px; white-space: nowrap;max-width: 150px; overflow: hidden; text-overflow: ellipsis; ">
-                                    <span>{{dormitory[index].name}}</span>
+                                    <span *ngIf="dormitory && dormitory.length > 0">{{dormitory[index].name}}</span>
                                 </h4>
                             </div>
                         </div>
@@ -103,7 +104,7 @@
                                     <span class="title"><b>Quản lý phòng</b></span>
                                 </div>
                             </a>
-                            
+
                             <a href="#" class="item-menu">
                                 <div class="icon text-center">
                                     <img width=45px src="/images/icons/menus/thu_tien.png" />
@@ -473,7 +474,8 @@
                     </div>
                     <!-- end report preview -->
 
-                  <app-list-room></app-list-room>
+                    <app-list-room (roomSelected)="currentRoom = $event"></app-list-room>
+                    <app-room-detail [room]="currentRoom"></app-room-detail>
                 </div>
             </div>
         </div>
